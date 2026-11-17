@@ -1,0 +1,41 @@
+:root { color-scheme:dark; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Apple SD Gothic Neo",monospace; color:#f9f1ff; background:#211b32; }
+* { box-sizing:border-box; }
+body { margin:0; }
+a { color:inherit; text-decoration:none; }
+button,input { font:inherit; }
+a:focus-visible,button:focus-visible,input:focus-visible { outline:2px solid #ffe29c; outline-offset:4px; }
+.login-shell { min-height:100svh; display:grid; grid-template-columns:1.15fr 1fr; }
+.welcome { position:relative; overflow:hidden; min-height:680px; padding:44px clamp(28px,5vw,84px); background:#33263f; border-right:2px solid #72517f; display:flex; flex-direction:column; }
+.brand { font-size:28px; font-weight:800; letter-spacing:-1px; width:fit-content; }
+.brand span { color:#ffe0ac; margin-right:8px; }
+.welcome-copy { position:relative; z-index:1; margin-top:72px; }
+.eyebrow { color:#e4b5d7; font-size:11px; letter-spacing:3px; }
+h1 { font-size:clamp(28px,3.1vw,46px); line-height:1.5; letter-spacing:-2px; margin:20px 0; }
+.welcome-copy>p:last-child { color:#cfbddb; font-size:14px; line-height:1.9; }
+.office-art { min-height:280px; flex:1; margin:28px -50px 0; background:url('../assets/backgrounds/office_night.png') center / contain no-repeat; image-rendering:pixelated; }
+.scene-caption { text-align:center; color:#c4a5d0; font-size:11px; margin-top:20px; }
+.scene-caption span { color:#f3d4a4; }
+.login-panel { padding:44px clamp(26px,5vw,80px) 24px; display:flex; flex-direction:column; background:radial-gradient(ellipse at top right,#382940,#211b32 65%); }
+.back-link { width:fit-content; color:#cbb6d7; font-size:12px; }
+.back-link:hover,.guest-link:hover { color:#ffe0ac; }
+.form-wrap { width:100%; max-width:380px; margin:auto; padding:55px 0; }
+.preview-badge { display:inline-block; font-size:10px; letter-spacing:2px; padding:6px 9px; border:1px solid #8d6ca2; color:#efb2d7; border-radius:4px; }
+h2 { font-size:32px; letter-spacing:-1px; margin:22px 0 10px; }
+.intro { color:#c6b6d2; font-size:14px; margin:0 0 26px; }
+.notice { border:1px solid #665074; background:#3d304a; border-radius:6px; padding:13px 15px; color:#dfcee8; font-size:12px; line-height:1.8; margin:0 0 26px; }
+label { display:block; font-size:12px; margin:20px 0 9px; color:#e8d6ef; }
+input { width:100%; min-width:0; height:48px; background:#241d30; border:1px solid #795c8a; border-radius:6px; padding:0 14px; color:#fff0fc; font-size:13px; }
+input::placeholder { color:#a18dac; }
+.password-field { position:relative; }
+.password-field input { padding-right:64px; }
+.password-field button { position:absolute; right:7px; top:7px; height:34px; padding:0 10px; border:0; background:transparent; color:#dac0e5; font-size:11px; border-radius:4px; cursor:pointer; }
+.submit-button { margin-top:26px; width:100%; min-height:48px; display:flex; align-items:center; justify-content:space-between; padding:12px 18px; background:#e7b3d5; color:#302139; border:2px solid #f7d5ea; border-radius:6px; box-shadow:0 4px #81587e; font-weight:700; cursor:pointer; }
+.submit-button:hover { background:#f4cbe5; }
+.form-status { color:#ffe0ac; font-size:12px; line-height:1.7; margin:12px 0 0; }
+.form-status:empty { display:none; }
+.divider { display:flex; align-items:center; gap:12px; color:#a996b8; font-size:10px; margin:30px 0 20px; }
+.divider::before,.divider::after { content:""; height:1px; flex:1; background:#574360; }
+.guest-link { display:block; text-align:center; padding:14px; border:1px solid #765a86; border-radius:6px; font-size:13px; }
+.privacy-note { text-align:center; color:#a996b8; font-size:10px; line-height:1.7; margin-top:18px; }
+footer { text-align:center; font-size:10px; color:#a996b8; }
+@media(max-width:760px) { .login-shell { grid-template-columns:1fr; } .welcome { min-height:0; padding:26px; border-right:0; border-bottom:2px solid #72517f; } .brand { font-size:24px; } .welcome-copy { margin-top:22px; } h1 { font-size:26px; margin:12px 0; } .welcome-copy>p:last-child { margin-bottom:0; } .office-art { min-height:190px; margin:16px 0 0; } .scene-caption { margin-top:10px; } .login-panel { padding:26px; } .form-wrap { padding:38px 0; } }

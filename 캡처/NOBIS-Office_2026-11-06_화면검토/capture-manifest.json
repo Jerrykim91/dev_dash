@@ -1,0 +1,404 @@
+{
+  "source": "http://127.0.0.1:15180",
+  "isolatedDatabase": true,
+  "records": [
+    {
+      "file": "01_월드전체_1920x1080.png",
+      "title": "하나로 연결된 Office World",
+      "criteria": [
+        1,
+        2,
+        3
+      ],
+      "notes": "집중·카페·라운지·회의실·휴가·외근 6존과 공용 통로를 한 화면에서 확인합니다.",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "worldFrameWidth": 1300,
+      "rightPanelWidth": 340,
+      "image_width": 1920,
+      "image_height": 1080,
+      "sha256": "991f2052e5984f88fd6977dcda77b22a20786f647738dcde9def08dbc3739c80",
+      "bytes": 489777
+    },
+    {
+      "file": "02_기본레이아웃_1440x1000.png",
+      "title": "기본 화면의 맵·채팅 비율",
+      "criteria": [
+        1,
+        2,
+        3
+      ],
+      "notes": "좌측 서비스 메뉴에 존 버튼이 없으며 우측 채팅과 중앙 맵의 실제 비율을 확인합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "ead48a59118a2041e00e7e202983ffbbb66814d7fedc80313dd43c69a6f4f7ce",
+      "bytes": 380310
+    },
+    {
+      "file": "03_캐릭터크기_집중업무존.png",
+      "title": "집중 업무존과 캐릭터 확대",
+      "criteria": [
+        3
+      ],
+      "notes": "실제 휠 줌으로 캐릭터·책상·파티션·보행 공간의 크기를 확인합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "a82c6885ca6c35b6cde4175771ab639d17de4ef767e5142e53caf09e1d6214d9",
+      "bytes": 416778
+    },
+    {
+      "file": "04_공개말풍선_설정.png",
+      "title": "채팅 말풍선 ON/OFF 설정",
+      "criteria": [
+        4
+      ],
+      "notes": "집중 업무존·회의실 제한과 상태 말풍선과의 구분이 안내됩니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "4b2ae2572112fff0ac95fcf1c06e3c6ce771ef8d2b057cbc65b0acffbd92acfa",
+      "bytes": 218910
+    },
+    {
+      "file": "05_카페_공개채팅말풍선.png",
+      "title": "카페의 공개 채팅 말풍선",
+      "criteria": [
+        3,
+        4
+      ],
+      "notes": "아바타 위의 임시 채팅 말풍선과 고정 상태 메시지를 구분해 확인합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "933b9618f1b98ea0424a45c9cf59e951942369aa73bd69ff5f500de8a1830d1e",
+      "bytes": 391514
+    },
+    {
+      "file": "06_귓속말_수신자선택.png",
+      "title": "ID로 연결하는 귓속말 입력",
+      "criteria": [
+        4
+      ],
+      "notes": "수신자를 선택한 실제 입력 상태입니다. 나래는 다른 월드 채널에 있습니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "cae8ba61dd7827e31e1f4aed2435afa969d6cbb0d122b3567b1d343a741e3a01",
+      "bytes": 387358
+    },
+    {
+      "file": "07_귓속말_채널간대화.png",
+      "title": "다른 채널 사용자와 귓속말",
+      "criteria": [
+        4,
+        5
+      ],
+      "notes": "공개 탭과 구분되는 귓속말 스타일·수신자·전달됨을 확인합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "51bd949471f93349323dfeaf6fbe6d1da874bee12bb7b0599e1bc9433fc4d7a3",
+      "bytes": 377800
+    },
+    {
+      "file": "08_월드채널_선택.png",
+      "title": "상단 월드 채널 선택",
+      "criteria": [
+        5
+      ],
+      "notes": "브라우저 기본 select UI입니다. 옵션 목록이 OS 캡처에 포함되지 않더라도 채널 관리 이미지에서 두 채널을 확인할 수 있습니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "474e56abf54c10387f41c9cec3ccfe2be1a8bd9165a2d137608c4838fe9ae80a",
+      "bytes": 378596
+    },
+    {
+      "file": "09_월드공지_게임화면.png",
+      "title": "전체 공지 토스트와 게임 화면",
+      "criteria": [
+        4,
+        5
+      ],
+      "notes": "제목·본문·공지 아이콘·닫기 버튼을 실제 발송된 배너로 확인합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "ed4859ca31164ae58682b3f4ba9a601657cac1f0ca83309231710ef1f6af34e9",
+      "bytes": 371692
+    },
+    {
+      "file": "10_월드공지_채팅전용.png",
+      "title": "채팅 전용 모드에서도 보이는 공지",
+      "criteria": [
+        2,
+        4
+      ],
+      "notes": "맵 비표시·확대 채팅·상단 공지 배너를 함께 확인합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 0,
+      "rightPanelWidth": 1260,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "f1b384b5b95ae49db71c48bbd86524568bacf45b9a8b9d1b38057e3bd9a49409",
+      "bytes": 98539
+    },
+    {
+      "file": "11_관리자_대시보드.png",
+      "title": "관리자 대시보드",
+      "criteria": [
+        5
+      ],
+      "notes": "샘플 super_admin 계정의 실제 별도 /admin 페이지입니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": null,
+      "rightPanelWidth": null,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "41aabc3eb4809ba05eb9b4159f413ff87f33189cf40f221f5ed5ad6313d49616",
+      "bytes": 33404
+    },
+    {
+      "file": "12_관리자_채널관리.png",
+      "title": "채널 추가와 정원·활성 관리",
+      "criteria": [
+        5
+      ],
+      "notes": "실제로 생성한 채널 1/2의 접속 수와 정원 설정을 확인합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": null,
+      "rightPanelWidth": null,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "d5a44833205c0c154faf04f48ee5a55770be66eb752da58bfaf1e2111250895b",
+      "bytes": 43884
+    },
+    {
+      "file": "13_관리자_공지관리.png",
+      "title": "전체/채널 공지 관리",
+      "criteria": [
+        4,
+        5
+      ],
+      "notes": "공지 제목·본문·대상 채널·표시 시간과 저장 기록입니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": null,
+      "rightPanelWidth": null,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "72a285b65275cb7bd8623ec61043e9e40088e0d17aa5b4d815c43a9ec335ec3a",
+      "bytes": 51457
+    },
+    {
+      "file": "14_관리자_권한관리.png",
+      "title": "역할별 권한 관리",
+      "criteria": [
+        5
+      ],
+      "notes": "샘플 사용자에게 moderator를 부여한 실제 서버 응답입니다. 실사용 DB 권한은 바꾸지 않습니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": null,
+      "rightPanelWidth": null,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "ec8bbf903350571838049cb4fc5f1500676d1c1943d5693c97781a647a10c0c8",
+      "bytes": 47744
+    },
+    {
+      "file": "15_관리자_운영로그.png",
+      "title": "권한·채널·공지 작업 기록",
+      "criteria": [
+        5
+      ],
+      "notes": "CLI 최초 관리자 생성과 채널·공지·역할 변경의 감사 로그입니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": null,
+      "rightPanelWidth": null,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "96a6d28323764de745cd26100debd5b5afd579c404809a555bde684a3932ebcd",
+      "bytes": 73775
+    },
+    {
+      "file": "16_사용자_공지기록.png",
+      "title": "채팅과 분리된 공지 기록",
+      "criteria": [
+        4
+      ],
+      "notes": "사용자에게 허용된 전체/채널 공지 기록을 별도로 표시합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "e6b35d361208cc31ec919d27a86d55837a3db595370e4456932e62407acf17a3",
+      "bytes": 261159
+    },
+    {
+      "file": "17_개인집_입장동선.png",
+      "title": "오피스 책장을 통한 개인 집 입장",
+      "criteria": [
+        1,
+        6
+      ],
+      "notes": "공용 맵을 분할하지 않고 개인 집으로 연결하는 기존 상호작용입니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "bdf863b3f4cc4c4ced20705cf0a620ca0cfe3d52fb63a757c4d4b5c85bcc1e69",
+      "bytes": 140397
+    },
+    {
+      "file": "18_개인집_작업실.png",
+      "title": "기존 개인 집과 작업실",
+      "criteria": [
+        3,
+        6
+      ],
+      "notes": "동일 엔진을 재사용하는 소유자별 집, PC·출입문·꾸미기/상점 UI입니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "2d0143818dd2b1531a14bd4ec1e030c7730b1f8349730fd84e4edd1f011c9775",
+      "bytes": 227832
+    },
+    {
+      "file": "19_개인집_가구배치미리보기.png",
+      "title": "인벤토리와 가구 배치 모듈",
+      "criteria": [
+        3,
+        6
+      ],
+      "notes": "회전·설치 상태·좌표·배치 가능 색상·저장/취소를 확인합니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "c5f4e07cb94d4aa8a2534628b32e272259fb7a9ee16b70b75b1dabce2064132a",
+      "bytes": 263882
+    },
+    {
+      "file": "20_개인집_가구상점.png",
+      "title": "가구 카탈로그·인벤토리·코인 확장",
+      "criteria": [
+        6
+      ],
+      "notes": "10종 카탈로그·보유량·가격·가상 코인 잔액의 실제 화면입니다. 소셜/미니게임 구현 화면을 꾸며내지 않습니다.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "worldFrameWidth": 910,
+      "rightPanelWidth": 302,
+      "image_width": 1440,
+      "image_height": 1000,
+      "sha256": "494c0dc4b7c002584d0ec29296c5fafd7b0e317f635df4d86faafbffff2dce33",
+      "bytes": 148217
+    },
+    {
+      "file": "21_모바일_레이아웃.png",
+      "title": "모바일 화면의 비율과 메뉴",
+      "criteria": [
+        2,
+        5
+      ],
+      "notes": "390px 뷰포트의 실제 반응형 전체 화면입니다. 데스크톱과 비교해 검토합니다.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "worldFrameWidth": 312,
+      "rightPanelWidth": 332,
+      "image_width": 390,
+      "image_height": 1397,
+      "sha256": "28c3612f651abf8e1d83b1f99bc2b74e017eb76afd1b04dca6c6d9cb433b9e27",
+      "bytes": 137568
+    }
+  ],
+  "errors": [],
+  "gallery_preview": {
+    "file": "00_한눈에보기.png",
+    "image_width": 1600,
+    "image_height": 2411,
+    "sha256": "14f3cea898b207d4353dba6f56cc22023ed69ae69b33b1b098f73f2f80972302"
+  }
+}

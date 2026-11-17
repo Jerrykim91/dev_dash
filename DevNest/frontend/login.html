@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211b32">
+  <link rel="icon" href="data:,">
+  <title>로그인 · DevNest</title>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/login.js" defer></script>
+</head>
+<body>
+  <main class="login-shell">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <a class="brand" href="index.html"><span aria-hidden="true">✦</span> DevNest</a>
+      <div class="welcome-copy">
+        <p class="eyebrow">YOUR LITTLE WORKSPACE</p>
+        <h1 id="welcome-title">다시 돌아오고 싶은,<br>나만의 작업 공간.</h1>
+        <p>오늘의 할 일도, 잠깐의 휴식도.<br>DevNest에서 나만의 하루를 만들어 보세요.</p>
+      </div>
+      <div class="office-art" role="img" aria-label="보라색 조명이 켜진 아늑한 픽셀 오피스"></div>
+      <span class="scene-caption"><span aria-hidden="true">✦</span> Make yourself at home.</span>
+    </section>
+    <section class="login-panel" aria-labelledby="login-title">
+      <a class="back-link" href="index.html">← 내 작업 공간으로</a>
+      <div class="form-wrap">
+        <span class="preview-badge">COMING SOON</span>
+        <h2 id="login-title">반가워요!</h2>
+        <p class="intro">나만의 작업 공간에 로그인하세요.</p>
+        <p class="notice" id="login-notice">로그인 기능은 준비 중이에요. 지금은 로그인 없이 모든 작업 공간을 사용할 수 있어요.</p>
+        <form id="login-form" aria-describedby="login-notice">
+          <label for="email">이메일</label>
+          <input id="email" name="email" type="email" autocomplete="username" placeholder="you@example.com" required>
+          <label for="password">비밀번호</label>
+          <div class="password-field">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="비밀번호를 입력하세요" required>
+            <button id="toggle-password" type="button" aria-label="비밀번호 표시" aria-pressed="false">표시</button>
+          </div>
+          <button class="submit-button" type="submit">로그인 <span aria-hidden="true">→</span></button>
+          <p id="login-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="divider"><span>지금 바로 시작하려면</span></div>
+        <a class="guest-link" href="index.html">로그인 없이 둘러보기 →</a>
+        <p class="privacy-note">입력한 정보는 저장되거나 전송되지 않아요.</p>
+      </div>
+      <footer>DevNest · 나만의 작은 오피스</footer>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-06",
+  "scope": [
+    "Phase 5 social",
+    "attendance tickets and gacha"
+  ],
+  "backend": {
+    "passed": 164,
+    "skipped": 1,
+    "engines": [
+      "SQLite",
+      "PostgreSQL17"
+    ]
+  },
+  "migration_with_social_media_gacha": {
+    "passed": 1,
+    "skipped": 1
+  },
+  "game_systems": {
+    "passed": 20
+  },
+  "browser_full": {
+    "passed": 18
+  },
+  "browser_final_phase5_sqlite": {
+    "passed": 3
+  },
+  "browser_phase5_postgresql": {
+    "passed": 3
+  },
+  "typescript_vite_build": "passed",
+  "docker": {
+    "production_api": "passed",
+    "concurrent_attendance_8": "passed",
+    "concurrent_same_draw_8": "passed",
+    "private_media_acl": "passed",
+    "inventory_coin_separation": "passed",
+    "immutable_probability_versions": "passed",
+    "database_and_media_backup_restore": "passed",
+    "container_recreate_named_volumes": "passed",
+    "postgres_backend_restart": "passed",
+    "image_sha256_preserved": true,
+    "linux_architecture": "aarch64",
+    "counts_before_after": {
+      "users": 3,
+      "attendance": 1,
+      "tickets": 0,
+      "draws": 2,
+      "draw_items": 6,
+      "instances": 14,
+      "logs": 1,
+      "media": 1,
+      "notifications": 7,
+      "schema": 7
+    }
+  },
+  "docker_final_ui_browser": "passed",
+  "live_migration": {
+    "preserved": true,
+    "schema": 7,
+    "counts": {
+      "users": 16,
+      "furniture_instances": 64,
+      "furniture_placements": 48,
+      "user_wallets": 8,
+      "shop_purchases": 0,
+      "coin_transactions": 9,
+      "private_messages": 1,
+      "wallet_total": 8030
+    }
+  },
+  "devnest_hashes_unchanged": 123,
+  "preserved_shared_files": [
+    "maps.json",
+    "zones.json",
+    "personal-room.json",
+    "furniture-catalog.json"
+  ],
+  "limitations": [
+    "single-process realtime hub",
+    "physical mobile and Raspberry Pi not tested",
+    "large Phaser bundle warning",
+    "native Python3.14 upstream deprecation warnings",
+    "production TLS and backup retention policy not configured"
+  ],
+  "browser_with_repository_image_fixture": {
+    "passed": 3
+  },
+  "runtime_after_verification": {
+    "nobis_frontend": "http://127.0.0.1:15173/",
+    "backend_health": "http://127.0.0.1:18000/health",
+    "native_servers": "running",
+    "isolated_docker_and_postgresql": "stopped; data retained"
+  }
+}

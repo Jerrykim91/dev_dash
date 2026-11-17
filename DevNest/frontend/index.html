@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211b32">
+  <link rel="icon" href="data:,">
+  <title>DevNest · Pixel Office</title>
+  <link rel="stylesheet" href="css/style.css?v=20261104-speech-position-28">
+  <script src="js/settings-tabs.js?v=20261104-simple-settings-24" defer></script>
+  <script src="js/actor-assets.js?v=20261104-desk-props-21" defer></script>
+  <script src="js/widget-config.js?v=20261104-productivity-26" defer></script>
+  <script src="js/settings-store.js?v=20261104-speech-position-28" defer></script>
+  <script src="js/office-state.js?v=20261104-executive-video-13" defer></script>
+  <script src="js/animation-engine.js?v=20261104-executive-video-13" defer></script>
+  <script src="js/cat-roaming.js?v=20261104-executive-video-13" defer></script>
+  <script src="js/office.js?v=20261104-speech-position-28" defer></script>
+  <script src="js/dashboard.js?v=20261104-header-state-22" defer></script>
+  <script src="js/productivity.js?v=20261104-productivity-26" defer></script>
+  <script src="js/widgets.js?v=20261104-productivity-26" defer></script>
+  <script src="js/office-settings.js?v=20261104-speech-position-28" defer></script>
+  <script src="js/integration-settings.js?v=20261104-integrations-17" defer></script>
+  <script src="js/reading-shelf.js?v=20261104-reading-shelf-20" defer></script>
+</head>
+<body>
+  <main class="app" data-view="dashboard">
+    <header class="header pixel-panel">
+      <a class="brand" id="brand-home" href="#home" aria-label="DevNest 홈">
+        <span class="brand-icon" aria-hidden="true">✦</span>
+        <span><h1>DevNest <span class="brand-check" aria-hidden="true">✓</span></h1><span class="tagline">My Interactive Workspace</span></span>
+      </a>
+      <label class="header-state-control" for="header-office-state">
+        <span>업무 상태</span>
+        <select id="header-office-state" aria-label="현재 업무 상태 수동 설정">
+          <option value="before_work">출근 전</option>
+          <option value="working">근무 중</option>
+          <option value="overtime">야근 중</option>
+          <option value="meeting">회의 중</option>
+          <option value="after_work">퇴근 완료</option>
+          <option value="holiday">휴무</option>
+        </select>
+      </label>
+      <button type="button" class="lighting-button" id="lighting-toggle" aria-label="실내 조명 끄기" aria-pressed="true" title="실내 조명 끄기"><span aria-hidden="true">☀</span></button>
+      <button type="button" class="settings-button" id="open-settings" aria-label="오피스 설정 열기" aria-controls="office-settings" aria-expanded="false">⚙</button>
+      <a class="login-link" href="login.html">로그인</a>
+      <span class="profile" title="나의 작업 공간" aria-hidden="true"><img src="assets/characters/developer_idle.png" alt="" width="512" height="640"></span>
+    </header>
+    <div class="main-grid dashboard-view" id="home" tabindex="-1">
+    <section class="office-panel pixel-panel" aria-label="픽셀 오피스">
+      <div class="scene" id="scene" data-status="working" data-lighting="on" data-background="night" data-time="night" data-weather="rain">
+        <img class="background" src="assets/backgrounds/office_night.png" data-period="night" data-weather="rain" alt="시간대와 날씨에 따라 바뀌는 픽셀 사무실" width="1672" height="941">
+        <!-- Pane boundaries are measured against the original 1672 × 941 background.
+             Lower panes stop above foreground plants, chair and monitor. -->
+        <div class="rain-layer" aria-hidden="true">
+          <i class="rain-pane pane-1"></i><i class="rain-pane pane-2"></i>
+          <i class="rain-pane pane-3"></i><i class="rain-pane pane-4"></i>
+          <i class="rain-pane pane-5"></i><i class="rain-pane pane-6"></i>
+          <i class="rain-pane pane-7"></i><i class="rain-pane pane-8"></i>
+        </div>
+        <div class="shutter-layer" aria-hidden="true">
+          <i class="shutter-pane pane-1"></i><i class="shutter-pane pane-2"></i>
+          <i class="shutter-pane pane-3"></i><i class="shutter-pane pane-4"></i>
+          <i class="shutter-pane pane-5"></i><i class="shutter-pane pane-6"></i>
+          <i class="shutter-pane pane-7"></i><i class="shutter-pane pane-8"></i>
+        </div>
+        <div class="ambient-lighting" aria-hidden="true"></div>
+        <div class="plant-layer actor" id="plant-upper-left" data-actor="plantUpperLeft" aria-label="왼쪽 위 덩굴 화분 배치" tabindex="-1"><img src="assets/characters/plant_upper_left.png" alt="왼쪽 위 덩굴 화분" width="222" height="433" draggable="false"></div>
+        <div class="plant-layer actor" id="plant-desk-left" data-actor="plantDeskLeft" aria-label="왼쪽 책상 화분 배치" tabindex="-1"><img src="assets/characters/plant_desk_left.png" alt="왼쪽 책상 화분" width="191" height="205" draggable="false"></div>
+        <div class="plant-layer actor" id="plant-floor-left" data-actor="plantFloorLeft" aria-label="왼쪽 바닥 화분 배치" tabindex="-1"><img src="assets/characters/plant_floor_left.png" alt="왼쪽 바닥 화분" width="252" height="223" draggable="false"></div>
+        <div class="plant-layer actor" id="plant-desk-right" data-actor="plantDeskRight" aria-label="오른쪽 책상 화분 배치" tabindex="-1"><img src="assets/characters/plant_desk_right.png" alt="오른쪽 책상 화분" width="177" height="210" draggable="false"></div>
+        <div class="plant-layer actor" id="plant-hanging-right" data-actor="plantHangingRight" aria-label="오른쪽 위 걸이 화분 배치" tabindex="-1"><img src="assets/characters/plant_hanging_right.png" alt="오른쪽 위 걸이 화분" width="170" height="436" draggable="false"></div>
+        <div class="plant-layer actor" id="plant-side-right" data-actor="plantSideRight" aria-label="오른쪽 탁자 화분 배치" tabindex="-1"><img src="assets/characters/plant_side_right.png" alt="오른쪽 탁자 화분" width="152" height="221" draggable="false"></div>
+        <div class="decor-layer actor" id="desk-books" data-actor="deskBooks" aria-label="책상 책 더미 배치" tabindex="-1"><img src="assets/characters/desk_books.png" alt="책상 위 책 더미" width="950" height="520" draggable="false"></div>
+        <div class="decor-layer actor" id="desk-lantern" data-actor="deskLantern" aria-label="책상 사각 조명 배치" tabindex="-1"><img src="assets/characters/desk_lantern.png" alt="책상 위 사각 조명" width="650" height="760" draggable="false"></div>
+        <div class="decor-layer actor" id="desk-pencils" data-actor="deskPencils" aria-label="책상 연필꽂이 배치" tabindex="-1"><img src="assets/characters/desk_pencils.png" alt="책상 위 연필꽂이" width="650" height="1200" draggable="false"></div>
+        <div class="decor-layer actor" id="desk-mug" data-actor="deskMug" aria-label="책상 고양이 머그컵 배치" tabindex="-1"><img src="assets/characters/desk_mug.png" alt="책상 위 고양이 머그컵" width="760" height="700" draggable="false"></div>
+        <span id="monitor-status" class="monitor-status" hidden>LAPTOP OFF</span>
+        <div class="developer actor" id="developer" data-actor="developer" aria-label="개발자 배치" tabindex="-1">
+          <div class="sprite-viewport" id="typing-viewport"><img id="developer-animation" class="typing-strip" src="assets/characters/developer_strip.png" alt="타이핑하는 개발자" width="2048" height="640" draggable="false"></div>
+          <img id="developer-idle" src="assets/characters/developer_idle.png" alt="키보드 앞에서 쉬는 개발자" width="512" height="640" draggable="false" hidden>
+          <span class="dark-circles" aria-hidden="true"><i></i><i></i></span>
+          <img id="developer-blink" class="blink-overlay" src="assets/characters/developer_blink.png" alt="" aria-hidden="true" width="512" height="640" draggable="false" hidden>
+        </div>
+        <div class="laptop-layer actor" id="laptop" data-actor="laptop" aria-label="노트북 배치" tabindex="-1">
+          <img id="laptop-open" src="assets/characters/laptop_silver.png" alt="고양이 스티커가 붙은 실버 노트북" width="640" height="336" draggable="false">
+          <img id="laptop-closed" src="assets/characters/laptop_closed.png" alt="뚜껑을 완전히 닫은 실버 노트북" width="640" height="336" draggable="false" hidden>
+          <span id="monitor-off" class="laptop-off-marker" hidden>OFF</span>
+        </div>
+        <div class="cat-layer actor" id="cat-layer" data-actor="cat" aria-label="고양이 배치" tabindex="-1">
+          <div class="sprite-viewport" id="cat-viewport"><img id="cat-animation" class="typing-strip" src="assets/characters/cat_strip.png" alt="잠든 고양이의 숨쉬기 애니메이션" width="2048" height="288" draggable="false"></div>
+          <img id="cat-idle" src="assets/characters/cat_idle.png" alt="잠든 고양이" width="512" height="288" draggable="false" hidden>
+          <div id="cat-walking" class="cat-walking sprite-viewport" hidden><img id="cat-walk-animation" class="cat-walk-strip" src="assets/characters/cat-walk_strip.png" alt="책상 위를 걷는 고양이" width="2048" height="288" draggable="false"></div>
+        </div>
+        <div id="meeting-away-sign" class="meeting-away-sign" hidden><span id="meeting-away-message">회의실 다녀오는 중!</span><i aria-hidden="true">↗</i></div>
+        <button type="button" id="office-portal" class="office-entry-hotspot" aria-label="주황 캐릭터를 통해 Virtual Office 입장" title="Virtual Office 입장"></button>
+        <button type="button" id="reading-shelf-entry" class="reading-shelf-entry" aria-label="나의 독서 책장 열기">
+          <span id="scene-reading-preview" class="scene-reading-preview" aria-hidden="true"></span>
+          <span class="scene-reading-badge"><span id="scene-reading-count">0</span>권</span>
+        </button>
+        <span class="scene-caption" id="scene-caption">작은 사무실에서, 오늘도 한 줄씩.</span>
+      </div>
+      <section id="video-meeting" class="video-meeting" aria-label="화상회의 화면" hidden>
+        <header class="video-meeting-header">
+          <strong><span aria-hidden="true">▣</span> 대표님 회의 중</strong>
+          <span class="video-live"><i></i> LIVE</span>
+          <span class="video-count" aria-label="참가자 4명">♟ 4명</span>
+        </header>
+        <div id="executive-sign" class="executive-sign" hidden><span class="executive-title" id="executive-sign-title">대표님 회의</span><p id="executive-sign-message">화상회의 중입니다</p></div>
+        <div class="video-participants">
+          <article class="video-tile is-speaking">
+            <div class="video-person video-person-me"><img src="assets/characters/developer_idle.png" alt="발표 중인 나" width="512" height="640"></div>
+            <span class="video-name"><i aria-hidden="true">●</i> 나 · 발표 중</span>
+          </article>
+          <article class="video-tile"><div class="video-person tone-violet"><span>민</span></div><span class="video-name"><i aria-hidden="true">●</i> 민수</span></article>
+          <article class="video-tile"><div class="video-person tone-blue"><span>지</span></div><span class="video-name"><i aria-hidden="true">●</i> 지훈</span></article>
+          <article class="video-tile"><div class="video-person tone-pink"><span>서</span></div><span class="video-name"><i aria-hidden="true">●</i> 서연</span></article>
+        </div>
+        <div class="video-controls" aria-label="화상회의 조작">
+          <button type="button" data-video-control="microphone" aria-label="마이크 켜기 또는 끄기" aria-pressed="false">●</button>
+          <button type="button" data-video-control="camera" aria-label="카메라 켜기 또는 끄기" aria-pressed="false">▣</button>
+          <button type="button" data-video-control="share" aria-label="화면 공유 켜기 또는 끄기" aria-pressed="false">⬆</button>
+          <button type="button" data-video-control="chat" aria-label="채팅 열기 또는 닫기" aria-pressed="false">▪▪▪</button>
+          <button type="button" id="video-hangup" class="video-hangup" aria-label="화상회의 종료">⌒</button>
+        </div>
+      </section>
+        <div class="scene-clock"><time id="clock">--:--</time><span id="date"></span></div>
+        <div class="scene-badge"><span class="dot"></span><span id="scene-status">근무 중</span></div>
+      <div id="closed-sign" class="closed-sign" hidden><span id="closed-title">CLOSED</span><p id="closed-message">오늘은 쉬어 가요</p></div>
+      <div id="work-bubble" class="speech-bubble" hidden>열심히 개발 중...<span>(아마도!)</span></div>
+      <div id="meeting-bubble" class="speech-bubble" hidden>회의 중이에요<span>잠시 후 돌아올게요!</span></div>
+      <p id="asset-error" class="error" role="alert" hidden></p>
+    </section>
+    <aside class="status-widgets" id="status-widget-slot" aria-label="상태 위젯">
+      <section class="status-card weather-card pixel-panel" aria-labelledby="weather-heading">
+        <span class="weather-icon" id="weather-icon" data-weather="rain" aria-hidden="true"><span class="cloud"></span><span class="rain-dots">▪ ▪ ▪</span></span>
+        <div><span class="sample-label">예시 날씨</span><h2 id="weather-heading">8°C</h2><p id="weather-summary">비 오는 날 ☂</p><small>실시간 날씨 연동 전</small></div>
+      </section>
+      <section class="status-card work-card pixel-panel" aria-labelledby="work-heading">
+        <span class="widget-icon briefcase" aria-hidden="true">▣</span>
+        <div><span class="eyebrow">OFFICE STATUS</span><h2 id="work-heading">근무 중</h2><p id="status-description" role="status">집중하는 시간. 차근차근 만들어 가요.</p></div>
+      </section>
+      <section class="status-card next-card pixel-panel" aria-labelledby="next-heading">
+        <span class="widget-icon calendar-icon" aria-hidden="true">▦</span>
+        <div><span class="eyebrow">UP NEXT · 예시</span><h2 id="next-heading">다음 일정</h2><p><time datetime="15:00">15:00</time> · 스프린트 회의</p><small>오늘의 일정에서 확인하세요</small></div>
+      </section>
+    </aside>
+    </div>
+    <div class="widget-grid dashboard-view" id="bottom-widget-slot" aria-label="나의 위젯">
+      <section class="widget pixel-panel" id="schedule" aria-labelledby="schedule-heading" tabindex="-1">
+        <header class="widget-heading"><h2 id="schedule-heading"><span aria-hidden="true">▦</span> 오늘의 일정</h2><span class="sample-label">예시 일정</span></header>
+        <div class="widget-body" tabindex="0" aria-label="오늘의 일정 목록">
+          <ul class="schedule-list">
+            <li><span class="event-dot"></span><time datetime="15:00">15:00</time><span>스프린트 회의</span><span class="event-tag">회의</span></li>
+            <li><span class="event-dot"></span><time datetime="16:30">16:30</time><span>코드 리뷰</span><span class="event-tag">업무</span></li>
+            <li><span class="event-dot"></span><time datetime="17:30">17:30</time><span>데일리 정리</span><span class="event-tag">정리</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="widget pixel-panel" id="tasks" aria-labelledby="tasks-heading" tabindex="-1">
+        <header class="widget-heading"><h2 id="tasks-heading"><span aria-hidden="true">☑</span> 오늘의 할 일</h2><span class="task-progress" id="task-progress" aria-live="polite">2/3</span></header>
+        <div class="widget-body" tabindex="0" aria-label="오늘의 할 일 목록">
+          <ul class="task-list">
+            <li><label><input type="checkbox" checked><span>PR 리뷰하기</span></label></li>
+            <li><label><input type="checkbox" checked><span>API 연동 테스트</span></label></li>
+            <li><label><input type="checkbox"><span>배포 노트 작성</span></label></li>
+          </ul>
+        </div>
+        <span class="task-note">예시 할 일 · 변경 사항은 이 화면에서만 유지돼요</span>
+      </section>
+    </div>
+    <div id="widget-parking" hidden>
+      <section class="widget pixel-panel time-timer-widget" id="time-timer-widget" aria-labelledby="time-timer-heading" tabindex="-1">
+        <header class="widget-heading"><h2 id="time-timer-heading"><span aria-hidden="true">◴</span>Time Timer</h2><span class="sample-label">집중 타이머</span></header>
+        <div class="time-timer-body">
+          <div class="time-timer-dial" id="time-timer-dial" role="timer" aria-live="off" aria-label="남은 시간 25분"><strong id="time-timer-display">25:00</strong></div>
+          <div class="time-timer-options">
+            <label>집중 시간<select id="time-timer-duration"><option value="300">5분</option><option value="900">15분</option><option value="1500" selected>25분</option><option value="2700">45분</option><option value="3600">60분</option></select></label>
+            <div><button type="button" id="time-timer-toggle">시작</button><button type="button" id="time-timer-reset">초기화</button></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section id="virtual-office" class="virtual-office-view pixel-panel" aria-labelledby="virtual-office-heading" aria-hidden="true" tabindex="-1">
+      <div class="virtual-office-stage">
+        <div class="virtual-office-rift" aria-hidden="true"><i></i></div>
+        <div class="virtual-office-copy">
+          <span class="eyebrow">LOCAL PREVIEW · SERVER OFFLINE</span>
+          <h2 id="virtual-office-heading" tabindex="-1">Virtual Office</h2>
+          <p>함께 일하는 가상 공간을 준비하고 있어요.<br>현재는 서버에 접속하지 않는 로컬 미리보기입니다.</p>
+          <span id="virtual-connection-status" class="virtual-connection-status" role="status"><i aria-hidden="true"></i> 접속 안 됨 · 임시 로비</span>
+          <button type="button" id="return-to-dashboard">내 오피스로 돌아가기</button>
+        </div>
+      </div>
+    </section>
+    <dialog id="projects" class="project-dialog pixel-panel" aria-labelledby="projects-heading">
+      <header class="widget-heading"><h2 id="projects-heading">나의 프로젝트</h2><button type="button" id="close-projects" aria-label="프로젝트 닫기">✕</button></header>
+      <p>DevNest <span class="project-tag">개발 중</span></p>
+      <p>나만의 픽셀 오피스를 조금씩 만들어 가고 있어요.</p>
+    </dialog>
+    <dialog id="reading-shelf-dialog" class="reading-shelf-dialog pixel-panel" aria-labelledby="reading-shelf-heading">
+      <header class="widget-heading reading-shelf-header">
+        <div><span class="eyebrow">MY READING TRACKER</span><h2 id="reading-shelf-heading">나의 독서 책장</h2></div>
+        <button type="button" id="close-reading-shelf" aria-label="독서 책장 닫기">✕</button>
+      </header>
+      <div class="reading-library-layout">
+        <section class="reading-board" aria-labelledby="reading-board-heading">
+          <div class="reading-toolbar"><label><input id="reading-year" type="number" min="1900" max="2100" step="1" aria-label="책장 연도"> BOOKS</label><strong id="reading-count">0권 완독</strong></div>
+          <h3 id="reading-board-heading" class="sr-only">연도별 완독 책장</h3>
+          <div class="reading-shelf-scroll"><div id="reading-bookshelf" class="reading-bookshelf"></div></div>
+          <p class="settings-hint">색칠된 책등을 누르면 기록을 수정할 수 있어요. 빈 책등을 누르면 새 책을 추가합니다.</p>
+        </section>
+        <form id="reading-book-form" class="reading-book-form">
+          <h3 id="reading-form-heading">완독 책 추가</h3>
+          <input id="reading-book-id" type="hidden">
+          <label>책 제목<input id="reading-title" type="text" maxlength="80" required placeholder="책 제목"></label>
+          <label>저자<input id="reading-author" type="text" maxlength="60" placeholder="저자"></label>
+          <label>완독일<input id="reading-finished-at" type="date"></label>
+          <label>평점<select id="reading-rating"><option value="0">평점 없음</option><option value="1">★</option><option value="2">★★</option><option value="3">★★★</option><option value="4">★★★★</option><option value="5">★★★★★</option></select></label>
+          <label>책등 색상<select id="reading-color"><option value="rose">분홍</option><option value="peach">살구</option><option value="lemon">노랑</option><option value="mint">민트</option><option value="sky">하늘</option><option value="violet">보라</option><option value="cream">아이보리</option></select></label>
+          <label>한줄평<textarea id="reading-note" maxlength="240" rows="4" placeholder="기억하고 싶은 문장이나 감상"></textarea></label>
+          <div class="reading-form-actions"><button type="submit">책장에 기록</button><button type="button" id="new-reading-book">새 책</button><button type="button" id="delete-reading-book" disabled>삭제</button></div>
+          <p id="reading-storage-status" class="settings-hint" role="status">이 브라우저에만 저장됩니다.</p>
+        </form>
+      </div>
+    </dialog>
+    <dialog id="office-settings" class="settings-dialog pixel-panel" aria-labelledby="settings-heading">
+      <header class="settings-header"><div><span class="settings-kicker">DEVNEST</span><h2 id="settings-heading">설정</h2></div><button type="button" id="close-settings" aria-label="설정 닫기">✕</button></header>
+      <div class="settings-tabs" role="tablist" aria-label="설정 분류">
+        <button type="button" id="settings-tab-office" role="tab" aria-controls="settings-panel-office" aria-selected="true" tabindex="0" data-settings-tab="office">배치</button>
+        <button type="button" id="settings-tab-state" role="tab" aria-controls="settings-panel-state" aria-selected="false" tabindex="-1" data-settings-tab="state">업무 상태</button>
+        <button type="button" id="settings-tab-animation" role="tab" aria-controls="settings-panel-animation" aria-selected="false" tabindex="-1" data-settings-tab="animation">모션</button>
+        <button type="button" id="settings-tab-integrations" role="tab" aria-controls="settings-panel-integrations" aria-selected="false" tabindex="-1" data-settings-tab="integrations">연동</button>
+        <button type="button" id="settings-tab-widgets" role="tab" aria-controls="settings-panel-widgets" aria-selected="false" tabindex="-1" data-settings-tab="widgets">위젯</button>
+      </div>
+      <div class="settings-content">
+      <div id="settings-panel-office" role="tabpanel" aria-labelledby="settings-tab-office" tabindex="0">
+      <section class="settings-section" aria-labelledby="placement-heading">
+        <h3 id="placement-heading">오브젝트 배치</h3>
+        <ol class="placement-steps" aria-label="배치 방법"><li>장면 선택</li><li>오브젝트 선택</li><li>켜고 드래그</li></ol>
+        <label>배치 장면<select id="placement-scope"><option value="common">공통 기본 배치</option><option value="before_work">출근 전 배치</option><option value="working">근무 중 배치</option><option value="overtime">야근 중 배치</option><option value="meeting">회의 중 배치</option><option value="after_work">퇴근 배치</option><option value="holiday">휴무 배치</option></select></label>
+        <label>움직일 오브젝트<select id="selected-actor"><optgroup label="캐릭터와 기기"><option value="developer">개발자</option><option value="cat">고양이</option><option value="laptop">노트북</option></optgroup><optgroup label="화분"><option value="plantUpperLeft">왼쪽 위 덩굴 화분</option><option value="plantDeskLeft">왼쪽 책상 화분</option><option value="plantFloorLeft">왼쪽 바닥 화분</option><option value="plantDeskRight">오른쪽 책상 화분</option><option value="plantHangingRight">오른쪽 위 걸이 화분</option><option value="plantSideRight">오른쪽 탁자 화분</option></optgroup><optgroup label="책상 소품"><option value="deskBooks">책 더미</option><option value="deskLantern">사각 조명</option><option value="deskPencils">연필꽂이</option><option value="deskMug">고양이 머그컵</option></optgroup></select></label>
+        <label class="placement-edit-toggle"><input id="position-edit" type="checkbox"><span><strong>화면에서 직접 배치</strong><small>오피스 안에서 선택한 오브젝트를 드래그하세요</small></span><i aria-hidden="true"></i></label>
+        <details class="settings-disclosure placement-profile-details"><summary>상태별 배치 옵션</summary><div class="disclosure-body"><p id="layout-profile-status" class="settings-hint" role="status"></p><div class="layout-profile-buttons"><button type="button" id="copy-common-layout">공통 배치 복사</button><button type="button" id="inherit-common-layout">이 상태는 공통 배치 사용</button></div></div></details>
+        <fieldset class="actor-settings-card" data-actor-settings="developer"><legend>개발자</legend>
+          <label class="scale-slider">크기<input id="developer-scale-slider" data-position="developer.scale" type="range" min="0.5" max="2" step="0.05" value="1"></label>
+          <label class="setting-check"><input id="developer-visible" data-visible="developer" type="checkbox"> 화면에 표시</label>
+          <details class="precision-controls"><summary>숫자로 정밀 조정</summary><div class="position-inputs">
+            <label>X (%)<input id="developer-x" data-position="developer.x" type="number" min="0" max="100" step="0.1"></label>
+            <label>Y (%)<input id="developer-y" data-position="developer.y" type="number" min="0" max="100" step="0.1"></label>
+            <label>크기 (배)<input id="developer-scale" data-position="developer.scale" type="number" min="0.5" max="2" step="0.05"></label>
+          </div>
+          <label class="z-setting">앞뒤 순서 (2~20)<input id="developer-zIndex" data-position="developer.zIndex" type="number" min="2" max="20" step="1"></label></details>
+        </fieldset>
+        <fieldset class="actor-settings-card" data-actor-settings="cat" hidden><legend>고양이</legend>
+          <label class="scale-slider">크기<input id="cat-scale-slider" data-position="cat.scale" type="range" min="0.5" max="2" step="0.05" value="1"></label>
+          <label class="setting-check"><input id="cat-visible" data-visible="cat" type="checkbox"> 화면에 표시</label>
+          <details class="precision-controls"><summary>숫자로 정밀 조정</summary><div class="position-inputs">
+            <label>X (%)<input id="cat-x" data-position="cat.x" type="number" min="0" max="100" step="0.1"></label>
+            <label>Y (%)<input id="cat-y" data-position="cat.y" type="number" min="0" max="100" step="0.1"></label>
+            <label>크기 (배)<input id="cat-scale" data-position="cat.scale" type="number" min="0.5" max="2" step="0.05"></label>
+          </div>
+          <label class="z-setting">앞뒤 순서 (2~20)<input id="cat-zIndex" data-position="cat.zIndex" type="number" min="2" max="20" step="1"></label></details>
+        </fieldset>
+        <fieldset class="actor-settings-card" data-actor-settings="laptop" hidden><legend>노트북</legend>
+          <label class="scale-slider">크기<input id="laptop-scale-slider" data-position="laptop.scale" type="range" min="0.5" max="2" step="0.05" value="1"></label>
+          <label class="setting-check"><input id="laptop-visible" data-visible="laptop" type="checkbox"> 화면에 표시</label>
+          <details class="precision-controls"><summary>숫자로 정밀 조정</summary><div class="position-inputs">
+            <label>X (%)<input id="laptop-x" data-position="laptop.x" type="number" min="0" max="100" step="0.1"></label>
+            <label>Y (%)<input id="laptop-y" data-position="laptop.y" type="number" min="0" max="100" step="0.1"></label>
+            <label>크기 (배)<input id="laptop-scale" data-position="laptop.scale" type="number" min="0.5" max="2" step="0.05"></label>
+          </div>
+          <label class="z-setting">앞뒤 순서 (2~20)<input id="laptop-zIndex" data-position="laptop.zIndex" type="number" min="2" max="20" step="1"></label></details>
+        </fieldset>
+        <fieldset class="actor-settings-card" data-actor-settings="decor" hidden><legend id="plant-settings-legend">화분 · 왼쪽 책상</legend>
+          <label class="legacy-decor-selector">화분·소품 선택<select id="plant-control-target"><optgroup label="화분"><option value="plantUpperLeft">왼쪽 위 덩굴</option><option value="plantDeskLeft" selected>왼쪽 책상</option><option value="plantFloorLeft">왼쪽 바닥</option><option value="plantDeskRight">오른쪽 책상</option><option value="plantHangingRight">오른쪽 위 걸이</option><option value="plantSideRight">오른쪽 탁자</option></optgroup><optgroup label="책상 소품"><option value="deskBooks">책 더미</option><option value="deskLantern">사각 조명</option><option value="deskPencils">연필꽂이</option><option value="deskMug">고양이 머그컵</option></optgroup></select></label>
+          <label class="scale-slider">크기<input id="plant-scale-slider" data-plant-field="scale" data-position="plantDeskLeft.scale" type="range" min="0.5" max="2" step="0.05" value="1"></label>
+          <label class="setting-check"><input id="plant-visible" data-visible="plantDeskLeft" type="checkbox"> 화면에 표시</label>
+          <details class="precision-controls"><summary>숫자로 정밀 조정</summary><div class="position-inputs">
+            <label>X (%)<input id="plant-x" data-plant-field="x" data-position="plantDeskLeft.x" type="number" min="0" max="100" step="0.1"></label>
+            <label>Y (%)<input id="plant-y" data-plant-field="y" data-position="plantDeskLeft.y" type="number" min="0" max="100" step="0.1"></label>
+            <label>크기 (배)<input id="plant-scale" data-plant-field="scale" data-position="plantDeskLeft.scale" type="number" min="0.5" max="2" step="0.05"></label>
+          </div>
+          <label class="z-setting">앞뒤 순서 (2~20)<input id="plant-zIndex" data-plant-field="zIndex" data-position="plantDeskLeft.zIndex" type="number" min="2" max="20" step="1"></label></details>
+        </fieldset>
+        <p class="settings-hint">오브젝트를 장면에서 직접 클릭해 선택할 수도 있습니다.</p>
+        <button type="button" id="reset-positions">이 오브젝트 기본 위치로</button>
+      </section>
+      </div>
+      <div id="settings-panel-state" role="tabpanel" aria-labelledby="settings-tab-state" tabindex="0" hidden>
+      <section class="settings-section" aria-labelledby="preview-heading">
+        <h3 id="preview-heading">상태 · 미리보기</h3>
+        <label>실제 업무 상태<select id="actual-state"><option value="before_work">출근 전</option><option value="working">근무 중</option><option value="overtime">야근 중</option><option value="meeting">회의 중</option><option value="after_work">퇴근 완료</option><option value="holiday">휴무</option></select></label>
+        <label>회의 장면<select id="meeting-mode"><option value="away">자리 비움 회의</option><option value="executive">대표님 회의</option></select></label>
+        <label>자리 비움 안내 문구<input type="text" id="meeting-away-message-input" maxlength="60" value="회의실 다녀오는 중!"></label>
+        <details class="settings-disclosure"><summary>대표님 회의 표말</summary><section class="settings-section compact-section">
+          <label>제목<input type="text" id="executive-sign-title-input" maxlength="40" value="대표님 회의"></label>
+          <label>문구<textarea id="executive-sign-message-input" maxlength="120" rows="2">화상회의 중입니다</textarea></label>
+          <label>크기<input type="range" id="executive-sign-scale" min="0.8" max="1.8" step="0.1" value="1"><output id="executive-sign-scale-value">1배</output></label>
+        </section></details>
+        <details class="settings-disclosure"><summary>상태별 말풍선 메시지</summary><fieldset class="state-message-settings"><legend>상태별 말풍선 메시지</legend>
+          <label>출근 전<input type="text" data-state-message="before_work" maxlength="100"></label>
+          <label>근무 중<input type="text" data-state-message="working" maxlength="100"></label>
+          <label>야근 중<input type="text" data-state-message="overtime" maxlength="100"></label>
+          <label>회의 중<input type="text" data-state-message="meeting" maxlength="100"></label>
+          <div class="speech-position-controls">
+            <label>위치를 바꿀 상태<select id="speech-position-state"><option value="before_work">출근 전</option><option value="working" selected>근무 중</option><option value="overtime">야근 중</option><option value="meeting">회의 중</option></select></label>
+            <label>가로 위치 <output id="speech-position-x-value">58%</output><input type="range" id="speech-position-x" min="8" max="92" step="1" value="58"></label>
+            <label>세로 위치 <output id="speech-position-y-value">18%</output><input type="range" id="speech-position-y" min="5" max="75" step="1" value="18"></label>
+            <button type="button" id="reset-speech-position">이 상태 기본 위치</button>
+          </div>
+          <p class="settings-hint">상태를 고르면 장면이 미리보기로 전환됩니다. 퇴근 완료와 휴무에는 말풍선을 표시하지 않습니다.</p>
+        </fieldset></details>
+        <p class="settings-hint">자리 비움은 사람 없이 고양이·닫힌 노트북·창문 안내판을 표시합니다. 대표님 회의는 참가자 화면과 편집 가능한 표말을 표시합니다.</p>
+        <div class="status-buttons" role="group" aria-label="장면 미리보기">
+          <button type="button" data-status="before_work" aria-pressed="false">출근 전</button>
+          <button type="button" data-status="working" aria-pressed="false">근무 중</button>
+          <button type="button" data-status="overtime" aria-pressed="false">야근 중</button>
+          <button type="button" data-status="meeting" aria-pressed="false">회의 중</button>
+          <button type="button" data-status="after_work" aria-pressed="false">퇴근</button>
+          <button type="button" data-status="holiday" aria-pressed="false">휴무</button>
+        </div>
+        <p id="preview-status" role="status">미리보기 꺼짐</p>
+        <button type="button" id="end-preview">미리보기 종료</button>
+        <details class="settings-disclosure"><summary>알람</summary><section class="settings-section compact-section alarm-settings" aria-labelledby="alarm-settings-heading">
+          <h3 id="alarm-settings-heading">매일 알람</h3>
+          <label>시간<input type="time" id="alarm-time" value="18:00"></label>
+          <label>메시지<input type="text" id="alarm-message" maxlength="80" value="오늘 업무를 정리할 시간이에요."></label>
+          <label class="setting-check"><input type="checkbox" id="alarm-enabled"> 알람 활성화</label>
+          <p id="alarm-next-status" class="settings-hint" role="status">알람 꺼짐</p>
+          <button type="button" id="alarm-test">알람 테스트</button>
+        </section></details>
+        <details class="settings-disclosure"><summary>휴무 안내판</summary>
+          <section class="settings-section compact-section" aria-labelledby="holiday-card-heading">
+            <h3 id="holiday-card-heading">휴무 안내판</h3>
+            <label>제목<input type="text" id="holiday-title" maxlength="40" value="CLOSED"></label>
+            <label>안내 문구<textarea id="holiday-message" maxlength="200" rows="3">오늘은 쉬어 가요</textarea></label>
+            <label>안내판 크기<input type="range" id="holiday-scale" min="1" max="2.2" step="0.1" value="1.5"><output id="holiday-scale-value">1.5배</output></label>
+            <button type="button" id="preview-holiday-card">휴무 안내판 미리보기</button>
+          </section>
+        </details>
+      </section>
+      </div>
+      <div id="settings-panel-animation" role="tabpanel" aria-labelledby="settings-tab-animation" tabindex="0" hidden>
+      <section class="settings-section" aria-labelledby="animation-heading">
+        <h3 id="animation-heading">애니메이션</h3>
+        <label>캐릭터 표시 모드<select id="animation-mode"><option value="static">정적 PNG · 배치 확인</option><option value="animated" selected>애니메이션 재생</option></select></label>
+        <label class="setting-check"><input id="hand-enabled" type="checkbox"> 개발자 손 타이핑</label>
+        <label class="setting-check"><input id="blink-enabled" type="checkbox"> 개발자 눈 깜빡임</label>
+        <label class="setting-check"><input id="cat-enabled" type="checkbox"> 고양이 수면 애니메이션</label>
+        <label class="setting-check"><input id="cat-roaming" type="checkbox"> 근무·야근 중 랜덤 산책</label>
+        <label class="setting-check"><input id="animation-enabled" type="checkbox"> 애니메이션 활성화</label>
+        <label class="setting-check"><input id="weather-enabled" type="checkbox"> 날씨 효과 활성화</label>
+        <label class="setting-check"><input id="lighting-enabled" type="checkbox"> 실내 조명 켜기</label>
+        <label>시간대 연출<select id="time-period"><option value="auto">자동 · 현재 시각</option><option value="dawn">해뜰 때 · 05–07시</option><option value="morning">아침 · 07–11시</option><option value="noon">점심 · 11–16시</option><option value="sunset">해질 때 · 16–19시</option><option value="evening">저녁 · 19–22시</option><option value="night">밤 · 22–05시</option></select></label>
+        <label>날씨 배경<select id="weather-type"><option value="clear">맑음</option><option value="cloudy">흐림</option><option value="rain">비</option><option value="snow">눈</option></select></label>
+        <p id="time-period-status" class="settings-hint" role="status">현재 시간대 계산 중</p>
+        <label>애니메이션 속도<select id="animation-speed"><option value="0.5">0.5배</option><option value="0.75">0.75배</option><option value="1">1배</option><option value="1.5">1.5배</option><option value="2">2배</option></select></label>
+        <p class="settings-hint">자동 모드는 현재 시각에 맞춰 창밖 색감과 실내 광량을 조절합니다. 상단 조명 버튼은 시간대 연출과 별개인 전체 조명 마스터 스위치입니다.</p>
+      </section>
+      <details class="settings-disclosure"><summary>캐릭터 동작 테스트</summary><section class="settings-section compact-section" aria-labelledby="action-test-heading">
+        <h3 id="action-test-heading">캐릭터 동작 테스트</h3>
+        <p class="settings-hint">동작 선택은 저장됩니다. 테스트 적용은 일시적이며, 설정을 닫거나 업무 장면을 바꾸면 자동 연동으로 돌아갑니다.</p>
+        <label>개발자<select id="test-developer-action" data-test-selection="developer"><option value="idle">대기</option><option value="typing">타이핑</option><option value="blink">눈 깜빡임</option><option value="away">자리 비움</option></select></label>
+        <div class="action-test-buttons"><button type="button" data-action-test="developer" aria-pressed="false">개발자 테스트</button><button type="button" data-action-auto="developer">자동 연동</button></div>
+        <label>고양이<select id="test-cat-action" data-test-selection="cat"><option value="sleep">정적 수면</option><option value="breathing">수면 중 움직임</option><option value="tail">꼬리 · 자산 없음</option></select></label>
+        <div class="action-test-buttons"><button type="button" data-action-test="cat" aria-pressed="false">고양이 테스트</button><button type="button" data-action-auto="cat">자동 연동</button></div>
+        <label>노트북<select id="test-laptop-action" data-test-selection="laptop"><option value="open">열림</option><option value="closed">닫힘</option></select></label>
+        <div class="action-test-buttons"><button type="button" data-action-test="laptop" aria-pressed="false">노트북 테스트</button><button type="button" data-action-auto="laptop">자동 연동</button></div>
+        <p id="animation-test-status" class="settings-hint" role="status"></p>
+        <p class="settings-warning">꼬리 전용 자산은 없어 정적 수면으로 표시합니다. 노트북 열림·닫힘은 각각 실제 PNG로 표시합니다.</p>
+        <button type="button" id="end-action-tests">모든 동작 테스트 종료</button>
+      </section></details>
+      </div>
+      <div id="settings-panel-integrations" role="tabpanel" aria-labelledby="settings-tab-integrations" tabindex="0" hidden>
+      <section class="settings-section" aria-labelledby="profile-settings-heading">
+        <h3 id="profile-settings-heading">개인정보</h3>
+        <p class="settings-hint">이 정보는 현재 기기의 브라우저에만 저장됩니다. 공용 기기에서는 입력하지 마세요.</p>
+        <label>표시 이름<input type="text" id="profile-display-name" data-profile-field="displayName" maxlength="60" autocomplete="name" placeholder="DevNest에서 사용할 이름"></label>
+        <label>이메일<input type="email" id="profile-email" data-profile-field="email" maxlength="160" autocomplete="email" placeholder="name@example.com"></label>
+        <label>시간대<select id="profile-timezone" data-profile-field="timezone"><option value="Asia/Seoul">Asia/Seoul · 한국</option><option value="UTC">UTC</option><option value="America/Los_Angeles">America/Los_Angeles</option><option value="Europe/London">Europe/London</option></select></label>
+      </section>
+      <section class="settings-section" aria-labelledby="api-settings-heading">
+        <h3 id="api-settings-heading">API 연동 정보</h3>
+        <label>FastAPI 주소<input type="url" id="fastapi-base-url" data-integration-field="fastApi.baseUrl" maxlength="300" inputmode="url" autocomplete="url" placeholder="http://raspberrypi.local:8000"></label>
+        <label>Google Calendar ID<input type="text" id="google-calendar-id" data-integration-field="googleCalendar.calendarId" maxlength="200" autocomplete="off" placeholder="primary 또는 캘린더 ID"></label>
+        <label>GitHub 사용자명<input type="text" id="github-username" data-integration-field="github.username" maxlength="80" autocomplete="username" placeholder="octocat"></label>
+        <label>날씨 지역<input type="text" id="weather-location" data-integration-field="weather.location" maxlength="100" autocomplete="address-level2" placeholder="서울"></label>
+      </section>
+      <details class="settings-disclosure"><summary>비밀키 · 세션 전용</summary><section class="settings-section compact-section secret-settings" aria-labelledby="secret-settings-heading">
+        <h3 id="secret-settings-heading">비밀값 · 세션 전용</h3>
+        <p class="settings-warning">API 키와 토큰은 localStorage에 저장하지 않습니다. 현재 페이지를 새로고침하거나 닫으면 모두 폐기됩니다.</p>
+        <label>Google API 키<input type="password" data-session-secret="googleApiKey" maxlength="500" autocomplete="new-password" spellcheck="false"></label>
+        <label>GitHub 토큰<input type="password" data-session-secret="githubToken" maxlength="500" autocomplete="new-password" spellcheck="false"></label>
+        <label>날씨 API 키<input type="password" data-session-secret="weatherApiKey" maxlength="500" autocomplete="new-password" spellcheck="false"></label>
+        <label>사용자 API 키<input type="password" data-session-secret="customApiKey" maxlength="500" autocomplete="new-password" spellcheck="false"></label>
+        <div class="secret-actions"><button type="button" id="clear-session-secrets">세션 비밀값 지우기</button><span id="secret-session-status" role="status">입력된 비밀값 없음</span></div>
+        <p class="settings-hint">현재 단계에서는 값을 입력만 할 수 있으며 외부 서버로 전송하거나 실제 API 연결을 시도하지 않습니다.</p>
+      </section></details>
+      </div>
+      <div id="settings-panel-widgets" role="tabpanel" aria-labelledby="settings-tab-widgets" tabindex="0" hidden>
+      <section class="settings-section" id="widget-settings" aria-labelledby="widget-settings-heading">
+        <h3 id="widget-settings-heading">대시보드 위젯 <span id="widget-count" aria-live="polite">4/8개</span></h3>
+        <p class="settings-hint">실제 카드 기준 최소 2개·최대 8개. 스마트 상태 분리형은 3개로 계산합니다.</p>
+        <label>스마트 상태 표시<select id="smart-status-mode"><option value="combined">통합 · 시간+날씨+근무 상태 1개</option><option value="split">분리 · 시간/날씨/근무 상태 3개</option></select></label>
+        <ol id="widget-editor" aria-label="위젯 순서와 표시 설정"></ol>
+        <p id="widget-feedback" class="settings-hint" role="status">핸들을 드래그하거나 위·아래 버튼으로 정렬하세요.</p>
+        <p id="widget-storage-warning" class="settings-warning" role="status"></p>
+        <button type="button" id="reset-widgets">기본 위젯 복원</button>
+      </section>
+      </div>
+      </div>
+      <p id="settings-save-status" role="status" class="settings-hint">설정 저장됨</p>
+    </dialog>
+    <div class="alarm-toast pixel-panel" id="alarm-toast" role="alert" aria-live="assertive" hidden>
+      <span aria-hidden="true">⏰</span><div><strong id="alarm-toast-title">알람</strong><p id="alarm-toast-message"></p></div><button type="button" id="alarm-dismiss" aria-label="알람 닫기">확인</button>
+    </div>
+    <footer class="dashboard-view"><span><span class="footer-dot" aria-hidden="true"></span> 나의 작은 작업 공간</span><span>로컬 미리보기 · 일정과 날씨는 예시 데이터</span></footer>
+  </main>
+</body>
+</html>
