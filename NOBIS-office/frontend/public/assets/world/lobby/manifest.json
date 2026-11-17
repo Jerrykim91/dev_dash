@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "map_id": "room-lobby",
+  "provenance": "Original code-authored interim pixel art; final commissioned artwork not supplied",
+  "pivot": {
+    "x": 0.5,
+    "y": 0.65
+  },
+  "maxTextureSize": 2048,
+  "atlases": [
+    {
+      "key": "nobis-lobby-tiles",
+      "image": "assets/world/lobby/tiles/tiles-f0b63aedc9b8.png",
+      "data": "assets/world/lobby/tiles/tiles-f712eef1af92.json",
+      "width": 128,
+      "height": 32,
+      "bytes": 1388
+    },
+    {
+      "key": "nobis-lobby-architecture",
+      "image": "assets/world/lobby/architecture/architecture-4b6fafbfe9c1.png",
+      "data": "assets/world/lobby/architecture/architecture-c994910a823d.json",
+      "width": 512,
+      "height": 800,
+      "bytes": 22480
+    }
+  ],
+  "frames": {
+    "floor/wood": {
+      "atlas": "nobis-lobby-tiles",
+      "frame": "floor/wood",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "floor/stone": {
+      "atlas": "nobis-lobby-tiles",
+      "frame": "floor/stone",
+      "rect": {
+        "x": 64,
+        "y": 0,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "door/cafe/lower": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/cafe/lower",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/cafe/upper": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/cafe/upper",
+      "rect": {
+        "x": 128,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/focus/lower": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/focus/lower",
+      "rect": {
+        "x": 256,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/focus/upper": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/focus/upper",
+      "rect": {
+        "x": 384,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/meeting/lower": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/meeting/lower",
+      "rect": {
+        "x": 0,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/meeting/upper": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/meeting/upper",
+      "rect": {
+        "x": 128,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/lounge/lower": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/lounge/lower",
+      "rect": {
+        "x": 256,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/lounge/upper": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/lounge/upper",
+      "rect": {
+        "x": 384,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/garden/lower": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/garden/lower",
+      "rect": {
+        "x": 0,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/garden/upper": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/garden/upper",
+      "rect": {
+        "x": 128,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/terrace/lower": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/terrace/lower",
+      "rect": {
+        "x": 256,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/terrace/upper": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/terrace/upper",
+      "rect": {
+        "x": 384,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/home/lower": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/home/lower",
+      "rect": {
+        "x": 0,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "door/home/upper": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "door/home/upper",
+      "rect": {
+        "x": 128,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "wall/x": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "wall/x",
+      "rect": {
+        "x": 256,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "wall/y": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "wall/y",
+      "rect": {
+        "x": 384,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "column/lower": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "column/lower",
+      "rect": {
+        "x": 0,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "column/upper": {
+      "atlas": "nobis-lobby-architecture",
+      "frame": "column/upper",
+      "rect": {
+        "x": 128,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    }
+  },
+  "camera": {
+    "minimumZoom": 0.55,
+    "maximumZoom": 1.8,
+    "desktopZoom": 0.85,
+    "mobileZoom": 1.05
+  },
+  "objects": {
+    "portal-cafe": "door/cafe",
+    "portal-focus": "door/focus",
+    "portal-meeting": "door/meeting",
+    "portal-lounge": "door/lounge",
+    "portal-garden": "door/garden",
+    "portal-terrace": "door/terrace",
+    "bookshelf": "door/home"
+  },
+  "floor": {
+    "stone": {
+      "x": 11,
+      "y": 9,
+      "width": 8,
+      "height": 11
+    }
+  },
+  "missingFinalAssets": [
+    "illustrated reception desk",
+    "corner wall cap",
+    "custom lobby sofa",
+    "wall decorations",
+    "soft light effect PNG",
+    "final portal illustrations"
+  ]
+}

@@ -1,0 +1,14 @@
+import {bridge} from '../game/bridge';
+import {useState,useEffect,useRef,type FormEvent} from 'react';
+import type {Player,DirectoryUser} from '../game/types';
+import {useOfficeStore} from '../stores/officeStore';
+export function ChatInput({disabled,players,onSend}:{disabled:boolean;players:Player[];onSend:(text:string,recipients:string[])=>boolean}) {
+ const session=useOfficeStore(s=>s.session),[text,setText]=useState(''),[recipient,setRecipient]=useState<DirectoryUser|null>(null),[results,setResults]=useState<DirectoryUser[]>([]),[cooling,setCooling]=useState(false),timer=useRef<ReturnType<typeof setTimeout>|undefined>(undefined);
+ const query=text.match(/^@([^@\s]*)$/)?.[1];
+ useEffect(()=>()=>clearTimeout(timer.current),[]);
+ useEffect(()=>{const compose=(e:Event)=>{const target=(e as CustomEvent<DirectoryUser>).detail;setText(`@${target.nickname} `);setRecipient(target);setResults([]);document.getElementById('chat-input')?.focus();};bridge.addEventListener('compose-whisper',compose);return()=>bridge.removeEventListener('compose-whisper',compose);},[]);
+ useEffect(()=>{if(query===undefined){setResults([]);return;}const controller=new AbortController(),t=setTimeout(()=>fetch(`/api/directory?q=${encodeURIComponent(query)}`,{headers:{Authorization:`Bearer ${session?.token}`},signal:controller.signal}).then(r=>r.ok?r.json():[]).then(setResults).catch(()=>{}),100);return()=>{clearTimeout(t);controller.abort();};},[query,session?.token]);
+ const matches:DirectoryUser[]=query!==undefined?(results.length?results:players.map(p=>({id:p.id,nickname:p.nickname,online:true}))).filter(p=>p.id!==session?.user.id&&(p.nickname.toLowerCase().includes(query.toLowerCase())||p.id.includes(query))).slice(0,8):[];
+ function submit(e:FormEvent){e.preventDefault();if(!cooling&&text.trim()&&onSend(text.trim(),recipient?[recipient.id]:[])){setText('');setRecipient(null);setCooling(true);timer.current=setTimeout(()=>setCooling(false),420);}}
+ return <div className="chat-input-wrap">{matches.length>0&&<div className="mention-suggestions" aria-label="귓속말 자동완성">{matches.map(p=><button key={p.id} title={p.id} type="button" onClick={()=>{setText(`@${p.nickname} `);setRecipient(p);setResults([]);}}> @{p.nickname} <small>{p.online===false?'오프라인':'접속 중'} · {p.id.slice(-6)}</small></button>)}</div>}<form className="chat-compose" onSubmit={submit}><label htmlFor="chat-input" className="sr-only">채팅 메시지</label><input id="chat-input" value={text} onChange={e=>{setText(e.target.value);if(recipient&&!e.target.value.startsWith(`@${recipient.nickname} `))setRecipient(null);}} placeholder={disabled?'연결 또는 채널 권한을 확인하세요':'메시지 입력… @닉네임 귓속말'} maxLength={text.startsWith('@')?550:500} disabled={disabled}/><button aria-label="채팅 보내기" disabled={disabled||cooling||!text.trim()}>↑</button></form></div>;
+}

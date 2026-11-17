@@ -1,0 +1,877 @@
+{
+  "desk-0": {
+    "id": "desk-0",
+    "kind": "desk",
+    "x": 3,
+    "y": 3,
+    "label": "집중 데스크",
+    "interaction": {
+      "kind": "action",
+      "action": "working",
+      "message": "책상에서 작업을 시작했어요.",
+      "toggle": true
+    }
+  },
+  "desk-1": {
+    "id": "desk-1",
+    "kind": "desk",
+    "x": 7,
+    "y": 3,
+    "label": "집중 데스크",
+    "interaction": {
+      "kind": "action",
+      "action": "working",
+      "message": "책상에서 작업을 시작했어요.",
+      "toggle": true
+    }
+  },
+  "desk-2": {
+    "id": "desk-2",
+    "kind": "desk",
+    "x": 3,
+    "y": 9,
+    "label": "집중 데스크",
+    "interaction": {
+      "kind": "action",
+      "action": "working",
+      "message": "책상에서 작업을 시작했어요.",
+      "toggle": true
+    }
+  },
+  "desk-3": {
+    "id": "desk-3",
+    "kind": "desk",
+    "x": 8,
+    "y": 9,
+    "label": "집중 데스크",
+    "interaction": {
+      "kind": "action",
+      "action": "working",
+      "message": "책상에서 작업을 시작했어요.",
+      "toggle": true
+    }
+  },
+  "chair": {
+    "id": "chair",
+    "kind": "chair",
+    "x": 6,
+    "y": 5,
+    "label": "업무 의자",
+    "interaction": {
+      "kind": "action",
+      "action": "sitting",
+      "message": "의자 옆에서 잠시 쉬고 있어요.",
+      "toggle": true
+    }
+  },
+  "computer": {
+    "id": "computer",
+    "kind": "computer",
+    "x": 3,
+    "y": 6,
+    "label": "작업실 컴퓨터",
+    "interaction": {
+      "kind": "dashboard"
+    }
+  },
+  "coffee": {
+    "id": "coffee",
+    "kind": "coffee",
+    "x": 16,
+    "y": 4,
+    "label": "커피머신",
+    "interaction": {
+      "kind": "action",
+      "action": "drinking",
+      "message": "커피 마시는 중"
+    }
+  },
+  "cafe-table-0": {
+    "id": "cafe-table-0",
+    "kind": "table",
+    "x": 20,
+    "y": 4,
+    "label": "카페 테이블",
+    "interaction": {
+      "kind": "channel",
+      "channel_kind": "cafe",
+      "message": "카페 테이블에서 비공개 대화를 시작하세요."
+    }
+  },
+  "cafe-table-1": {
+    "id": "cafe-table-1",
+    "kind": "table",
+    "x": 16,
+    "y": 9,
+    "label": "카페 테이블",
+    "interaction": {
+      "kind": "channel",
+      "channel_kind": "cafe",
+      "message": "카페 테이블에서 비공개 대화를 시작하세요."
+    }
+  },
+  "cafe-table-2": {
+    "id": "cafe-table-2",
+    "kind": "table",
+    "x": 20,
+    "y": 9,
+    "label": "카페 테이블",
+    "interaction": {
+      "kind": "channel",
+      "channel_kind": "cafe",
+      "message": "카페 테이블에서 비공개 대화를 시작하세요."
+    }
+  },
+  "sofa-0": {
+    "id": "sofa-0",
+    "kind": "sofa",
+    "x": 28,
+    "y": 4,
+    "label": "라운지 소파",
+    "interaction": {
+      "kind": "action",
+      "action": "resting",
+      "message": "편안하게 쉬고 있어요.",
+      "toggle": true
+    }
+  },
+  "sofa-1": {
+    "id": "sofa-1",
+    "kind": "sofa",
+    "x": 31,
+    "y": 4,
+    "label": "라운지 소파",
+    "interaction": {
+      "kind": "action",
+      "action": "resting",
+      "message": "편안하게 쉬고 있어요.",
+      "toggle": true
+    }
+  },
+  "sofa-2": {
+    "id": "sofa-2",
+    "kind": "sofa",
+    "x": 28,
+    "y": 9,
+    "label": "라운지 소파",
+    "interaction": {
+      "kind": "action",
+      "action": "resting",
+      "message": "편안하게 쉬고 있어요.",
+      "toggle": true
+    }
+  },
+  "bookshelf": {
+    "id": "bookshelf",
+    "kind": "bookshelf",
+    "x": 32,
+    "y": 8,
+    "label": "월드 안내 책장",
+    "interaction": {
+      "kind": "menu",
+      "targets": [
+        "focus",
+        "cafe",
+        "meeting",
+        "vacation",
+        "outside"
+      ],
+      "personal_entry": true
+    }
+  },
+  "whiteboard": {
+    "id": "whiteboard",
+    "kind": "whiteboard",
+    "x": 3,
+    "y": 19,
+    "label": "회의 안내 보드",
+    "interaction": {
+      "kind": "menu",
+      "targets": [
+        "meeting"
+      ]
+    }
+  },
+  "meeting-table-0": {
+    "id": "meeting-table-0",
+    "kind": "table",
+    "x": 6,
+    "y": 19,
+    "label": "회의 테이블",
+    "interaction": {
+      "kind": "channel",
+      "channel_kind": "meeting",
+      "message": "초대된 회의를 선택하거나 새 회의를 만들어 보세요."
+    }
+  },
+  "meeting-table-1": {
+    "id": "meeting-table-1",
+    "kind": "table",
+    "x": 8,
+    "y": 22,
+    "label": "회의 테이블",
+    "interaction": {
+      "kind": "channel",
+      "channel_kind": "meeting",
+      "message": "초대된 회의를 선택하거나 새 회의를 만들어 보세요."
+    }
+  },
+  "bed-0": {
+    "id": "bed-0",
+    "kind": "bed",
+    "x": 16,
+    "y": 19,
+    "label": "휴식 침대",
+    "interaction": {
+      "kind": "action",
+      "action": "resting",
+      "message": "편안하게 쉬고 있어요.",
+      "toggle": true
+    }
+  },
+  "bed-1": {
+    "id": "bed-1",
+    "kind": "bed",
+    "x": 20,
+    "y": 22,
+    "label": "휴식 침대",
+    "interaction": {
+      "kind": "action",
+      "action": "resting",
+      "message": "편안하게 쉬고 있어요.",
+      "toggle": true
+    }
+  },
+  "outside-desk": {
+    "id": "outside-desk",
+    "kind": "desk",
+    "x": 28,
+    "y": 19,
+    "label": "외근 데스크",
+    "interaction": {
+      "kind": "action",
+      "action": "working",
+      "message": "외근 공간에서 업무를 보고 있어요.",
+      "toggle": true
+    }
+  },
+  "outside-books": {
+    "id": "outside-books",
+    "kind": "bookshelf",
+    "x": 32,
+    "y": 23,
+    "label": "외근 안내 책장",
+    "interaction": {
+      "kind": "menu",
+      "targets": [
+        "office",
+        "cafe",
+        "focus"
+      ],
+      "personal_entry": true
+    }
+  },
+  "plant-0": {
+    "id": "plant-0",
+    "kind": "plant",
+    "x": 1,
+    "y": 1,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-1": {
+    "id": "plant-1",
+    "kind": "plant",
+    "x": 10,
+    "y": 1,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-2": {
+    "id": "plant-2",
+    "kind": "plant",
+    "x": 13,
+    "y": 1,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-3": {
+    "id": "plant-3",
+    "kind": "plant",
+    "x": 22,
+    "y": 1,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-4": {
+    "id": "plant-4",
+    "kind": "plant",
+    "x": 25,
+    "y": 1,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-5": {
+    "id": "plant-5",
+    "kind": "plant",
+    "x": 34,
+    "y": 1,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-6": {
+    "id": "plant-6",
+    "kind": "plant",
+    "x": 1,
+    "y": 26,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-7": {
+    "id": "plant-7",
+    "kind": "plant",
+    "x": 10,
+    "y": 26,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-8": {
+    "id": "plant-8",
+    "kind": "plant",
+    "x": 13,
+    "y": 26,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-9": {
+    "id": "plant-9",
+    "kind": "plant",
+    "x": 22,
+    "y": 26,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-10": {
+    "id": "plant-10",
+    "kind": "plant",
+    "x": 25,
+    "y": 26,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "plant-11": {
+    "id": "plant-11",
+    "kind": "plant",
+    "x": 34,
+    "y": 26,
+    "label": "실내 화분",
+    "interaction": {
+      "kind": "action",
+      "action": "idle",
+      "message": "초록빛으로 채운 오피스예요."
+    }
+  },
+  "glass-11-1": {
+    "id": "glass-11-1",
+    "kind": "partition",
+    "x": 11,
+    "y": 1,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-2": {
+    "id": "glass-11-2",
+    "kind": "partition",
+    "x": 11,
+    "y": 2,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-3": {
+    "id": "glass-11-3",
+    "kind": "partition",
+    "x": 11,
+    "y": 3,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-4": {
+    "id": "glass-11-4",
+    "kind": "partition",
+    "x": 11,
+    "y": 4,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-5": {
+    "id": "glass-11-5",
+    "kind": "partition",
+    "x": 11,
+    "y": 5,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-8": {
+    "id": "glass-11-8",
+    "kind": "partition",
+    "x": 11,
+    "y": 8,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-9": {
+    "id": "glass-11-9",
+    "kind": "partition",
+    "x": 11,
+    "y": 9,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-10": {
+    "id": "glass-11-10",
+    "kind": "partition",
+    "x": 11,
+    "y": 10,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-17": {
+    "id": "glass-11-17",
+    "kind": "partition",
+    "x": 11,
+    "y": 17,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-18": {
+    "id": "glass-11-18",
+    "kind": "partition",
+    "x": 11,
+    "y": 18,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-19": {
+    "id": "glass-11-19",
+    "kind": "partition",
+    "x": 11,
+    "y": 19,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-20": {
+    "id": "glass-11-20",
+    "kind": "partition",
+    "x": 11,
+    "y": 20,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-23": {
+    "id": "glass-11-23",
+    "kind": "partition",
+    "x": 11,
+    "y": 23,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-24": {
+    "id": "glass-11-24",
+    "kind": "partition",
+    "x": 11,
+    "y": 24,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-25": {
+    "id": "glass-11-25",
+    "kind": "partition",
+    "x": 11,
+    "y": 25,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-11-26": {
+    "id": "glass-11-26",
+    "kind": "partition",
+    "x": 11,
+    "y": 26,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-1": {
+    "id": "glass-24-1",
+    "kind": "partition",
+    "x": 24,
+    "y": 1,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-2": {
+    "id": "glass-24-2",
+    "kind": "partition",
+    "x": 24,
+    "y": 2,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-3": {
+    "id": "glass-24-3",
+    "kind": "partition",
+    "x": 24,
+    "y": 3,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-4": {
+    "id": "glass-24-4",
+    "kind": "partition",
+    "x": 24,
+    "y": 4,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-5": {
+    "id": "glass-24-5",
+    "kind": "partition",
+    "x": 24,
+    "y": 5,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-8": {
+    "id": "glass-24-8",
+    "kind": "partition",
+    "x": 24,
+    "y": 8,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-9": {
+    "id": "glass-24-9",
+    "kind": "partition",
+    "x": 24,
+    "y": 9,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-10": {
+    "id": "glass-24-10",
+    "kind": "partition",
+    "x": 24,
+    "y": 10,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-17": {
+    "id": "glass-24-17",
+    "kind": "partition",
+    "x": 24,
+    "y": 17,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-18": {
+    "id": "glass-24-18",
+    "kind": "partition",
+    "x": 24,
+    "y": 18,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-19": {
+    "id": "glass-24-19",
+    "kind": "partition",
+    "x": 24,
+    "y": 19,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-20": {
+    "id": "glass-24-20",
+    "kind": "partition",
+    "x": 24,
+    "y": 20,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-23": {
+    "id": "glass-24-23",
+    "kind": "partition",
+    "x": 24,
+    "y": 23,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-24": {
+    "id": "glass-24-24",
+    "kind": "partition",
+    "x": 24,
+    "y": 24,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-25": {
+    "id": "glass-24-25",
+    "kind": "partition",
+    "x": 24,
+    "y": 25,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-24-26": {
+    "id": "glass-24-26",
+    "kind": "partition",
+    "x": 24,
+    "y": 26,
+    "label": "유리 파티션",
+    "axis": "y"
+  },
+  "glass-1-14": {
+    "id": "glass-1-14",
+    "kind": "partition",
+    "x": 1,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-2-14": {
+    "id": "glass-2-14",
+    "kind": "partition",
+    "x": 2,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-3-14": {
+    "id": "glass-3-14",
+    "kind": "partition",
+    "x": 3,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-4-14": {
+    "id": "glass-4-14",
+    "kind": "partition",
+    "x": 4,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-7-14": {
+    "id": "glass-7-14",
+    "kind": "partition",
+    "x": 7,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-8-14": {
+    "id": "glass-8-14",
+    "kind": "partition",
+    "x": 8,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-9-14": {
+    "id": "glass-9-14",
+    "kind": "partition",
+    "x": 9,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-10-14": {
+    "id": "glass-10-14",
+    "kind": "partition",
+    "x": 10,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-13-14": {
+    "id": "glass-13-14",
+    "kind": "partition",
+    "x": 13,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-14-14": {
+    "id": "glass-14-14",
+    "kind": "partition",
+    "x": 14,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-15-14": {
+    "id": "glass-15-14",
+    "kind": "partition",
+    "x": 15,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-16-14": {
+    "id": "glass-16-14",
+    "kind": "partition",
+    "x": 16,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-19-14": {
+    "id": "glass-19-14",
+    "kind": "partition",
+    "x": 19,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-20-14": {
+    "id": "glass-20-14",
+    "kind": "partition",
+    "x": 20,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-21-14": {
+    "id": "glass-21-14",
+    "kind": "partition",
+    "x": 21,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-22-14": {
+    "id": "glass-22-14",
+    "kind": "partition",
+    "x": 22,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-25-14": {
+    "id": "glass-25-14",
+    "kind": "partition",
+    "x": 25,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-26-14": {
+    "id": "glass-26-14",
+    "kind": "partition",
+    "x": 26,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-27-14": {
+    "id": "glass-27-14",
+    "kind": "partition",
+    "x": 27,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-28-14": {
+    "id": "glass-28-14",
+    "kind": "partition",
+    "x": 28,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-31-14": {
+    "id": "glass-31-14",
+    "kind": "partition",
+    "x": 31,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-32-14": {
+    "id": "glass-32-14",
+    "kind": "partition",
+    "x": 32,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-33-14": {
+    "id": "glass-33-14",
+    "kind": "partition",
+    "x": 33,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "glass-34-14": {
+    "id": "glass-34-14",
+    "kind": "partition",
+    "x": 34,
+    "y": 14,
+    "label": "복도 유리 파티션",
+    "axis": "x"
+  },
+  "arcade": {
+    "id": "arcade",
+    "kind": "arcade",
+    "x": 29,
+    "y": 6,
+    "label": "NOBIS 아케이드",
+    "interaction": {
+      "kind": "arcade",
+      "message": "미니게임을 선택해 주세요."
+    }
+  }
+}

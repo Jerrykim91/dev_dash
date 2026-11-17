@@ -1,0 +1,71 @@
+services:
+  postgres:
+    image: postgres:17-bookworm
+    platform: ${DOCKER_PLATFORM:-linux/arm64}
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-nobis}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run python3 infra/init-env.py first}
+      NOBIS_DB_USER: ${NOBIS_DB_USER:-nobis}
+      NOBIS_DB_PASSWORD: ${NOBIS_DB_PASSWORD:?Run python3 infra/init-env.py first}
+    volumes:
+      - nobis-postgres-data:/var/lib/postgresql/data
+      - ./infra/postgres:/docker-entrypoint-initdb.d:ro
+    networks: [data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  backend:
+    platform: ${DOCKER_PLATFORM:-linux/arm64}
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      APP_ENV: ${APP_ENV:-production}
+      DEV_AUTH_ENABLED: ${DEV_AUTH_ENABLED:-false}
+      DEV_ADMIN_KEY: ${DEV_ADMIN_KEY:-}
+      HOME_MAX_OCCUPANTS: ${HOME_MAX_OCCUPANTS:-5}
+      MEDIA_ROOT: /app/media
+      SOCIAL_GROUP_MAX_MEMBERS: ${SOCIAL_GROUP_MAX_MEMBERS:-30}
+      CHANNEL_CAPACITY: ${CHANNEL_CAPACITY:-15}
+      DATABASE_URL: postgresql://${NOBIS_DB_USER:-nobis}:${NOBIS_DB_PASSWORD:?Generate environment first}@postgres:5432/${POSTGRES_DB:-nobis}
+      DEVNEST_URL: ${DEVNEST_URL:-}
+      DEVNEST_DEV_URL: ${DEVNEST_DEV_URL:-http://127.0.0.1:8001/}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:8080,http://127.0.0.1:8080}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [default, data]
+    volumes:
+      - nobis-media:/app/media
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+  frontend:
+    restart: unless-stopped
+    platform: ${DOCKER_PLATFORM:-linux/arm64}
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "${HTTP_BIND:-127.0.0.1}:${HTTP_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+volumes:
+  nobis-media:
+  nobis-postgres-data:
+networks:
+  data:
+    internal: true

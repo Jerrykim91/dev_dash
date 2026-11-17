@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: postgres:17-bookworm
+    platform: ${DOCKER_PLATFORM:-linux/arm64}
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-nobis}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Generate development environment first}
+      NOBIS_DB_USER: ${NOBIS_DB_USER:-nobis}
+      NOBIS_DB_PASSWORD: ${NOBIS_DB_PASSWORD:?Generate development environment first}
+    volumes:
+      - nobis-dev-postgres-data:/var/lib/postgresql/data
+      - ./infra/postgres:/docker-entrypoint-initdb.d:ro
+    networks: [data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      retries: 20
+  backend:
+    platform: ${DOCKER_PLATFORM:-linux/arm64}
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    environment:
+      APP_ENV: development
+      DEV_AUTH_ENABLED: ${DEV_AUTH_ENABLED:-true}
+      DEV_ADMIN_KEY: ${DEV_ADMIN_KEY:-}
+      HOME_MAX_OCCUPANTS: ${HOME_MAX_OCCUPANTS:-5}
+      MEDIA_ROOT: /app/media
+      SOCIAL_GROUP_MAX_MEMBERS: ${SOCIAL_GROUP_MAX_MEMBERS:-30}
+      CHANNEL_CAPACITY: ${CHANNEL_CAPACITY:-15}
+      DATABASE_URL: postgresql://${NOBIS_DB_USER:-nobis}:${NOBIS_DB_PASSWORD:?Generate environment first}@postgres:5432/${POSTGRES_DB:-nobis}
+      DEVNEST_URL: ${DEVNEST_URL:-}
+      DEVNEST_DEV_URL: ${DEVNEST_DEV_URL:-http://127.0.0.1:8001/}
+      ALLOWED_ORIGINS: ${DEV_ALLOWED_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}
+    volumes:
+      - nobis-media:/app/media
+      - ./backend/app:/app/app:ro
+      - ./shared:/app/shared:ro
+    networks: [default, data]
+    depends_on:
+      postgres:
+        condition: service_healthy
+  frontend:
+    platform: ${DOCKER_PLATFORM:-linux/arm64}
+    image: node:22-alpine
+    working_dir: /workspace/frontend
+    command: ["sh", "-c", "npm ci && npm run dev -- --host 0.0.0.0 --port 5173"]
+    environment:
+      API_TARGET: http://backend:8000
+    ports:
+      - "127.0.0.1:${DEV_HTTP_PORT:-5173}:5173"
+    volumes:
+      - ./frontend:/workspace/frontend
+      - ./shared:/workspace/shared:ro
+      - nobis-dev-node-modules:/workspace/frontend/node_modules
+    depends_on: [backend]
+volumes:
+  nobis-media:
+  nobis-dev-postgres-data:
+  nobis-dev-node-modules:
+networks:
+  data:
+    internal: true

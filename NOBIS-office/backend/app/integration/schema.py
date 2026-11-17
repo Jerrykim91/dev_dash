@@ -1,0 +1,15 @@
+PHASE6="""
+CREATE TABLE IF NOT EXISTS home_visit_settings(owner_id TEXT PRIMARY KEY REFERENCES users(id),access TEXT NOT NULL DEFAULT 'private' CHECK(access IN ('private','friends','invite_only')),capacity INTEGER NOT NULL DEFAULT 5 CHECK(capacity BETWEEN 1 AND 5));
+CREATE TABLE IF NOT EXISTS home_visit_requests(id TEXT PRIMARY KEY,owner_id TEXT NOT NULL REFERENCES users(id),visitor_id TEXT NOT NULL REFERENCES users(id),status TEXT NOT NULL CHECK(status IN ('pending','accepted','rejected','cancelled')),created_at REAL NOT NULL);
+CREATE UNIQUE INDEX IF NOT EXISTS one_pending_visit ON home_visit_requests(owner_id,visitor_id) WHERE status='pending';
+CREATE TABLE IF NOT EXISTS home_visit_permissions(owner_id TEXT NOT NULL REFERENCES users(id),visitor_id TEXT NOT NULL REFERENCES users(id),expires_at REAL NOT NULL,PRIMARY KEY(owner_id,visitor_id));
+CREATE TABLE IF NOT EXISTS home_visitors(user_id TEXT PRIMARY KEY REFERENCES users(id),owner_id TEXT NOT NULL REFERENCES users(id),connected INTEGER NOT NULL DEFAULT 0,updated_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS multiplayer_game_sessions(id TEXT PRIMARY KEY,host_user_id TEXT NOT NULL REFERENCES users(id),invited_user_id TEXT NOT NULL REFERENCES users(id),request_id TEXT NOT NULL,status TEXT NOT NULL CHECK(status IN ('pending','active','completed','cancelled','expired','disconnected')),board TEXT NOT NULL,matched TEXT NOT NULL DEFAULT '[]',selected TEXT NOT NULL DEFAULT '[]',turn_user_id TEXT NOT NULL REFERENCES users(id),revision INTEGER NOT NULL DEFAULT 0,reveal_until REAL NOT NULL DEFAULT 0,created_at REAL NOT NULL,started_at REAL,expires_at REAL NOT NULL,finished_at REAL,UNIQUE(host_user_id,request_id));
+CREATE TABLE IF NOT EXISTS multiplayer_game_participants(session_id TEXT NOT NULL REFERENCES multiplayer_game_sessions(id),user_id TEXT NOT NULL REFERENCES users(id),active INTEGER NOT NULL DEFAULT 1,disconnected_at REAL,PRIMARY KEY(session_id,user_id));
+CREATE UNIQUE INDEX IF NOT EXISTS one_multiplayer_participant ON multiplayer_game_participants(user_id) WHERE active=1;
+CREATE TABLE IF NOT EXISTS multiplayer_game_actions(session_id TEXT NOT NULL REFERENCES multiplayer_game_sessions(id),event_id TEXT NOT NULL,user_id TEXT NOT NULL REFERENCES users(id),card INTEGER NOT NULL,revision INTEGER NOT NULL,created_at REAL NOT NULL,PRIMARY KEY(session_id,event_id));
+CREATE TABLE IF NOT EXISTS multiplayer_game_rewards(session_id TEXT NOT NULL REFERENCES multiplayer_game_sessions(id),user_id TEXT NOT NULL REFERENCES users(id),coin_transaction_id TEXT NOT NULL UNIQUE REFERENCES coin_transactions(id),reward_date TEXT NOT NULL,reason TEXT NOT NULL,PRIMARY KEY(session_id,user_id));
+CREATE TABLE IF NOT EXISTS multiplayer_validation_events(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id),session_id TEXT,reason TEXT NOT NULL,created_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS integration_reports(id TEXT PRIMARY KEY,reporter_id TEXT NOT NULL REFERENCES users(id),owner_id TEXT NOT NULL REFERENCES users(id),reason TEXT NOT NULL,resolved INTEGER NOT NULL DEFAULT 0,created_at REAL NOT NULL);
+INSERT OR IGNORE INTO schema_migrations(version) VALUES (9);
+"""

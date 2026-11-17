@@ -1,0 +1,132 @@
+[
+  {
+    "item_id": "furniture_desk_001",
+    "name": "원목 책상",
+    "category": "desk",
+    "size": {
+      "width": 2,
+      "height": 1
+    },
+    "rotatable": true,
+    "price": 120,
+    "asset_key": "desk",
+    "blocking": true
+  },
+  {
+    "item_id": "furniture_chair_001",
+    "name": "라벤더 의자",
+    "category": "chair",
+    "size": {
+      "width": 1,
+      "height": 1
+    },
+    "rotatable": true,
+    "price": 60,
+    "asset_key": "chair",
+    "blocking": true
+  },
+  {
+    "item_id": "furniture_bed_001",
+    "name": "포근한 침대",
+    "category": "bed",
+    "size": {
+      "width": 1,
+      "height": 2
+    },
+    "rotatable": true,
+    "price": 180,
+    "asset_key": "bed",
+    "blocking": true
+  },
+  {
+    "item_id": "furniture_sofa_001",
+    "name": "크림 소파",
+    "category": "sofa",
+    "size": {
+      "width": 2,
+      "height": 1
+    },
+    "rotatable": true,
+    "price": 150,
+    "asset_key": "sofa",
+    "blocking": true
+  },
+  {
+    "item_id": "furniture_bookshelf_001",
+    "name": "작은 책장",
+    "category": "bookshelf",
+    "size": {
+      "width": 1,
+      "height": 1
+    },
+    "rotatable": true,
+    "price": 100,
+    "asset_key": "bookshelf",
+    "blocking": true
+  },
+  {
+    "item_id": "furniture_plant_001",
+    "name": "초록 화분",
+    "category": "plant",
+    "size": {
+      "width": 1,
+      "height": 1
+    },
+    "rotatable": true,
+    "price": 40,
+    "asset_key": "plant",
+    "blocking": false
+  },
+  {
+    "item_id": "furniture_lamp_001",
+    "name": "따뜻한 스탠드",
+    "category": "lamp",
+    "size": {
+      "width": 1,
+      "height": 1
+    },
+    "rotatable": true,
+    "price": 50,
+    "asset_key": "lamp",
+    "blocking": true
+  },
+  {
+    "item_id": "furniture_rug_001",
+    "name": "라벤더 러그",
+    "category": "rug",
+    "size": {
+      "width": 2,
+      "height": 2
+    },
+    "rotatable": true,
+    "price": 70,
+    "asset_key": "rug",
+    "blocking": false
+  },
+  {
+    "item_id": "furniture_computer_001",
+    "name": "작업실 컴퓨터",
+    "category": "computer",
+    "size": {
+      "width": 1,
+      "height": 1
+    },
+    "rotatable": true,
+    "price": 200,
+    "asset_key": "computer",
+    "blocking": true
+  },
+  {
+    "item_id": "furniture_decoration_001",
+    "name": "작은 고양이 장식",
+    "category": "decoration",
+    "size": {
+      "width": 1,
+      "height": 1
+    },
+    "rotatable": true,
+    "price": 30,
+    "asset_key": "decoration",
+    "blocking": true
+  }
+]

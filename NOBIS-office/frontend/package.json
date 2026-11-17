@@ -1,0 +1,31 @@
+{
+  "name": "nobis-office",
+  "version": "0.5.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../infra/visual/sync-lobby-manifest.cjs && vite --host 0.0.0.0",
+    "build": "node ../infra/visual/sync-lobby-manifest.cjs && tsc --noEmit && vite build",
+    "test": "node --import tsx --test src/game/systems/systems.test.ts src/game/systems/surface.test.ts src/game/visual/visual.test.ts",
+    "test:e2e": "playwright test",
+    "test:visual": "node --import tsx --test src/game/visual/visual.test.ts",
+    "assets:build": "node ../infra/visual/build-assets.cjs",
+    "assets:lobby": "node ../infra/visual/build-lobby-assets.cjs",
+    "assets:lobby:sync": "node ../infra/visual/sync-lobby-manifest.cjs"
+  },
+  "dependencies": {
+    "phaser": "3.90.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.55.1",
+    "@types/node": "^22.15.29",
+    "@types/react": "19.1.6",
+    "@types/react-dom": "19.1.5",
+    "tsx": "4.19.4",
+    "typescript": "5.8.3",
+    "vite": "6.4.5"
+  }
+}

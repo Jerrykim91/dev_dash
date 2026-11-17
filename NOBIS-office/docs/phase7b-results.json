@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-07",
+  "frontend_unit_passed": 35,
+  "browser_passed": 27,
+  "server_sqlite_passed": 106,
+  "server_skipped": 96,
+  "build": true,
+  "docker_arm64_production": true,
+  "native_preserved_tables": 11,
+  "devnest_unchanged_files": 123,
+  "final_art_supplied": false
+}

@@ -1,0 +1,26 @@
+def test_walking_boundary_changes_zone_and_channel_permissions(client):
+    a,b=login(client),login(client,'Bob')
+    with client.websocket_connect('/ws') as wa:
+        auth(wa,a)
+        with client.websocket_connect('/ws') as wb:
+            auth(wb,b);wa.receive_json()
+            place(a,11,19.4)
+            wa.send_json({'type':'move','zone':'office','x':11,'y':19.6,'direction':'east','moving':True})
+            changed=wa.receive_json();assert changed['type']=='zone_changed' and changed['player']['zone']=='cafe'
+            assert changed['player']['x']==11.0 and changed['player']['action']=='walking'
+            # All clients keep the avatar and receive its position, even across zone boundaries.
+            assert wb.receive_json()['player']['zone']=='cafe'
+            wa.send_json({'type':'chat','channel':'zone:cafe','text':'cafe only'})
+            assert wa.receive_json()['chat']['text']=='cafe only'
+            wb.send_json({'type':'ping'});assert wb.receive_json()['type']=='pong'
+            wb.send_json({'type':'chat','channel':'world','text':'one world'})
+            assert wb.receive_json()['type']=='chat'
+            assert wa.receive_json()['chat']['text']=='one world'
+            wa.send_json({'type':'chat','channel':'zone:focus','text':'forbidden'})
+            assert wa.receive_json()['type']=='error'
+            place(a,11,19.6)
+            wa.send_json({'type':'move','zone':'cafe','x':11,'y':19.4,'direction':'west'})
+            assert wa.receive_json()['player']['zone']=='office'
+            assert wb.receive_json()['player']['zone']=='office'
+        assert wa.receive_json()=={'type':'left','id':b['user']['id']}
+    assert client.get('/api/users',headers=headers(a)).json()==[]

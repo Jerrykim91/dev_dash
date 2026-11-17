@@ -1,0 +1,7 @@
+fastapi==0.115.12
+uvicorn==0.34.2
+websockets==15.0.1
+psycopg[binary]==3.3.8
+
+Pillow==13.0.0
+tzdata==2026.6

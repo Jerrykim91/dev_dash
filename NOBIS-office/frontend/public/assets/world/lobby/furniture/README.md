@@ -1,0 +1,1 @@
+Existing project-authored furniture atlases in /visual are reused without copying or duplicate requests. See ../../../visual via the root manifest paths and docs/asset-licenses.json. Custom reception/sofa art is not supplied.

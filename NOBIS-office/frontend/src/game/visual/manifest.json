@@ -1,0 +1,8429 @@
+{
+  "version": 1,
+  "maxTextureSize": 2048,
+  "atlases": [
+    {
+      "key": "nobis-avatar-0",
+      "image": "visual/avatar-a79c399193b6.png",
+      "data": "visual/avatar-atlas-304c2d739689.json",
+      "width": 1536,
+      "height": 1280,
+      "bytes": 211930
+    },
+    {
+      "key": "nobis-furniture-0",
+      "image": "visual/furniture-2c16e38b7b6b.png",
+      "data": "visual/furniture-atlas-fe77859b7a02.json",
+      "width": 1024,
+      "height": 1600,
+      "bytes": 63918
+    },
+    {
+      "key": "nobis-furniture-1",
+      "image": "visual/furniture-9ba25f6a4f4d.png",
+      "data": "visual/furniture-atlas-907ae64968ed.json",
+      "width": 1024,
+      "height": 1440,
+      "bytes": 73084
+    }
+  ],
+  "frames": {
+    "avatar/v0/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/idle/0",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/idle/1",
+      "rect": {
+        "x": 48,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/walking/0",
+      "rect": {
+        "x": 96,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/walking/1",
+      "rect": {
+        "x": 144,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/walking/2",
+      "rect": {
+        "x": 192,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/walking/3",
+      "rect": {
+        "x": 240,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/sitting/0",
+      "rect": {
+        "x": 288,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/sitting/1",
+      "rect": {
+        "x": 336,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/typing/0",
+      "rect": {
+        "x": 384,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/north/typing/1",
+      "rect": {
+        "x": 432,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/idle/0",
+      "rect": {
+        "x": 480,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/idle/1",
+      "rect": {
+        "x": 528,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/walking/0",
+      "rect": {
+        "x": 576,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/walking/1",
+      "rect": {
+        "x": 624,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/walking/2",
+      "rect": {
+        "x": 672,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/walking/3",
+      "rect": {
+        "x": 720,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/sitting/0",
+      "rect": {
+        "x": 768,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/sitting/1",
+      "rect": {
+        "x": 816,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/typing/0",
+      "rect": {
+        "x": 864,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/south/typing/1",
+      "rect": {
+        "x": 912,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/idle/0",
+      "rect": {
+        "x": 960,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/idle/1",
+      "rect": {
+        "x": 1008,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/walking/0",
+      "rect": {
+        "x": 1056,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/walking/1",
+      "rect": {
+        "x": 1104,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/walking/2",
+      "rect": {
+        "x": 1152,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/walking/3",
+      "rect": {
+        "x": 1200,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/sitting/0",
+      "rect": {
+        "x": 1248,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/sitting/1",
+      "rect": {
+        "x": 1296,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/typing/0",
+      "rect": {
+        "x": 1344,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/east/typing/1",
+      "rect": {
+        "x": 1392,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/idle/0",
+      "rect": {
+        "x": 1440,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/idle/1",
+      "rect": {
+        "x": 1488,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/walking/0",
+      "rect": {
+        "x": 0,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/walking/1",
+      "rect": {
+        "x": 48,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/walking/2",
+      "rect": {
+        "x": 96,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/walking/3",
+      "rect": {
+        "x": 144,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/sitting/0",
+      "rect": {
+        "x": 192,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/sitting/1",
+      "rect": {
+        "x": 240,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/typing/0",
+      "rect": {
+        "x": 288,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v0/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v0/west/typing/1",
+      "rect": {
+        "x": 336,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/idle/0",
+      "rect": {
+        "x": 384,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/idle/1",
+      "rect": {
+        "x": 432,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/walking/0",
+      "rect": {
+        "x": 480,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/walking/1",
+      "rect": {
+        "x": 528,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/walking/2",
+      "rect": {
+        "x": 576,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/walking/3",
+      "rect": {
+        "x": 624,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/sitting/0",
+      "rect": {
+        "x": 672,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/sitting/1",
+      "rect": {
+        "x": 720,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/typing/0",
+      "rect": {
+        "x": 768,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/north/typing/1",
+      "rect": {
+        "x": 816,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/idle/0",
+      "rect": {
+        "x": 864,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/idle/1",
+      "rect": {
+        "x": 912,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/walking/0",
+      "rect": {
+        "x": 960,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/walking/1",
+      "rect": {
+        "x": 1008,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/walking/2",
+      "rect": {
+        "x": 1056,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/walking/3",
+      "rect": {
+        "x": 1104,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/sitting/0",
+      "rect": {
+        "x": 1152,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/sitting/1",
+      "rect": {
+        "x": 1200,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/typing/0",
+      "rect": {
+        "x": 1248,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/south/typing/1",
+      "rect": {
+        "x": 1296,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/idle/0",
+      "rect": {
+        "x": 1344,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/idle/1",
+      "rect": {
+        "x": 1392,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/walking/0",
+      "rect": {
+        "x": 1440,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/walking/1",
+      "rect": {
+        "x": 1488,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/walking/2",
+      "rect": {
+        "x": 0,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/walking/3",
+      "rect": {
+        "x": 48,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/sitting/0",
+      "rect": {
+        "x": 96,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/sitting/1",
+      "rect": {
+        "x": 144,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/typing/0",
+      "rect": {
+        "x": 192,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/east/typing/1",
+      "rect": {
+        "x": 240,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/idle/0",
+      "rect": {
+        "x": 288,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/idle/1",
+      "rect": {
+        "x": 336,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/walking/0",
+      "rect": {
+        "x": 384,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/walking/1",
+      "rect": {
+        "x": 432,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/walking/2",
+      "rect": {
+        "x": 480,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/walking/3",
+      "rect": {
+        "x": 528,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/sitting/0",
+      "rect": {
+        "x": 576,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/sitting/1",
+      "rect": {
+        "x": 624,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/typing/0",
+      "rect": {
+        "x": 672,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v1/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v1/west/typing/1",
+      "rect": {
+        "x": 720,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/idle/0",
+      "rect": {
+        "x": 768,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/idle/1",
+      "rect": {
+        "x": 816,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/walking/0",
+      "rect": {
+        "x": 864,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/walking/1",
+      "rect": {
+        "x": 912,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/walking/2",
+      "rect": {
+        "x": 960,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/walking/3",
+      "rect": {
+        "x": 1008,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/sitting/0",
+      "rect": {
+        "x": 1056,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/sitting/1",
+      "rect": {
+        "x": 1104,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/typing/0",
+      "rect": {
+        "x": 1152,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/north/typing/1",
+      "rect": {
+        "x": 1200,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/idle/0",
+      "rect": {
+        "x": 1248,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/idle/1",
+      "rect": {
+        "x": 1296,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/walking/0",
+      "rect": {
+        "x": 1344,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/walking/1",
+      "rect": {
+        "x": 1392,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/walking/2",
+      "rect": {
+        "x": 1440,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/walking/3",
+      "rect": {
+        "x": 1488,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/sitting/0",
+      "rect": {
+        "x": 0,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/sitting/1",
+      "rect": {
+        "x": 48,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/typing/0",
+      "rect": {
+        "x": 96,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/south/typing/1",
+      "rect": {
+        "x": 144,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/idle/0",
+      "rect": {
+        "x": 192,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/idle/1",
+      "rect": {
+        "x": 240,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/walking/0",
+      "rect": {
+        "x": 288,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/walking/1",
+      "rect": {
+        "x": 336,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/walking/2",
+      "rect": {
+        "x": 384,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/walking/3",
+      "rect": {
+        "x": 432,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/sitting/0",
+      "rect": {
+        "x": 480,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/sitting/1",
+      "rect": {
+        "x": 528,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/typing/0",
+      "rect": {
+        "x": 576,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/east/typing/1",
+      "rect": {
+        "x": 624,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/idle/0",
+      "rect": {
+        "x": 672,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/idle/1",
+      "rect": {
+        "x": 720,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/walking/0",
+      "rect": {
+        "x": 768,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/walking/1",
+      "rect": {
+        "x": 816,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/walking/2",
+      "rect": {
+        "x": 864,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/walking/3",
+      "rect": {
+        "x": 912,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/sitting/0",
+      "rect": {
+        "x": 960,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/sitting/1",
+      "rect": {
+        "x": 1008,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/typing/0",
+      "rect": {
+        "x": 1056,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v2/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v2/west/typing/1",
+      "rect": {
+        "x": 1104,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/idle/0",
+      "rect": {
+        "x": 1152,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/idle/1",
+      "rect": {
+        "x": 1200,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/walking/0",
+      "rect": {
+        "x": 1248,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/walking/1",
+      "rect": {
+        "x": 1296,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/walking/2",
+      "rect": {
+        "x": 1344,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/walking/3",
+      "rect": {
+        "x": 1392,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/sitting/0",
+      "rect": {
+        "x": 1440,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/sitting/1",
+      "rect": {
+        "x": 1488,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/typing/0",
+      "rect": {
+        "x": 0,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/north/typing/1",
+      "rect": {
+        "x": 48,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/idle/0",
+      "rect": {
+        "x": 96,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/idle/1",
+      "rect": {
+        "x": 144,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/walking/0",
+      "rect": {
+        "x": 192,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/walking/1",
+      "rect": {
+        "x": 240,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/walking/2",
+      "rect": {
+        "x": 288,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/walking/3",
+      "rect": {
+        "x": 336,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/sitting/0",
+      "rect": {
+        "x": 384,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/sitting/1",
+      "rect": {
+        "x": 432,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/typing/0",
+      "rect": {
+        "x": 480,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/south/typing/1",
+      "rect": {
+        "x": 528,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/idle/0",
+      "rect": {
+        "x": 576,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/idle/1",
+      "rect": {
+        "x": 624,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/walking/0",
+      "rect": {
+        "x": 672,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/walking/1",
+      "rect": {
+        "x": 720,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/walking/2",
+      "rect": {
+        "x": 768,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/walking/3",
+      "rect": {
+        "x": 816,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/sitting/0",
+      "rect": {
+        "x": 864,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/sitting/1",
+      "rect": {
+        "x": 912,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/typing/0",
+      "rect": {
+        "x": 960,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/east/typing/1",
+      "rect": {
+        "x": 1008,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/idle/0",
+      "rect": {
+        "x": 1056,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/idle/1",
+      "rect": {
+        "x": 1104,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/walking/0",
+      "rect": {
+        "x": 1152,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/walking/1",
+      "rect": {
+        "x": 1200,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/walking/2",
+      "rect": {
+        "x": 1248,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/walking/3",
+      "rect": {
+        "x": 1296,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/sitting/0",
+      "rect": {
+        "x": 1344,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/sitting/1",
+      "rect": {
+        "x": 1392,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/typing/0",
+      "rect": {
+        "x": 1440,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v3/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v3/west/typing/1",
+      "rect": {
+        "x": 1488,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/idle/0",
+      "rect": {
+        "x": 0,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/idle/1",
+      "rect": {
+        "x": 48,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/walking/0",
+      "rect": {
+        "x": 96,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/walking/1",
+      "rect": {
+        "x": 144,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/walking/2",
+      "rect": {
+        "x": 192,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/walking/3",
+      "rect": {
+        "x": 240,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/sitting/0",
+      "rect": {
+        "x": 288,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/sitting/1",
+      "rect": {
+        "x": 336,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/typing/0",
+      "rect": {
+        "x": 384,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/north/typing/1",
+      "rect": {
+        "x": 432,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/idle/0",
+      "rect": {
+        "x": 480,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/idle/1",
+      "rect": {
+        "x": 528,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/walking/0",
+      "rect": {
+        "x": 576,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/walking/1",
+      "rect": {
+        "x": 624,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/walking/2",
+      "rect": {
+        "x": 672,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/walking/3",
+      "rect": {
+        "x": 720,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/sitting/0",
+      "rect": {
+        "x": 768,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/sitting/1",
+      "rect": {
+        "x": 816,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/typing/0",
+      "rect": {
+        "x": 864,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/south/typing/1",
+      "rect": {
+        "x": 912,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/idle/0",
+      "rect": {
+        "x": 960,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/idle/1",
+      "rect": {
+        "x": 1008,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/walking/0",
+      "rect": {
+        "x": 1056,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/walking/1",
+      "rect": {
+        "x": 1104,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/walking/2",
+      "rect": {
+        "x": 1152,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/walking/3",
+      "rect": {
+        "x": 1200,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/sitting/0",
+      "rect": {
+        "x": 1248,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/sitting/1",
+      "rect": {
+        "x": 1296,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/typing/0",
+      "rect": {
+        "x": 1344,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/east/typing/1",
+      "rect": {
+        "x": 1392,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/idle/0",
+      "rect": {
+        "x": 1440,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/idle/1",
+      "rect": {
+        "x": 1488,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/walking/0",
+      "rect": {
+        "x": 0,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/walking/1",
+      "rect": {
+        "x": 48,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/walking/2",
+      "rect": {
+        "x": 96,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/walking/3",
+      "rect": {
+        "x": 144,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/sitting/0",
+      "rect": {
+        "x": 192,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/sitting/1",
+      "rect": {
+        "x": 240,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/typing/0",
+      "rect": {
+        "x": 288,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v4/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v4/west/typing/1",
+      "rect": {
+        "x": 336,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/idle/0",
+      "rect": {
+        "x": 384,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/idle/1",
+      "rect": {
+        "x": 432,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/walking/0",
+      "rect": {
+        "x": 480,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/walking/1",
+      "rect": {
+        "x": 528,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/walking/2",
+      "rect": {
+        "x": 576,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/walking/3",
+      "rect": {
+        "x": 624,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/sitting/0",
+      "rect": {
+        "x": 672,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/sitting/1",
+      "rect": {
+        "x": 720,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/typing/0",
+      "rect": {
+        "x": 768,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/north/typing/1",
+      "rect": {
+        "x": 816,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/idle/0",
+      "rect": {
+        "x": 864,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/idle/1",
+      "rect": {
+        "x": 912,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/walking/0",
+      "rect": {
+        "x": 960,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/walking/1",
+      "rect": {
+        "x": 1008,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/walking/2",
+      "rect": {
+        "x": 1056,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/walking/3",
+      "rect": {
+        "x": 1104,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/sitting/0",
+      "rect": {
+        "x": 1152,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/sitting/1",
+      "rect": {
+        "x": 1200,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/typing/0",
+      "rect": {
+        "x": 1248,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/south/typing/1",
+      "rect": {
+        "x": 1296,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/idle/0",
+      "rect": {
+        "x": 1344,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/idle/1",
+      "rect": {
+        "x": 1392,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/walking/0",
+      "rect": {
+        "x": 1440,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/walking/1",
+      "rect": {
+        "x": 1488,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/walking/2",
+      "rect": {
+        "x": 0,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/walking/3",
+      "rect": {
+        "x": 48,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/sitting/0",
+      "rect": {
+        "x": 96,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/sitting/1",
+      "rect": {
+        "x": 144,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/typing/0",
+      "rect": {
+        "x": 192,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/east/typing/1",
+      "rect": {
+        "x": 240,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/idle/0",
+      "rect": {
+        "x": 288,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/idle/1",
+      "rect": {
+        "x": 336,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/walking/0",
+      "rect": {
+        "x": 384,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/walking/1",
+      "rect": {
+        "x": 432,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/walking/2",
+      "rect": {
+        "x": 480,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/walking/3",
+      "rect": {
+        "x": 528,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/sitting/0",
+      "rect": {
+        "x": 576,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/sitting/1",
+      "rect": {
+        "x": 624,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/typing/0",
+      "rect": {
+        "x": 672,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v5/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v5/west/typing/1",
+      "rect": {
+        "x": 720,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/idle/0",
+      "rect": {
+        "x": 768,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/idle/1",
+      "rect": {
+        "x": 816,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/walking/0",
+      "rect": {
+        "x": 864,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/walking/1",
+      "rect": {
+        "x": 912,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/walking/2",
+      "rect": {
+        "x": 960,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/walking/3",
+      "rect": {
+        "x": 1008,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/sitting/0",
+      "rect": {
+        "x": 1056,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/sitting/1",
+      "rect": {
+        "x": 1104,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/typing/0",
+      "rect": {
+        "x": 1152,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/north/typing/1",
+      "rect": {
+        "x": 1200,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/idle/0",
+      "rect": {
+        "x": 1248,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/idle/1",
+      "rect": {
+        "x": 1296,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/walking/0",
+      "rect": {
+        "x": 1344,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/walking/1",
+      "rect": {
+        "x": 1392,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/walking/2",
+      "rect": {
+        "x": 1440,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/walking/3",
+      "rect": {
+        "x": 1488,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/sitting/0",
+      "rect": {
+        "x": 0,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/sitting/1",
+      "rect": {
+        "x": 48,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/typing/0",
+      "rect": {
+        "x": 96,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/south/typing/1",
+      "rect": {
+        "x": 144,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/idle/0",
+      "rect": {
+        "x": 192,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/idle/1",
+      "rect": {
+        "x": 240,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/walking/0",
+      "rect": {
+        "x": 288,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/walking/1",
+      "rect": {
+        "x": 336,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/walking/2",
+      "rect": {
+        "x": 384,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/walking/3",
+      "rect": {
+        "x": 432,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/sitting/0",
+      "rect": {
+        "x": 480,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/sitting/1",
+      "rect": {
+        "x": 528,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/typing/0",
+      "rect": {
+        "x": 576,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/east/typing/1",
+      "rect": {
+        "x": 624,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/idle/0",
+      "rect": {
+        "x": 672,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/idle/1",
+      "rect": {
+        "x": 720,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/walking/0",
+      "rect": {
+        "x": 768,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/walking/1",
+      "rect": {
+        "x": 816,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/walking/2",
+      "rect": {
+        "x": 864,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/walking/3",
+      "rect": {
+        "x": 912,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/sitting/0",
+      "rect": {
+        "x": 960,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/sitting/1",
+      "rect": {
+        "x": 1008,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/typing/0",
+      "rect": {
+        "x": 1056,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v6/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v6/west/typing/1",
+      "rect": {
+        "x": 1104,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/idle/0",
+      "rect": {
+        "x": 1152,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/idle/1",
+      "rect": {
+        "x": 1200,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/walking/0",
+      "rect": {
+        "x": 1248,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/walking/1",
+      "rect": {
+        "x": 1296,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/walking/2",
+      "rect": {
+        "x": 1344,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/walking/3",
+      "rect": {
+        "x": 1392,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/sitting/0",
+      "rect": {
+        "x": 1440,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/sitting/1",
+      "rect": {
+        "x": 1488,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/typing/0",
+      "rect": {
+        "x": 0,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/north/typing/1",
+      "rect": {
+        "x": 48,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/idle/0",
+      "rect": {
+        "x": 96,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/idle/1",
+      "rect": {
+        "x": 144,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/walking/0",
+      "rect": {
+        "x": 192,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/walking/1",
+      "rect": {
+        "x": 240,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/walking/2",
+      "rect": {
+        "x": 288,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/walking/3",
+      "rect": {
+        "x": 336,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/sitting/0",
+      "rect": {
+        "x": 384,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/sitting/1",
+      "rect": {
+        "x": 432,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/typing/0",
+      "rect": {
+        "x": 480,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/south/typing/1",
+      "rect": {
+        "x": 528,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/idle/0",
+      "rect": {
+        "x": 576,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/idle/1",
+      "rect": {
+        "x": 624,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/walking/0",
+      "rect": {
+        "x": 672,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/walking/1",
+      "rect": {
+        "x": 720,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/walking/2",
+      "rect": {
+        "x": 768,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/walking/3",
+      "rect": {
+        "x": 816,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/sitting/0",
+      "rect": {
+        "x": 864,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/sitting/1",
+      "rect": {
+        "x": 912,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/typing/0",
+      "rect": {
+        "x": 960,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/east/typing/1",
+      "rect": {
+        "x": 1008,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/idle/0",
+      "rect": {
+        "x": 1056,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/idle/1",
+      "rect": {
+        "x": 1104,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/walking/0",
+      "rect": {
+        "x": 1152,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/walking/1",
+      "rect": {
+        "x": 1200,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/walking/2",
+      "rect": {
+        "x": 1248,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/walking/3",
+      "rect": {
+        "x": 1296,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/sitting/0",
+      "rect": {
+        "x": 1344,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/sitting/1",
+      "rect": {
+        "x": 1392,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/typing/0",
+      "rect": {
+        "x": 1440,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v7/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v7/west/typing/1",
+      "rect": {
+        "x": 1488,
+        "y": 576,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/idle/0",
+      "rect": {
+        "x": 0,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/idle/1",
+      "rect": {
+        "x": 48,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/walking/0",
+      "rect": {
+        "x": 96,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/walking/1",
+      "rect": {
+        "x": 144,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/walking/2",
+      "rect": {
+        "x": 192,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/walking/3",
+      "rect": {
+        "x": 240,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/sitting/0",
+      "rect": {
+        "x": 288,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/sitting/1",
+      "rect": {
+        "x": 336,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/typing/0",
+      "rect": {
+        "x": 384,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/north/typing/1",
+      "rect": {
+        "x": 432,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/idle/0",
+      "rect": {
+        "x": 480,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/idle/1",
+      "rect": {
+        "x": 528,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/walking/0",
+      "rect": {
+        "x": 576,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/walking/1",
+      "rect": {
+        "x": 624,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/walking/2",
+      "rect": {
+        "x": 672,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/walking/3",
+      "rect": {
+        "x": 720,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/sitting/0",
+      "rect": {
+        "x": 768,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/sitting/1",
+      "rect": {
+        "x": 816,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/typing/0",
+      "rect": {
+        "x": 864,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/south/typing/1",
+      "rect": {
+        "x": 912,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/idle/0",
+      "rect": {
+        "x": 960,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/idle/1",
+      "rect": {
+        "x": 1008,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/walking/0",
+      "rect": {
+        "x": 1056,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/walking/1",
+      "rect": {
+        "x": 1104,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/walking/2",
+      "rect": {
+        "x": 1152,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/walking/3",
+      "rect": {
+        "x": 1200,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/sitting/0",
+      "rect": {
+        "x": 1248,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/sitting/1",
+      "rect": {
+        "x": 1296,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/typing/0",
+      "rect": {
+        "x": 1344,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/east/typing/1",
+      "rect": {
+        "x": 1392,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/idle/0",
+      "rect": {
+        "x": 1440,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/idle/1",
+      "rect": {
+        "x": 1488,
+        "y": 640,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/walking/0",
+      "rect": {
+        "x": 0,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/walking/1",
+      "rect": {
+        "x": 48,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/walking/2",
+      "rect": {
+        "x": 96,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/walking/3",
+      "rect": {
+        "x": 144,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/sitting/0",
+      "rect": {
+        "x": 192,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/sitting/1",
+      "rect": {
+        "x": 240,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/typing/0",
+      "rect": {
+        "x": 288,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v8/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v8/west/typing/1",
+      "rect": {
+        "x": 336,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/idle/0",
+      "rect": {
+        "x": 384,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/idle/1",
+      "rect": {
+        "x": 432,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/walking/0",
+      "rect": {
+        "x": 480,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/walking/1",
+      "rect": {
+        "x": 528,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/walking/2",
+      "rect": {
+        "x": 576,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/walking/3",
+      "rect": {
+        "x": 624,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/sitting/0",
+      "rect": {
+        "x": 672,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/sitting/1",
+      "rect": {
+        "x": 720,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/typing/0",
+      "rect": {
+        "x": 768,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/north/typing/1",
+      "rect": {
+        "x": 816,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/idle/0",
+      "rect": {
+        "x": 864,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/idle/1",
+      "rect": {
+        "x": 912,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/walking/0",
+      "rect": {
+        "x": 960,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/walking/1",
+      "rect": {
+        "x": 1008,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/walking/2",
+      "rect": {
+        "x": 1056,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/walking/3",
+      "rect": {
+        "x": 1104,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/sitting/0",
+      "rect": {
+        "x": 1152,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/sitting/1",
+      "rect": {
+        "x": 1200,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/typing/0",
+      "rect": {
+        "x": 1248,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/south/typing/1",
+      "rect": {
+        "x": 1296,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/idle/0",
+      "rect": {
+        "x": 1344,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/idle/1",
+      "rect": {
+        "x": 1392,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/walking/0",
+      "rect": {
+        "x": 1440,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/walking/1",
+      "rect": {
+        "x": 1488,
+        "y": 704,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/walking/2",
+      "rect": {
+        "x": 0,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/walking/3",
+      "rect": {
+        "x": 48,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/sitting/0",
+      "rect": {
+        "x": 96,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/sitting/1",
+      "rect": {
+        "x": 144,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/typing/0",
+      "rect": {
+        "x": 192,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/east/typing/1",
+      "rect": {
+        "x": 240,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/idle/0",
+      "rect": {
+        "x": 288,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/idle/1",
+      "rect": {
+        "x": 336,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/walking/0",
+      "rect": {
+        "x": 384,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/walking/1",
+      "rect": {
+        "x": 432,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/walking/2",
+      "rect": {
+        "x": 480,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/walking/3",
+      "rect": {
+        "x": 528,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/sitting/0",
+      "rect": {
+        "x": 576,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/sitting/1",
+      "rect": {
+        "x": 624,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/typing/0",
+      "rect": {
+        "x": 672,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v9/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v9/west/typing/1",
+      "rect": {
+        "x": 720,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/idle/0",
+      "rect": {
+        "x": 768,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/idle/1",
+      "rect": {
+        "x": 816,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/walking/0",
+      "rect": {
+        "x": 864,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/walking/1",
+      "rect": {
+        "x": 912,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/walking/2",
+      "rect": {
+        "x": 960,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/walking/3",
+      "rect": {
+        "x": 1008,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/sitting/0",
+      "rect": {
+        "x": 1056,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/sitting/1",
+      "rect": {
+        "x": 1104,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/typing/0",
+      "rect": {
+        "x": 1152,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/north/typing/1",
+      "rect": {
+        "x": 1200,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/idle/0",
+      "rect": {
+        "x": 1248,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/idle/1",
+      "rect": {
+        "x": 1296,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/walking/0",
+      "rect": {
+        "x": 1344,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/walking/1",
+      "rect": {
+        "x": 1392,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/walking/2",
+      "rect": {
+        "x": 1440,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/walking/3",
+      "rect": {
+        "x": 1488,
+        "y": 768,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/sitting/0",
+      "rect": {
+        "x": 0,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/sitting/1",
+      "rect": {
+        "x": 48,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/typing/0",
+      "rect": {
+        "x": 96,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/south/typing/1",
+      "rect": {
+        "x": 144,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/idle/0",
+      "rect": {
+        "x": 192,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/idle/1",
+      "rect": {
+        "x": 240,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/walking/0",
+      "rect": {
+        "x": 288,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/walking/1",
+      "rect": {
+        "x": 336,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/walking/2",
+      "rect": {
+        "x": 384,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/walking/3",
+      "rect": {
+        "x": 432,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/sitting/0",
+      "rect": {
+        "x": 480,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/sitting/1",
+      "rect": {
+        "x": 528,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/typing/0",
+      "rect": {
+        "x": 576,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/east/typing/1",
+      "rect": {
+        "x": 624,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/idle/0",
+      "rect": {
+        "x": 672,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/idle/1",
+      "rect": {
+        "x": 720,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/walking/0",
+      "rect": {
+        "x": 768,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/walking/1",
+      "rect": {
+        "x": 816,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/walking/2",
+      "rect": {
+        "x": 864,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/walking/3",
+      "rect": {
+        "x": 912,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/sitting/0",
+      "rect": {
+        "x": 960,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/sitting/1",
+      "rect": {
+        "x": 1008,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/typing/0",
+      "rect": {
+        "x": 1056,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v10/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v10/west/typing/1",
+      "rect": {
+        "x": 1104,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/idle/0",
+      "rect": {
+        "x": 1152,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/idle/1",
+      "rect": {
+        "x": 1200,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/walking/0",
+      "rect": {
+        "x": 1248,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/walking/1",
+      "rect": {
+        "x": 1296,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/walking/2",
+      "rect": {
+        "x": 1344,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/walking/3",
+      "rect": {
+        "x": 1392,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/sitting/0",
+      "rect": {
+        "x": 1440,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/sitting/1",
+      "rect": {
+        "x": 1488,
+        "y": 832,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/typing/0",
+      "rect": {
+        "x": 0,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/north/typing/1",
+      "rect": {
+        "x": 48,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/idle/0",
+      "rect": {
+        "x": 96,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/idle/1",
+      "rect": {
+        "x": 144,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/walking/0",
+      "rect": {
+        "x": 192,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/walking/1",
+      "rect": {
+        "x": 240,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/walking/2",
+      "rect": {
+        "x": 288,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/walking/3",
+      "rect": {
+        "x": 336,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/sitting/0",
+      "rect": {
+        "x": 384,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/sitting/1",
+      "rect": {
+        "x": 432,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/typing/0",
+      "rect": {
+        "x": 480,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/south/typing/1",
+      "rect": {
+        "x": 528,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/idle/0",
+      "rect": {
+        "x": 576,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/idle/1",
+      "rect": {
+        "x": 624,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/walking/0",
+      "rect": {
+        "x": 672,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/walking/1",
+      "rect": {
+        "x": 720,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/walking/2",
+      "rect": {
+        "x": 768,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/walking/3",
+      "rect": {
+        "x": 816,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/sitting/0",
+      "rect": {
+        "x": 864,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/sitting/1",
+      "rect": {
+        "x": 912,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/typing/0",
+      "rect": {
+        "x": 960,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/east/typing/1",
+      "rect": {
+        "x": 1008,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/idle/0",
+      "rect": {
+        "x": 1056,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/idle/1",
+      "rect": {
+        "x": 1104,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/walking/0",
+      "rect": {
+        "x": 1152,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/walking/1",
+      "rect": {
+        "x": 1200,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/walking/2",
+      "rect": {
+        "x": 1248,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/walking/3",
+      "rect": {
+        "x": 1296,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/sitting/0",
+      "rect": {
+        "x": 1344,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/sitting/1",
+      "rect": {
+        "x": 1392,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/typing/0",
+      "rect": {
+        "x": 1440,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v11/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v11/west/typing/1",
+      "rect": {
+        "x": 1488,
+        "y": 896,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/idle/0",
+      "rect": {
+        "x": 0,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/idle/1",
+      "rect": {
+        "x": 48,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/walking/0",
+      "rect": {
+        "x": 96,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/walking/1",
+      "rect": {
+        "x": 144,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/walking/2",
+      "rect": {
+        "x": 192,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/walking/3",
+      "rect": {
+        "x": 240,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/sitting/0",
+      "rect": {
+        "x": 288,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/sitting/1",
+      "rect": {
+        "x": 336,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/typing/0",
+      "rect": {
+        "x": 384,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/north/typing/1",
+      "rect": {
+        "x": 432,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/idle/0",
+      "rect": {
+        "x": 480,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/idle/1",
+      "rect": {
+        "x": 528,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/walking/0",
+      "rect": {
+        "x": 576,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/walking/1",
+      "rect": {
+        "x": 624,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/walking/2",
+      "rect": {
+        "x": 672,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/walking/3",
+      "rect": {
+        "x": 720,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/sitting/0",
+      "rect": {
+        "x": 768,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/sitting/1",
+      "rect": {
+        "x": 816,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/typing/0",
+      "rect": {
+        "x": 864,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/south/typing/1",
+      "rect": {
+        "x": 912,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/idle/0",
+      "rect": {
+        "x": 960,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/idle/1",
+      "rect": {
+        "x": 1008,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/walking/0",
+      "rect": {
+        "x": 1056,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/walking/1",
+      "rect": {
+        "x": 1104,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/walking/2",
+      "rect": {
+        "x": 1152,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/walking/3",
+      "rect": {
+        "x": 1200,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/sitting/0",
+      "rect": {
+        "x": 1248,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/sitting/1",
+      "rect": {
+        "x": 1296,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/typing/0",
+      "rect": {
+        "x": 1344,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/east/typing/1",
+      "rect": {
+        "x": 1392,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/idle/0",
+      "rect": {
+        "x": 1440,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/idle/1",
+      "rect": {
+        "x": 1488,
+        "y": 960,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/walking/0",
+      "rect": {
+        "x": 0,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/walking/1",
+      "rect": {
+        "x": 48,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/walking/2",
+      "rect": {
+        "x": 96,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/walking/3",
+      "rect": {
+        "x": 144,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/sitting/0",
+      "rect": {
+        "x": 192,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/sitting/1",
+      "rect": {
+        "x": 240,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/typing/0",
+      "rect": {
+        "x": 288,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v12/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v12/west/typing/1",
+      "rect": {
+        "x": 336,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/idle/0",
+      "rect": {
+        "x": 384,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/idle/1",
+      "rect": {
+        "x": 432,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/walking/0",
+      "rect": {
+        "x": 480,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/walking/1",
+      "rect": {
+        "x": 528,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/walking/2",
+      "rect": {
+        "x": 576,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/walking/3",
+      "rect": {
+        "x": 624,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/sitting/0",
+      "rect": {
+        "x": 672,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/sitting/1",
+      "rect": {
+        "x": 720,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/typing/0",
+      "rect": {
+        "x": 768,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/north/typing/1",
+      "rect": {
+        "x": 816,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/idle/0",
+      "rect": {
+        "x": 864,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/idle/1",
+      "rect": {
+        "x": 912,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/walking/0",
+      "rect": {
+        "x": 960,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/walking/1",
+      "rect": {
+        "x": 1008,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/walking/2",
+      "rect": {
+        "x": 1056,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/walking/3",
+      "rect": {
+        "x": 1104,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/sitting/0",
+      "rect": {
+        "x": 1152,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/sitting/1",
+      "rect": {
+        "x": 1200,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/typing/0",
+      "rect": {
+        "x": 1248,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/south/typing/1",
+      "rect": {
+        "x": 1296,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/idle/0",
+      "rect": {
+        "x": 1344,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/idle/1",
+      "rect": {
+        "x": 1392,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/walking/0",
+      "rect": {
+        "x": 1440,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/walking/1",
+      "rect": {
+        "x": 1488,
+        "y": 1024,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/walking/2",
+      "rect": {
+        "x": 0,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/walking/3",
+      "rect": {
+        "x": 48,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/sitting/0",
+      "rect": {
+        "x": 96,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/sitting/1",
+      "rect": {
+        "x": 144,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/typing/0",
+      "rect": {
+        "x": 192,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/east/typing/1",
+      "rect": {
+        "x": 240,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/idle/0",
+      "rect": {
+        "x": 288,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/idle/1",
+      "rect": {
+        "x": 336,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/walking/0",
+      "rect": {
+        "x": 384,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/walking/1",
+      "rect": {
+        "x": 432,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/walking/2",
+      "rect": {
+        "x": 480,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/walking/3",
+      "rect": {
+        "x": 528,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/sitting/0",
+      "rect": {
+        "x": 576,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/sitting/1",
+      "rect": {
+        "x": 624,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/typing/0",
+      "rect": {
+        "x": 672,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v13/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v13/west/typing/1",
+      "rect": {
+        "x": 720,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/idle/0",
+      "rect": {
+        "x": 768,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/idle/1",
+      "rect": {
+        "x": 816,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/walking/0",
+      "rect": {
+        "x": 864,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/walking/1",
+      "rect": {
+        "x": 912,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/walking/2",
+      "rect": {
+        "x": 960,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/walking/3",
+      "rect": {
+        "x": 1008,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/sitting/0",
+      "rect": {
+        "x": 1056,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/sitting/1",
+      "rect": {
+        "x": 1104,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/typing/0",
+      "rect": {
+        "x": 1152,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/north/typing/1",
+      "rect": {
+        "x": 1200,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/idle/0",
+      "rect": {
+        "x": 1248,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/idle/1",
+      "rect": {
+        "x": 1296,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/walking/0",
+      "rect": {
+        "x": 1344,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/walking/1",
+      "rect": {
+        "x": 1392,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/walking/2",
+      "rect": {
+        "x": 1440,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/walking/3",
+      "rect": {
+        "x": 1488,
+        "y": 1088,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/sitting/0",
+      "rect": {
+        "x": 0,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/sitting/1",
+      "rect": {
+        "x": 48,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/typing/0",
+      "rect": {
+        "x": 96,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/south/typing/1",
+      "rect": {
+        "x": 144,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/idle/0",
+      "rect": {
+        "x": 192,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/idle/1",
+      "rect": {
+        "x": 240,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/walking/0",
+      "rect": {
+        "x": 288,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/walking/1",
+      "rect": {
+        "x": 336,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/walking/2",
+      "rect": {
+        "x": 384,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/walking/3",
+      "rect": {
+        "x": 432,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/sitting/0",
+      "rect": {
+        "x": 480,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/sitting/1",
+      "rect": {
+        "x": 528,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/typing/0",
+      "rect": {
+        "x": 576,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/east/typing/1",
+      "rect": {
+        "x": 624,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/idle/0",
+      "rect": {
+        "x": 672,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/idle/1",
+      "rect": {
+        "x": 720,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/walking/0",
+      "rect": {
+        "x": 768,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/walking/1",
+      "rect": {
+        "x": 816,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/walking/2",
+      "rect": {
+        "x": 864,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/walking/3",
+      "rect": {
+        "x": 912,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/sitting/0",
+      "rect": {
+        "x": 960,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/sitting/1",
+      "rect": {
+        "x": 1008,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/typing/0",
+      "rect": {
+        "x": 1056,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v14/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v14/west/typing/1",
+      "rect": {
+        "x": 1104,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/idle/0",
+      "rect": {
+        "x": 1152,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/idle/1",
+      "rect": {
+        "x": 1200,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/walking/0",
+      "rect": {
+        "x": 1248,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/walking/1",
+      "rect": {
+        "x": 1296,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/walking/2",
+      "rect": {
+        "x": 1344,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/walking/3",
+      "rect": {
+        "x": 1392,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/sitting/0",
+      "rect": {
+        "x": 1440,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/sitting/1",
+      "rect": {
+        "x": 1488,
+        "y": 1152,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/typing/0",
+      "rect": {
+        "x": 0,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/north/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/north/typing/1",
+      "rect": {
+        "x": 48,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/idle/0",
+      "rect": {
+        "x": 96,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/idle/1",
+      "rect": {
+        "x": 144,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/walking/0",
+      "rect": {
+        "x": 192,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/walking/1",
+      "rect": {
+        "x": 240,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/walking/2",
+      "rect": {
+        "x": 288,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/walking/3",
+      "rect": {
+        "x": 336,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/sitting/0",
+      "rect": {
+        "x": 384,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/sitting/1",
+      "rect": {
+        "x": 432,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/typing/0",
+      "rect": {
+        "x": 480,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/south/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/south/typing/1",
+      "rect": {
+        "x": 528,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/idle/0",
+      "rect": {
+        "x": 576,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/idle/1",
+      "rect": {
+        "x": 624,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/walking/0",
+      "rect": {
+        "x": 672,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/walking/1",
+      "rect": {
+        "x": 720,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/walking/2",
+      "rect": {
+        "x": 768,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/walking/3",
+      "rect": {
+        "x": 816,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/sitting/0",
+      "rect": {
+        "x": 864,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/sitting/1",
+      "rect": {
+        "x": 912,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/typing/0",
+      "rect": {
+        "x": 960,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/east/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/east/typing/1",
+      "rect": {
+        "x": 1008,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/idle/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/idle/0",
+      "rect": {
+        "x": 1056,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/idle/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/idle/1",
+      "rect": {
+        "x": 1104,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/walking/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/walking/0",
+      "rect": {
+        "x": 1152,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/walking/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/walking/1",
+      "rect": {
+        "x": 1200,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/walking/2": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/walking/2",
+      "rect": {
+        "x": 1248,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/walking/3": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/walking/3",
+      "rect": {
+        "x": 1296,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/sitting/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/sitting/0",
+      "rect": {
+        "x": 1344,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/sitting/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/sitting/1",
+      "rect": {
+        "x": 1392,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/typing/0": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/typing/0",
+      "rect": {
+        "x": 1440,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "avatar/v15/west/typing/1": {
+      "atlas": "nobis-avatar-0",
+      "frame": "v15/west/typing/1",
+      "rect": {
+        "x": 1488,
+        "y": 1216,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "furniture/desk/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "desk/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "desk/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "desk/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "desk/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "desk/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "desk/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "desk/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "desk/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/chair/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "chair/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/chair/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "chair/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/chair/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "chair/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/chair/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "chair/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/chair/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "chair/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/chair/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "chair/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/chair/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "chair/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/chair/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "chair/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/computer/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "computer/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/computer/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "computer/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/computer/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "computer/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/computer/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "computer/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/computer/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "computer/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/computer/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "computer/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/computer/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "computer/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/computer/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "computer/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/coffee/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "coffee/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/coffee/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "coffee/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/coffee/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "coffee/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/coffee/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "coffee/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/coffee/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "coffee/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/coffee/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "coffee/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/coffee/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "coffee/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/coffee/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "coffee/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/table/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "table/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/table/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "table/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/table/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "table/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/table/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "table/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/table/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "table/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/table/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "table/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/table/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "table/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/table/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "table/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "sofa/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "sofa/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "sofa/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "sofa/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "sofa/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "sofa/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "sofa/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "sofa/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bookshelf/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bookshelf/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bookshelf/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bookshelf/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bookshelf/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bookshelf/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bookshelf/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bookshelf/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bookshelf/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bookshelf/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bookshelf/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bookshelf/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bookshelf/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bookshelf/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bookshelf/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bookshelf/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/whiteboard/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "whiteboard/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/whiteboard/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "whiteboard/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/whiteboard/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "whiteboard/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/whiteboard/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "whiteboard/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/whiteboard/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "whiteboard/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/whiteboard/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "whiteboard/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/whiteboard/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "whiteboard/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/whiteboard/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "whiteboard/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bed/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bed/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bed/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bed/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bed/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bed/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bed/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "bed/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/plant/1x1/0/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "plant/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 1440,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/plant/1x1/0/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "plant/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 1440,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/plant/1x1/90/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "plant/1x1/90/lower",
+      "rect": {
+        "x": 256,
+        "y": 1440,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/plant/1x1/90/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "plant/1x1/90/upper",
+      "rect": {
+        "x": 384,
+        "y": 1440,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/plant/1x1/180/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "plant/1x1/180/lower",
+      "rect": {
+        "x": 512,
+        "y": 1440,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/plant/1x1/180/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "plant/1x1/180/upper",
+      "rect": {
+        "x": 640,
+        "y": 1440,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/plant/1x1/270/lower": {
+      "atlas": "nobis-furniture-0",
+      "frame": "plant/1x1/270/lower",
+      "rect": {
+        "x": 768,
+        "y": 1440,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/plant/1x1/270/upper": {
+      "atlas": "nobis-furniture-0",
+      "frame": "plant/1x1/270/upper",
+      "rect": {
+        "x": 896,
+        "y": 1440,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/partition-y/1x1/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "partition-y/1x1/0/lower",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/partition-y/1x1/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "partition-y/1x1/0/upper",
+      "rect": {
+        "x": 128,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/partition-x/1x1/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "partition-x/1x1/0/lower",
+      "rect": {
+        "x": 256,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/partition-x/1x1/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "partition-x/1x1/0/upper",
+      "rect": {
+        "x": 384,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/arcade/1x1/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "arcade/1x1/0/lower",
+      "rect": {
+        "x": 512,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/arcade/1x1/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "arcade/1x1/0/upper",
+      "rect": {
+        "x": 640,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/arcade/1x1/90/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "arcade/1x1/90/lower",
+      "rect": {
+        "x": 768,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/arcade/1x1/90/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "arcade/1x1/90/upper",
+      "rect": {
+        "x": 896,
+        "y": 0,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/arcade/1x1/180/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "arcade/1x1/180/lower",
+      "rect": {
+        "x": 0,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/arcade/1x1/180/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "arcade/1x1/180/upper",
+      "rect": {
+        "x": 128,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/arcade/1x1/270/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "arcade/1x1/270/lower",
+      "rect": {
+        "x": 256,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/arcade/1x1/270/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "arcade/1x1/270/upper",
+      "rect": {
+        "x": 384,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/2x1/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "desk/2x1/0/lower",
+      "rect": {
+        "x": 512,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/2x1/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "desk/2x1/0/upper",
+      "rect": {
+        "x": 640,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x2/90/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "desk/1x2/90/lower",
+      "rect": {
+        "x": 768,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x2/90/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "desk/1x2/90/upper",
+      "rect": {
+        "x": 896,
+        "y": 160,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/2x1/180/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "desk/2x1/180/lower",
+      "rect": {
+        "x": 0,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/2x1/180/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "desk/2x1/180/upper",
+      "rect": {
+        "x": 128,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x2/270/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "desk/1x2/270/lower",
+      "rect": {
+        "x": 256,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/desk/1x2/270/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "desk/1x2/270/upper",
+      "rect": {
+        "x": 384,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x2/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "bed/1x2/0/lower",
+      "rect": {
+        "x": 512,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x2/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "bed/1x2/0/upper",
+      "rect": {
+        "x": 640,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/2x1/90/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "bed/2x1/90/lower",
+      "rect": {
+        "x": 768,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/2x1/90/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "bed/2x1/90/upper",
+      "rect": {
+        "x": 896,
+        "y": 320,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x2/180/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "bed/1x2/180/lower",
+      "rect": {
+        "x": 0,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/1x2/180/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "bed/1x2/180/upper",
+      "rect": {
+        "x": 128,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/2x1/270/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "bed/2x1/270/lower",
+      "rect": {
+        "x": 256,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/bed/2x1/270/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "bed/2x1/270/upper",
+      "rect": {
+        "x": 384,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/2x1/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "sofa/2x1/0/lower",
+      "rect": {
+        "x": 512,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/2x1/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "sofa/2x1/0/upper",
+      "rect": {
+        "x": 640,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x2/90/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "sofa/1x2/90/lower",
+      "rect": {
+        "x": 768,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x2/90/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "sofa/1x2/90/upper",
+      "rect": {
+        "x": 896,
+        "y": 480,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/2x1/180/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "sofa/2x1/180/lower",
+      "rect": {
+        "x": 0,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/2x1/180/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "sofa/2x1/180/upper",
+      "rect": {
+        "x": 128,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x2/270/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "sofa/1x2/270/lower",
+      "rect": {
+        "x": 256,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/sofa/1x2/270/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "sofa/1x2/270/upper",
+      "rect": {
+        "x": 384,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/lamp/1x1/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "lamp/1x1/0/lower",
+      "rect": {
+        "x": 512,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/lamp/1x1/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "lamp/1x1/0/upper",
+      "rect": {
+        "x": 640,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/lamp/1x1/90/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "lamp/1x1/90/lower",
+      "rect": {
+        "x": 768,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/lamp/1x1/90/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "lamp/1x1/90/upper",
+      "rect": {
+        "x": 896,
+        "y": 640,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/lamp/1x1/180/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "lamp/1x1/180/lower",
+      "rect": {
+        "x": 0,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/lamp/1x1/180/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "lamp/1x1/180/upper",
+      "rect": {
+        "x": 128,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/lamp/1x1/270/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "lamp/1x1/270/lower",
+      "rect": {
+        "x": 256,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/lamp/1x1/270/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "lamp/1x1/270/upper",
+      "rect": {
+        "x": 384,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/rug/2x2/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "rug/2x2/0/lower",
+      "rect": {
+        "x": 512,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/rug/2x2/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "rug/2x2/0/upper",
+      "rect": {
+        "x": 640,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/rug/2x2/90/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "rug/2x2/90/lower",
+      "rect": {
+        "x": 768,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/rug/2x2/90/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "rug/2x2/90/upper",
+      "rect": {
+        "x": 896,
+        "y": 800,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/rug/2x2/180/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "rug/2x2/180/lower",
+      "rect": {
+        "x": 0,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/rug/2x2/180/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "rug/2x2/180/upper",
+      "rect": {
+        "x": 128,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/rug/2x2/270/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "rug/2x2/270/lower",
+      "rect": {
+        "x": 256,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/rug/2x2/270/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "rug/2x2/270/upper",
+      "rect": {
+        "x": 384,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/decoration/1x1/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "decoration/1x1/0/lower",
+      "rect": {
+        "x": 512,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/decoration/1x1/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "decoration/1x1/0/upper",
+      "rect": {
+        "x": 640,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/decoration/1x1/90/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "decoration/1x1/90/lower",
+      "rect": {
+        "x": 768,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/decoration/1x1/90/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "decoration/1x1/90/upper",
+      "rect": {
+        "x": 896,
+        "y": 960,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/decoration/1x1/180/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "decoration/1x1/180/lower",
+      "rect": {
+        "x": 0,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/decoration/1x1/180/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "decoration/1x1/180/upper",
+      "rect": {
+        "x": 128,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/decoration/1x1/270/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "decoration/1x1/270/lower",
+      "rect": {
+        "x": 256,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/decoration/1x1/270/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "decoration/1x1/270/upper",
+      "rect": {
+        "x": 384,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/door/1x1/0/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "door/1x1/0/lower",
+      "rect": {
+        "x": 512,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/door/1x1/0/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "door/1x1/0/upper",
+      "rect": {
+        "x": 640,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/door/1x1/90/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "door/1x1/90/lower",
+      "rect": {
+        "x": 768,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/door/1x1/90/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "door/1x1/90/upper",
+      "rect": {
+        "x": 896,
+        "y": 1120,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/door/1x1/180/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "door/1x1/180/lower",
+      "rect": {
+        "x": 0,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/door/1x1/180/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "door/1x1/180/upper",
+      "rect": {
+        "x": 128,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/door/1x1/270/lower": {
+      "atlas": "nobis-furniture-1",
+      "frame": "door/1x1/270/lower",
+      "rect": {
+        "x": 256,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    },
+    "furniture/door/1x1/270/upper": {
+      "atlas": "nobis-furniture-1",
+      "frame": "door/1x1/270/upper",
+      "rect": {
+        "x": 384,
+        "y": 1280,
+        "w": 128,
+        "h": 160
+      }
+    }
+  },
+  "avatar": {
+    "width": 48,
+    "height": 64,
+    "portrait": {
+      "x": 6,
+      "y": 0,
+      "w": 36,
+      "h": 34
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.90625
+    },
+    "scale": 1.125,
+    "palettes": [
+      "#d2beff",
+      "#b5e5d0",
+      "#ffceaf",
+      "#a9d8ff",
+      "#f4bfe7",
+      "#e5e8ac",
+      "#b7c6f2",
+      "#e5bbbc",
+      "#bbdedc",
+      "#e2c99d",
+      "#c0b1df",
+      "#b2d4ad",
+      "#e6b8d0",
+      "#abc1dc",
+      "#d4d4aa",
+      "#d0b9a6"
+    ],
+    "directions": [
+      "north",
+      "south",
+      "east",
+      "west"
+    ],
+    "animations": {
+      "idle": {
+        "frames": 2,
+        "fps": 1.2
+      },
+      "walking": {
+        "frames": 4,
+        "fps": 8
+      },
+      "sitting": {
+        "frames": 2,
+        "fps": 1.5
+      },
+      "typing": {
+        "frames": 2,
+        "fps": 5
+      }
+    }
+  },
+  "furniture": {
+    "width": 128,
+    "height": 160,
+    "origin": {
+      "x": 0.5,
+      "y": 0.65
+    },
+    "previewBounds": {
+      "desk/1x1/0": {
+        "x": 33,
+        "y": 39,
+        "w": 62,
+        "h": 86
+      },
+      "desk/1x1/90": {
+        "x": 33,
+        "y": 39,
+        "w": 62,
+        "h": 86
+      },
+      "desk/1x1/180": {
+        "x": 33,
+        "y": 39,
+        "w": 62,
+        "h": 86
+      },
+      "desk/1x1/270": {
+        "x": 33,
+        "y": 39,
+        "w": 62,
+        "h": 86
+      },
+      "chair/1x1/0": {
+        "x": 33,
+        "y": 56,
+        "w": 62,
+        "h": 69
+      },
+      "chair/1x1/90": {
+        "x": 33,
+        "y": 56,
+        "w": 62,
+        "h": 69
+      },
+      "chair/1x1/180": {
+        "x": 33,
+        "y": 56,
+        "w": 62,
+        "h": 69
+      },
+      "chair/1x1/270": {
+        "x": 33,
+        "y": 56,
+        "w": 62,
+        "h": 69
+      },
+      "computer/1x1/0": {
+        "x": 33,
+        "y": 40,
+        "w": 62,
+        "h": 85
+      },
+      "computer/1x1/90": {
+        "x": 33,
+        "y": 40,
+        "w": 62,
+        "h": 85
+      },
+      "computer/1x1/180": {
+        "x": 33,
+        "y": 40,
+        "w": 62,
+        "h": 85
+      },
+      "computer/1x1/270": {
+        "x": 33,
+        "y": 40,
+        "w": 62,
+        "h": 85
+      },
+      "coffee/1x1/0": {
+        "x": 33,
+        "y": 40,
+        "w": 62,
+        "h": 85
+      },
+      "coffee/1x1/90": {
+        "x": 33,
+        "y": 40,
+        "w": 62,
+        "h": 85
+      },
+      "coffee/1x1/180": {
+        "x": 33,
+        "y": 40,
+        "w": 62,
+        "h": 85
+      },
+      "coffee/1x1/270": {
+        "x": 33,
+        "y": 40,
+        "w": 62,
+        "h": 85
+      },
+      "table/1x1/0": {
+        "x": 33,
+        "y": 61,
+        "w": 62,
+        "h": 64
+      },
+      "table/1x1/90": {
+        "x": 33,
+        "y": 61,
+        "w": 62,
+        "h": 64
+      },
+      "table/1x1/180": {
+        "x": 33,
+        "y": 61,
+        "w": 62,
+        "h": 64
+      },
+      "table/1x1/270": {
+        "x": 33,
+        "y": 61,
+        "w": 62,
+        "h": 64
+      },
+      "sofa/1x1/0": {
+        "x": 33,
+        "y": 58,
+        "w": 64,
+        "h": 67
+      },
+      "sofa/1x1/90": {
+        "x": 33,
+        "y": 58,
+        "w": 64,
+        "h": 67
+      },
+      "sofa/1x1/180": {
+        "x": 33,
+        "y": 58,
+        "w": 64,
+        "h": 67
+      },
+      "sofa/1x1/270": {
+        "x": 33,
+        "y": 58,
+        "w": 64,
+        "h": 67
+      },
+      "bookshelf/1x1/0": {
+        "x": 33,
+        "y": 26,
+        "w": 62,
+        "h": 99
+      },
+      "bookshelf/1x1/90": {
+        "x": 33,
+        "y": 26,
+        "w": 62,
+        "h": 99
+      },
+      "bookshelf/1x1/180": {
+        "x": 33,
+        "y": 26,
+        "w": 62,
+        "h": 99
+      },
+      "bookshelf/1x1/270": {
+        "x": 33,
+        "y": 26,
+        "w": 62,
+        "h": 99
+      },
+      "whiteboard/1x1/0": {
+        "x": 31,
+        "y": 27,
+        "w": 66,
+        "h": 98
+      },
+      "whiteboard/1x1/90": {
+        "x": 31,
+        "y": 27,
+        "w": 66,
+        "h": 98
+      },
+      "whiteboard/1x1/180": {
+        "x": 31,
+        "y": 27,
+        "w": 66,
+        "h": 98
+      },
+      "whiteboard/1x1/270": {
+        "x": 31,
+        "y": 27,
+        "w": 66,
+        "h": 98
+      },
+      "bed/1x1/0": {
+        "x": 33,
+        "y": 64,
+        "w": 62,
+        "h": 61
+      },
+      "bed/1x1/90": {
+        "x": 33,
+        "y": 64,
+        "w": 62,
+        "h": 61
+      },
+      "bed/1x1/180": {
+        "x": 33,
+        "y": 64,
+        "w": 62,
+        "h": 61
+      },
+      "bed/1x1/270": {
+        "x": 33,
+        "y": 64,
+        "w": 62,
+        "h": 61
+      },
+      "plant/1x1/0": {
+        "x": 33,
+        "y": 23,
+        "w": 62,
+        "h": 102
+      },
+      "plant/1x1/90": {
+        "x": 33,
+        "y": 23,
+        "w": 62,
+        "h": 102
+      },
+      "plant/1x1/180": {
+        "x": 33,
+        "y": 23,
+        "w": 62,
+        "h": 102
+      },
+      "plant/1x1/270": {
+        "x": 33,
+        "y": 23,
+        "w": 62,
+        "h": 102
+      },
+      "partition-y/1x1/0": {
+        "x": 41,
+        "y": 50,
+        "w": 46,
+        "h": 69
+      },
+      "partition-x/1x1/0": {
+        "x": 43,
+        "y": 50,
+        "w": 43,
+        "h": 69
+      },
+      "arcade/1x1/0": {
+        "x": 33,
+        "y": 29,
+        "w": 62,
+        "h": 96
+      },
+      "arcade/1x1/90": {
+        "x": 33,
+        "y": 29,
+        "w": 62,
+        "h": 96
+      },
+      "arcade/1x1/180": {
+        "x": 33,
+        "y": 29,
+        "w": 62,
+        "h": 96
+      },
+      "arcade/1x1/270": {
+        "x": 33,
+        "y": 29,
+        "w": 62,
+        "h": 96
+      },
+      "desk/2x1/0": {
+        "x": 33,
+        "y": 39,
+        "w": 94,
+        "h": 102
+      },
+      "desk/1x2/90": {
+        "x": 1,
+        "y": 39,
+        "w": 94,
+        "h": 102
+      },
+      "desk/2x1/180": {
+        "x": 33,
+        "y": 39,
+        "w": 94,
+        "h": 102
+      },
+      "desk/1x2/270": {
+        "x": 1,
+        "y": 39,
+        "w": 94,
+        "h": 102
+      },
+      "bed/1x2/0": {
+        "x": 1,
+        "y": 64,
+        "w": 94,
+        "h": 77
+      },
+      "bed/2x1/90": {
+        "x": 33,
+        "y": 64,
+        "w": 94,
+        "h": 77
+      },
+      "bed/1x2/180": {
+        "x": 1,
+        "y": 64,
+        "w": 94,
+        "h": 77
+      },
+      "bed/2x1/270": {
+        "x": 33,
+        "y": 64,
+        "w": 94,
+        "h": 77
+      },
+      "sofa/2x1/0": {
+        "x": 33,
+        "y": 58,
+        "w": 95,
+        "h": 83
+      },
+      "sofa/1x2/90": {
+        "x": 1,
+        "y": 58,
+        "w": 96,
+        "h": 83
+      },
+      "sofa/2x1/180": {
+        "x": 33,
+        "y": 58,
+        "w": 95,
+        "h": 83
+      },
+      "sofa/1x2/270": {
+        "x": 1,
+        "y": 58,
+        "w": 96,
+        "h": 83
+      },
+      "lamp/1x1/0": {
+        "x": 33,
+        "y": 33,
+        "w": 62,
+        "h": 92
+      },
+      "lamp/1x1/90": {
+        "x": 33,
+        "y": 33,
+        "w": 62,
+        "h": 92
+      },
+      "lamp/1x1/180": {
+        "x": 33,
+        "y": 33,
+        "w": 62,
+        "h": 92
+      },
+      "lamp/1x1/270": {
+        "x": 33,
+        "y": 33,
+        "w": 62,
+        "h": 92
+      },
+      "rug/2x2/0": {
+        "x": 1,
+        "y": 85,
+        "w": 126,
+        "h": 69
+      },
+      "rug/2x2/90": {
+        "x": 1,
+        "y": 85,
+        "w": 126,
+        "h": 69
+      },
+      "rug/2x2/180": {
+        "x": 1,
+        "y": 85,
+        "w": 126,
+        "h": 69
+      },
+      "rug/2x2/270": {
+        "x": 1,
+        "y": 85,
+        "w": 126,
+        "h": 69
+      },
+      "decoration/1x1/0": {
+        "x": 33,
+        "y": 46,
+        "w": 62,
+        "h": 79
+      },
+      "decoration/1x1/90": {
+        "x": 33,
+        "y": 46,
+        "w": 62,
+        "h": 79
+      },
+      "decoration/1x1/180": {
+        "x": 33,
+        "y": 46,
+        "w": 62,
+        "h": 79
+      },
+      "decoration/1x1/270": {
+        "x": 33,
+        "y": 46,
+        "w": 62,
+        "h": 79
+      },
+      "door/1x1/0": {
+        "x": 35,
+        "y": 34,
+        "w": 58,
+        "h": 91
+      },
+      "door/1x1/90": {
+        "x": 35,
+        "y": 34,
+        "w": 58,
+        "h": 91
+      },
+      "door/1x1/180": {
+        "x": 35,
+        "y": 34,
+        "w": 58,
+        "h": 91
+      },
+      "door/1x1/270": {
+        "x": 35,
+        "y": 34,
+        "w": 58,
+        "h": 91
+      }
+    }
+  },
+  "license": {
+    "origin": "original-code-authored",
+    "source": "infra/visual/build-assets.cjs",
+    "externalArt": false,
+    "policy": "Project-internal artwork; external distribution license is not assigned."
+  }
+}

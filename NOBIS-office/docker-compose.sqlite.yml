@@ -1,0 +1,48 @@
+services:
+  backend:
+    platform: ${DOCKER_PLATFORM:-linux/arm64}
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DEV_AUTH_ENABLED: ${DEV_AUTH_ENABLED:-false}
+      DEV_ADMIN_KEY: ${DEV_ADMIN_KEY:-}
+      HOME_MAX_OCCUPANTS: ${HOME_MAX_OCCUPANTS:-5}
+      MEDIA_ROOT: /app/media
+      SOCIAL_GROUP_MAX_MEMBERS: ${SOCIAL_GROUP_MAX_MEMBERS:-30}
+      CHANNEL_CAPACITY: ${CHANNEL_CAPACITY:-15}
+      DEVNEST_URL: ${DEVNEST_URL:-}
+      DEVNEST_DEV_URL: ${DEVNEST_DEV_URL:-http://127.0.0.1:8001/}
+      DATABASE_PATH: /app/data/nobis.sqlite3
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:8080,http://127.0.0.1:8080}
+    volumes:
+      - nobis-media:/app/media
+      - nobis-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+  frontend:
+    restart: unless-stopped
+    platform: ${DOCKER_PLATFORM:-linux/arm64}
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        VITE_DEVNEST_URL: ${DEVNEST_URL:-}
+    ports:
+      - "${HTTP_BIND:-127.0.0.1}:${HTTP_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+volumes:
+  nobis-media:
+  nobis-data:

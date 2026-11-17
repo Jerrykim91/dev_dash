@@ -1,0 +1,11 @@
+import {createRoot} from 'react-dom/client';
+import App from './App';
+import './design/tokens.css';
+import './style.css';
+import './home.css';
+import './social.css';
+import './phase35.css';
+import './games/arcade.css';
+import './social/social.css';
+import './design/system.css';
+createRoot(document.getElementById('root')!).render(<App/>);

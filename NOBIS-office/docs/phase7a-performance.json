@@ -1,0 +1,105 @@
+{
+  "environment": "macOS Chrome headless / local Vite dev / foreground single avatar",
+  "frameSampleCount": 87,
+  "meanClientFrameMs": 16.666666666666668,
+  "p95ClientFrameMs": 16.799999999999272,
+  "estimatedClientFps": 59.99999999999999,
+  "apiHealthMeanMs": 5.280000001192093,
+  "sceneObjectCount": 217,
+  "visuals": {
+    "version": 1,
+    "queuedAtlases": 3,
+    "failures": [],
+    "declaredPngBytes": 348932,
+    "decodedTextureBytes": 20316160,
+    "maxTextureSize": 2048
+  },
+  "assetRequests": [
+    {
+      "name": "catalog.ts",
+      "bytes": 300,
+      "duration": 0.8999999910593033
+    },
+    {
+      "name": "manifest.json?import",
+      "bytes": 300,
+      "duration": 0.6000000089406967
+    },
+    {
+      "name": "overrides.json?import",
+      "bytes": 300,
+      "duration": 0.7000000029802322
+    },
+    {
+      "name": "ArchitectureVisual.ts",
+      "bytes": 300,
+      "duration": 1.2999999970197678
+    },
+    {
+      "name": "AssetLoader.ts",
+      "bytes": 300,
+      "duration": 2.2999999970197678
+    },
+    {
+      "name": "CharacterVisual.ts",
+      "bytes": 300,
+      "duration": 2.3999999910593033
+    },
+    {
+      "name": "FurnitureVisual.ts",
+      "bytes": 300,
+      "duration": 2.5
+    },
+    {
+      "name": "FloorVisual.ts",
+      "bytes": 300,
+      "duration": 2.5
+    },
+    {
+      "name": "furniture-2c16e38b7b6b.png",
+      "bytes": 300,
+      "duration": 0.9000000059604645
+    },
+    {
+      "name": "furniture-9ba25f6a4f4d.png",
+      "bytes": 300,
+      "duration": 0.7000000029802322
+    },
+    {
+      "name": "avatar-a79c399193b6.png",
+      "bytes": 300,
+      "duration": 0.5
+    },
+    {
+      "name": "avatar-atlas-304c2d739689.json",
+      "bytes": 109414,
+      "duration": 2.6000000089406967
+    },
+    {
+      "name": "avatar-a79c399193b6.png",
+      "bytes": 300,
+      "duration": 2.1000000089406967
+    },
+    {
+      "name": "furniture-2c16e38b7b6b.png",
+      "bytes": 300,
+      "duration": 2.300000011920929
+    },
+    {
+      "name": "furniture-atlas-fe77859b7a02.json",
+      "bytes": 14637,
+      "duration": 2.7999999970197678
+    },
+    {
+      "name": "furniture-atlas-907ae64968ed.json",
+      "bytes": 12431,
+      "duration": 3.1000000089406967
+    },
+    {
+      "name": "furniture-9ba25f6a4f4d.png",
+      "bytes": 300,
+      "duration": 2.5
+    }
+  ],
+  "renderer": 2
+}

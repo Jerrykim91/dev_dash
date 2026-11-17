@@ -1,0 +1,35 @@
+/* Generated from tokens.json by infra/visual/build-assets.cjs. */
+:root{
+ --color-canvas:#171321; --color-canvas-rgb:23 19 33;
+ --color-surface:#211b30; --color-surface-rgb:33 27 48;
+ --color-raised:#2c2440; --color-raised-rgb:44 36 64;
+ --color-soft:#3a2e50; --color-soft-rgb:58 46 80;
+ --color-hover:#4b3a64; --color-hover-rgb:75 58 100;
+ --color-border:#65517e; --color-border-rgb:101 81 126;
+ --color-borderStrong:#977bb5; --color-borderStrong-rgb:151 123 181;
+ --color-text:#f6efdf; --color-text-rgb:246 239 223;
+ --color-muted:#c7b6d5; --color-muted-rgb:199 182 213;
+ --color-subtle:#a18db5; --color-subtle-rgb:161 141 181;
+ --color-accent:#c6a6f1; --color-accent-rgb:198 166 241;
+ --color-accentStrong:#9974d1; --color-accentStrong-rgb:153 116 209;
+ --color-cream:#f4d7a1; --color-cream-rgb:244 215 161;
+ --color-creamDark:#ad865a; --color-creamDark-rgb:173 134 90;
+ --color-ink:#30233d; --color-ink-rgb:48 35 61;
+ --color-success:#a7d6b6; --color-success-rgb:167 214 182;
+ --color-successDark:#386454; --color-successDark-rgb:56 100 84;
+ --color-warning:#edbf80; --color-warning-rgb:237 191 128;
+ --color-error:#f0a0b5; --color-error-rgb:240 160 181;
+ --color-errorDark:#703c55; --color-errorDark-rgb:112 60 85;
+ --color-info:#a7c9e9; --color-info-rgb:167 201 233;
+ --color-infoDark:#3c536e; --color-infoDark-rgb:60 83 110;
+ --font-body:'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, sans-serif;
+ --font-display:ui-monospace, 'SFMono-Regular', Menlo, 'Apple SD Gothic Neo', monospace;
+ --font-size:14px;
+ --font-small:12px;
+ --radius-small:6px;
+ --radius-medium:10px;
+ --radius-large:16px;
+ --motion-fast:120ms;
+ --motion-normal:180ms;
+ --motion-result:350ms;
+}

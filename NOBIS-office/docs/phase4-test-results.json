@@ -1,0 +1,81 @@
+{
+  "phase": 4,
+  "date": "2026-11-06",
+  "server": {
+    "passed": 122,
+    "skipped": 1,
+    "new_game_tests_included": 26,
+    "databases": [
+      "sqlite",
+      "postgresql"
+    ]
+  },
+  "systems": {
+    "passed": 20
+  },
+  "frontend_build": "passed",
+  "browser_full_suite": {
+    "passed": 14
+  },
+  "browser_additional": {
+    "passed": 2,
+    "includes_repeat_mobile": true,
+    "new_unique_case": "Delayed initial channel query cannot overwrite newer WebSocket counts"
+  },
+  "npm_audit_vulnerabilities": 0,
+  "docker_api_play": {
+    "real_time_play": [
+      {
+        "score": 380,
+        "hits": 38,
+        "reward": 30,
+        "balance": 30
+      },
+      {
+        "score": 380,
+        "hits": 38,
+        "reward": 30,
+        "balance": 60
+      }
+    ],
+    "initial_balance": 0,
+    "after_reward_balance": 60,
+    "after_shop_balance": 20,
+    "websocket_via_proxy": "passed",
+    "duplicate_finish": "passed",
+    "history_persistence": "checked",
+    "world_entry": "walked connected A* grid path; no teleport"
+  },
+  "docker_storage": {
+    "docker_pg_dump_restore": "passed",
+    "container_restart": "passed",
+    "container_recreate_named_volume": "passed",
+    "linux_architecture": "aarch64",
+    "data_before_and_after": {
+      "users": 1,
+      "game_sessions": 2,
+      "game_results": 2,
+      "game_rewards": 2,
+      "coin_transactions": 4,
+      "wallet_total": 20,
+      "furniture_instances": 9,
+      "schema": 6
+    },
+    "database_host_port_exposed": false
+  },
+  "docker_production_browser": {
+    "production_login": "passed",
+    "production_debug_handle_exposed": false,
+    "real_browser_play": "passed",
+    "earned_reward": 30,
+    "balance_before": 20,
+    "balance_after_reward": 50,
+    "home_entry": "passed",
+    "home_shop_purchase": "passed",
+    "balance_after_purchase": 10,
+    "browser_errors": []
+  },
+  "live_development": "Existing SQLite database migrated additively to v6; http://127.0.0.1:15173",
+  "raspberry_pi_hardware_tested": false,
+  "screenshots": "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase4_2026-11-06"
+}

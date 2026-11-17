@@ -1,0 +1,43 @@
+# Phase 7-B 생성·수정 파일
+
+- `README.md`
+- `design/rooms/rooms.json`
+- `docs/ASSET_SPEC.md`
+- `docs/asset-licenses.json`
+- `docs/lobby-assets.md`
+- `docs/phase7b-docker-admin.png`
+- `docs/phase7b-docker-gacha.png`
+- `docs/phase7b-docker-office.png`
+- `docs/phase7b-lobby-detail.png`
+- `docs/phase7b-lobby-fallback.png`
+- `docs/phase7b-lobby-mobile.png`
+- `docs/phase7b-lobby-overview.png`
+- `docs/phase7b-results.json`
+- `docs/phase7b-verification.md`
+- `frontend/Dockerfile`
+- `frontend/nginx.conf`
+- `frontend/package.json`
+- `frontend/public/assets/world/lobby/architecture/architecture-4b6fafbfe9c1.png`
+- `frontend/public/assets/world/lobby/architecture/architecture-c994910a823d.json`
+- `frontend/public/assets/world/lobby/effects/README.md`
+- `frontend/public/assets/world/lobby/furniture/README.md`
+- `frontend/public/assets/world/lobby/manifest.json`
+- `frontend/public/assets/world/lobby/tiles/tiles-f0b63aedc9b8.png`
+- `frontend/public/assets/world/lobby/tiles/tiles-f712eef1af92.json`
+- `frontend/src/game/scenes/WorldScene.ts`
+- `frontend/src/game/types.ts`
+- `frontend/src/game/visual/AssetLoader.ts`
+- `frontend/src/game/visual/FloorVisual.ts`
+- `frontend/src/game/visual/FurnitureVisual.ts`
+- `frontend/src/game/visual/LobbyCatalog.ts`
+- `frontend/src/game/visual/LobbyVisual.ts`
+- `frontend/src/game/visual/lobby-manifest.generated.json`
+- `frontend/src/game/visual/visual.test.ts`
+- `infra/visual/build-lobby-assets.cjs`
+- `infra/visual/sync-lobby-manifest.cjs`
+- `shared/maps.json`
+- `shared/rooms.json`
+- `tests/lobby-assets.spec.ts`
+- `tests/phase7.spec.ts`
+
+기존 서버/DB/경제 기능 파일은 변경하지 않았습니다. 실제 이미지와 제한은 lobby-assets.md, 검증은 phase7b-verification.md를 참고하세요.

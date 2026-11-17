@@ -1,0 +1,43 @@
+import {test,expect,type Page} from '../frontend/node_modules/@playwright/test';
+import maps from '../shared/maps.json';
+const world=maps.office;
+async function join(p:Page,name:string){await p.goto('/');await p.getByLabel('개발용 닉네임',{exact:true}).fill(name);await p.getByRole('button',{name:/오피스 입장하기/}).click();await expect(p.locator('.connection')).toContainText('접속');await p.waitForFunction(()=>!!(window as any).__NOBIS_GAME__?.registry.get('world')?.model.worldRevision);}
+async function point(p:Page,t:{x:number;y:number},offset=0){await p.getByRole('button',{name:'월드 전체 보기',exact:true}).click();await p.evaluate(()=>new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r()))));return p.evaluate(({t,offset})=>{const s=(window as any).__NOBIS_GAME__.registry.get('world'),v=s.coords.toWorld(t),c=s.cameras.main,o=c.getWorldPoint(0,0),b=s.game.canvas.getBoundingClientRect();return{x:b.left+(v.x-o.x)*c.zoom,y:b.top+(v.y+offset-o.y)*c.zoom};},{t,offset});}
+async function walk(p:Page,t:{x:number;y:number}){const q=await point(p,t);await p.mouse.click(q.x,q.y);await expect.poll(()=>p.evaluate(t=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return Math.hypot(s.movement.position.x-t.x,s.movement.position.y-t.y);},t),{timeout:45000}).toBeLessThan(.05);}
+
+test('15 real connections walk to 15 separate employee seats and clear presence on disconnect',async({page,context})=>{
+ test.setTimeout(150000);await join(page,'15인좌석검증');const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ const sessions=[];for(let i=1;i<15;i++){const r=await context.request.post('/api/dev-login',{data:{nickname:'직원'+String(i).padStart(2,'0')}});expect(r.ok()).toBe(true);sessions.push(await r.json());}
+ await page.evaluate(({sessions,stations})=>{const w=window as any,s=w.__NOBIS_GAME__.registry.get('world');w.__capacityPeers=[];w.__peerFailures=[];w.__peerSeated=new Set();for(const [i,session]of sessions.entries()){
+  const station=stations[i+1],ws=new WebSocket(`${location.protocol==='https:'?'wss:':'ws:'}//${location.host}/ws`);w.__capacityPeers.push(ws);let timer:ReturnType<typeof setInterval>|undefined;
+  ws.onopen=()=>ws.send(JSON.stringify({token:session.token}));ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.type==='snapshot'){
+   const own=m.players.find((p:any)=>p.id===session.user.id),route=s.paths.find({x:Math.round(own.x),y:Math.round(own.y)},station.approach);if(!route){w.__peerFailures.push('no path');return;}let index=1;
+   timer=setInterval(()=>{if(ws.readyState!==WebSocket.OPEN){clearInterval(timer);return;}if(index<route.length){const p=route[index++];ws.send(JSON.stringify({type:'move',scope:'office',channel_id:'ch1',x:p.x,y:p.y,direction:'south',moving:true}));}else{clearInterval(timer);ws.send(JSON.stringify({type:'interact',object_id:station.chair_id}));}},350);
+  }if(m.type==='correction'||m.type==='error')w.__peerFailures.push(m.type);if(m.type==='action'&&m.player.id===session.user.id&&m.player.action==='sitting')w.__peerSeated.add(session.user.id);};
+ }},{sessions,stations:world.workstations});
+ await expect(page.locator('.connection')).toContainText('15 / 15');await walk(page,world.workstations[0].approach);
+ const chair=world.objects.find(o=>o.id===world.workstations[0].chair_id)!;const q=await point(page,chair,-30);await page.mouse.click(q.x,q.y);await expect.poll(()=>page.evaluate(()=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return s.model.players.find((p:any)=>p.id===s.model.session.user.id).action;})).toBe('sitting');
+ await expect.poll(()=>page.evaluate(()=>(window as any).__peerSeated.size),{timeout:60000}).toBe(14);expect(await page.evaluate(()=>(window as any).__peerFailures)).toEqual([]);
+ const seated=await page.evaluate(()=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return s.model.players.filter((p:any)=>p.action==='sitting').map((p:any)=>p.active_object);});expect(seated).toHaveLength(15);expect(new Set(seated).size).toBe(15);
+ await page.getByRole('button',{name:'월드 전체 보기',exact:true}).click();await page.screenshot({path:'../docs/capacity-world.png',animations:'disabled'});
+ await page.evaluate(()=>{const s=(window as any).__NOBIS_GAME__.registry.get('world'),ps=s.map.workstations.map((p:any)=>s.coords.toWorld(p.approach)),c=s.cameras.main;c.stopFollow();c.setZoom(.65);c.centerOn(ps.reduce((n:number,p:any)=>n+p.x,0)/ps.length,ps.reduce((n:number,p:any)=>n+p.y,0)/ps.length);});await page.screenshot({path:'../docs/capacity-15-seated.png',animations:'disabled'});
+ await page.evaluate(()=>{for(const ws of (window as any).__capacityPeers)ws.close();});await expect(page.locator('.connection')).toContainText('1 / 15');expect(errors).toEqual([]);
+});
+
+test('same-tab server reconnect replaces stale collision map and restores real click movement',async({page})=>{
+ let connects=0;let serverPeer:any;
+ await page.routeWebSocket('**/ws',route=>{connects++;const generation=connects,server=route.connectToServer();serverPeer=server;server.onMessage(message=>{const m=JSON.parse(String(message));if(m.type==='snapshot'&&generation>1)m.world_revision+=':rollout-'+generation;route.send(JSON.stringify(m));});route.onMessage(message=>server.send(message));});
+ await join(page,'재접속이동복구');
+ await page.evaluate(async()=>{const w=window as any,s=w.__NOBIS_GAME__.registry.get('world');w.__beforeRollout=w.__NOBIS_GAME__;const module=await import('/src/game/systems/CollisionSystem.ts' as string);s.map={width:2,height:2,spawn:{x:0,y:0},objects:[]};s.collision=new module.CollisionSystem(s.map);s.paths.collision=s.collision;});
+ expect(await page.evaluate(()=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return s.paths.find(s.startTile(),{x:0,y:0});})).toBeNull();
+ await serverPeer.close({code:1012,reason:'simulated map deployment'});
+ await expect.poll(()=>page.evaluate(()=>(window as any).__NOBIS_GAME__!==(window as any).__beforeRollout),{timeout:10000}).toBe(true);await expect(page.locator('.connection')).toContainText('접속');
+ expect(await page.evaluate(()=>(window as any).__NOBIS_GAME__.registry.get('world').map.version)).toBe(3);
+ await walk(page,{x:world.spawn.x-1,y:world.spawn.y});
+});
+
+test('vacation is a message only and meeting room has 15 usable seats',async({page})=>{
+ await join(page,'휴가메시지');await page.getByLabel('근무 상태',{exact:true}).selectOption('vacation');await page.getByRole('button',{name:'상태 저장',exact:true}).click();await expect.poll(()=>page.evaluate(()=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return s.model.players.find((p:any)=>p.id===s.model.session.user.id).status_text;})).toBe('휴가 중');await walk(page,{x:world.spawn.x-1,y:world.spawn.y});
+ const participant=await page.evaluate(()=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return s.model.players.find((p:any)=>p.id===s.model.session.user.id).participation_mode;});expect(participant).toBe('normal');await page.screenshot({path:'../docs/capacity-vacation-message.png',animations:'disabled'});
+ await walk(page,world.meeting_seats[0].approach);await page.getByRole('button',{name:'캐릭터 추적',exact:true}).click();await page.screenshot({path:'../docs/capacity-meeting.png',animations:'disabled'});
+});

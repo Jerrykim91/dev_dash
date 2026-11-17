@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-06",
+  "schema": 9,
+  "backend_full": {
+    "passed": 190,
+    "skipped": 1,
+    "engines": [
+      "SQLite",
+      "PostgreSQL17"
+    ]
+  },
+  "phase6_server_targeted_passed": 16,
+  "browser_full_passed": 21,
+  "browser_final_phase6_passed": 3,
+  "browser_postgresql_phase6_passed": 3,
+  "game_systems_passed": 20,
+  "typescript_vite_build": "passed",
+  "docker": {
+    "linux_arm64_production": "passed",
+    "v7_to_v9_preservation": "passed",
+    "unchanged_coin_odds": "passed",
+    "coin_gacha_shop_collection": "passed",
+    "websocket_home_visit_chat_acl_kick": "passed",
+    "coop_invite_turn_cancel": "passed",
+    "restart_persistence": "passed",
+    "counts": {
+      "schema": 9,
+      "wallets": 1940,
+      "coin_draws": 5,
+      "visits": 1,
+      "multiplayer": 1,
+      "purchases": 1
+    }
+  },
+  "docker_final_browser": "passed",
+  "privacy": {
+    "docker_private_home_chat_excluded_from_public_admin": true,
+    "native_api_version": "0.6.0",
+    "native_frontend_http": 200
+  },
+  "native_preservation": {
+    "preserved_existing_table_counts": true,
+    "schema": 9,
+    "users": 17,
+    "wallet_total": 9030,
+    "coin_odds_unchanged": true,
+    "devnest_unchanged_files": 123,
+    "native_api_version": "0.6.0"
+  },
+  "limitations": [
+    "single-backend-worker",
+    "physical mobile and Raspberry Pi untested",
+    "long-running 15-user load not tested",
+    "no external SSO or final art",
+    "existing large bundle and Python3.14 upstream warnings"
+  ]
+}

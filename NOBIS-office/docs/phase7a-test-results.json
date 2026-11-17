@@ -1,0 +1,173 @@
+{
+  "phase": "7-A asymmetric world",
+  "date": "2026-11-07",
+  "recoveryCommit": "4af9fc9",
+  "map": {
+    "version": 2,
+    "bounds": [
+      58,
+      54
+    ],
+    "walkableFloorCells": 1150,
+    "freeCellsAfterFurniture": 1116,
+    "areas": 9,
+    "principalZoneIds": 6,
+    "furnitureObjectsAndContractsRetained": 34,
+    "connectionPaths": 13,
+    "doorEdges": 16,
+    "stairEdges": 8,
+    "closedInteriorEdges": 30,
+    "elevations": [
+      0,
+      24,
+      48,
+      72
+    ]
+  },
+  "tests": {
+    "frontendUnit": {
+      "passed": 30,
+      "failed": 0
+    },
+    "browser": {
+      "passed": 27,
+      "failed": 0,
+      "duration": "8.6 minutes",
+      "newPhase7aCases": 3
+    },
+    "backend": {
+      "passed": 192,
+      "failed": 0,
+      "skipped": 1,
+      "databases": [
+        "isolated SQLite",
+        "real isolated PostgreSQL17"
+      ],
+      "skipReason": "PostgreSQL-specific import test on SQLite parameter"
+    },
+    "typescriptViteBuild": true,
+    "worldGeneratorIdempotence": true
+  },
+  "docker": {
+    "productionBrowser": true,
+    "login": true,
+    "canvas": true,
+    "coinOdds": true,
+    "admin": true,
+    "pageErrors": [],
+    "assets": [
+      {
+        "path": "visual/avatar-a79c399193b6.png",
+        "status": 200,
+        "contentType": "image/png",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/avatar-atlas-304c2d739689.json",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/furniture-2c16e38b7b6b.png",
+        "status": 200,
+        "contentType": "image/png",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/furniture-atlas-fe77859b7a02.json",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/furniture-9ba25f6a4f4d.png",
+        "status": 200,
+        "contentType": "image/png",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/furniture-atlas-907ae64968ed.json",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "public, max-age=31536000, immutable"
+      }
+    ],
+    "missingAssetStatus": 404,
+    "architecture": "aarch64",
+    "deployedMapVersion": 2,
+    "deployedFloorCells": 1150,
+    "allThreeServicesHealthy": true,
+    "zoneMasksMatch": true
+  },
+  "preservation": {
+    "devnestUnchangedFiles": 123,
+    "unchangedCoreModulesAndHomeCatalog": [
+      "frontend/src/game/systems/CoordinateSystem.ts",
+      "frontend/src/game/systems/PathfindingSystem.ts",
+      "frontend/src/game/systems/MovementSystem.ts",
+      "frontend/src/game/systems/InteractionSystem.ts",
+      "frontend/src/game/systems/CameraSystem.ts",
+      "frontend/src/game/systems/GestureSystem.ts",
+      "shared/personal-room.json",
+      "shared/furniture-catalog.json"
+    ],
+    "nativeDataUnchanged": true,
+    "tables": {
+      "users": {
+        "count": 19
+      },
+      "user_wallets": {
+        "count": 11,
+        "hash": "0ce780c9889f7dce02b0427e069bfa1217bed6f96c753f07077fabcf9b891c0e"
+      },
+      "furniture_instances": {
+        "count": 88,
+        "hash": "907c003950637f56503c662e0ebe675c24040939555a43bdc6cb0c72d3ee99a7"
+      },
+      "furniture_placements": {
+        "count": 66,
+        "hash": "5f6393835ebacf4059c857aaddd6f4c910bf217a26282d4b34ff5c74bbb57ae4"
+      },
+      "coin_transactions": {
+        "count": 12,
+        "hash": "116404db680d0392d63d51311b2760263ae4f3c3748fa11442d17ae4fe9dfccd"
+      },
+      "gacha_pool_items": {
+        "count": 8,
+        "hash": "926a74c7c37c91d2be758b8b0ff4a445f9c16ddded8ff8e9daa2f0dcb67c2cb5"
+      }
+    }
+  },
+  "performance": {
+    "environment": "macOS Chrome headless / local Vite dev / foreground single avatar",
+    "frameSampleCount": 87,
+    "meanClientFrameMs": 16.666666666666668,
+    "p95ClientFrameMs": 16.799999999999272,
+    "estimatedClientFps": 59.99999999999999,
+    "apiHealthMeanMs": 5.280000001192093,
+    "sceneObjectCount": 217,
+    "visuals": {
+      "version": 1,
+      "queuedAtlases": 3,
+      "failures": [],
+      "declaredPngBytes": 348932,
+      "decodedTextureBytes": 20316160,
+      "maxTextureSize": 2048
+    },
+    "renderer": 2
+  },
+  "cleanup": {
+    "isolatedComposeStopped": true,
+    "isolatedPostgresStopped": true,
+    "volumesPreserved": true,
+    "nativeBackendHealth": 200,
+    "nativeFrontend15173": 200
+  },
+  "limits": [
+    "final pixel artwork deferred by request",
+    "Raspberry Pi physical device and 15-user load not tested",
+    "one surface height per logical tile; overlapping floors require future node/level model",
+    "existing large JS chunk warning remains"
+  ]
+}

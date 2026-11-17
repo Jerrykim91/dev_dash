@@ -1,0 +1,54 @@
+import {resolvePoint} from './world-fixture';
+import {test,expect,type Page} from '../frontend/node_modules/@playwright/test';
+async function ready(p:Page){await expect(p.locator('.connection')).toContainText('접속');await expect.poll(()=>p.evaluate(()=>!!(window as any).__NOBIS_GAME__?.registry.get('world')?.movement)).toBe(true);}
+async function join(p:Page,name:string){await p.goto('/');await p.getByLabel('개발용 닉네임',{exact:true}).fill(name);await p.getByRole('button',{name:'오피스 입장하기'}).click();await ready(p);}
+async function own(p:Page){return p.evaluate(()=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return s.model.players.find((v:any)=>v.id===s.model.session.user.id);});}
+async function at(p:Page,x:number,y:number){({x,y}=await resolvePoint(p,x,y,0));await expect.poll(()=>p.evaluate(({x,y})=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return Math.hypot(s.movement.position.x-x,s.movement.position.y-y);},{x,y}),{timeout:45000}).toBeLessThan(.05);}
+async function settle(p:Page){await p.evaluate(()=>new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r()))));}
+async function screen(p:Page,x:number,y:number,offset=0){({x,y}=await resolvePoint(p,x,y,offset));return p.evaluate(({x,y,offset})=>{const s=(window as any).__NOBIS_GAME__.registry.get('world'),c=s.cameras.main,w=s.coords.toWorld({x,y}),o=c.getWorldPoint(0,0),r=s.game.canvas.getBoundingClientRect();return {x:r.left+(w.x-o.x)*c.zoom,y:r.top+(w.y+offset-o.y)*c.zoom};},{x,y,offset});}
+async function clickWorld(p:Page,x:number,y:number,offset=0){await p.getByRole('button',{name:'월드 전체 보기',exact:true}).click();await settle(p);const point=await screen(p,x,y,offset);await p.mouse.click(point.x,point.y);}
+async function say(p:Page,text:string){await p.getByLabel('채팅 메시지',{exact:true}).fill(text);await p.getByRole('button',{name:'채팅 보내기'}).click();}
+async function saveRefs(p:Page){await p.evaluate(()=>{const w=window as any;w.__originalGame=w.__NOBIS_GAME__;w.__originalScene=w.__NOBIS_GAME__.registry.get('world');w.__originalCanvas=document.querySelector('canvas');});}
+async function sameWorld(p:Page){expect(await p.evaluate(()=>{const w=window as any;return w.__originalGame===w.__NOBIS_GAME__&&w.__originalScene===w.__NOBIS_GAME__.registry.get('world')&&w.__originalCanvas===document.querySelector('canvas')&&w.__NOBIS_GAME__.scene.getScenes(true).length===1;})).toBe(true);}
+
+test('one scene: focus-to-cafe walking, automatic boundary/channel, multiplayer and modes',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:1920,height:1080}}),a=await context.newPage(),b=await context.newPage();const errors:string[]=[];let sockets=0;
+ for(const p of [a,b])p.on('pageerror',e=>errors.push(e.message));a.on('websocket',ws=>{if(new URL(ws.url()).pathname==='/ws')sockets++;});
+ await join(a,'하늘');await join(b,'유진');await expect(a.locator('.connection')).toContainText('2 / 15');await saveRefs(a);
+ await a.getByRole('button',{name:'월드 전체 보기',exact:true}).click();await settle(a);await a.screenshot({path:'../docs/office-world.png'});
+ await clickWorld(a,6,8);await at(a,6,8);expect((await own(a)).zone).toBe('focus');await expect(a.getByRole('tab',{name:'현재 존'})).toHaveAttribute('aria-selected','true');
+ await a.evaluate(()=>{const w=window as any;w.__collisions=[];w.__sample=setInterval(()=>{const s=w.__NOBIS_GAME__.registry.get('world'),p=s.movement.position;if(!s.collision.walkable({x:Math.round(p.x),y:Math.round(p.y)}))w.__collisions.push({...p});},15);});
+ await clickWorld(a,18,8);await at(a,18,8);expect((await own(a)).zone).toBe('cafe');await expect(a.locator('.location-label')).toContainText('카페');await expect(a.locator('.bottom-zone')).toContainText('카페');await sameWorld(a);
+ expect(await a.evaluate(()=>(window as any).__collisions)).toEqual([]);await a.evaluate(()=>clearInterval((window as any).__sample));
+ await expect.poll(()=>b.evaluate(()=>{const s=(window as any).__NOBIS_GAME__.registry.get('world');return [...s.avatars.values()].some((v:any)=>v.player.nickname==='하늘'&&v.player.zone==='cafe'&&Math.abs(v.target.x-s.model.worldZones.find((z:any)=>z.id==='cafe').anchor.x)<.05);})).toBe(true);
+ await say(a,'카페 전용 대화');await expect(a.getByRole('log')).toContainText('카페 전용 대화');await b.getByRole('tab',{name:'현재 존'}).click();await b.waitForTimeout(100);await expect(b.getByRole('log')).not.toContainText('카페 전용 대화');
+ await b.getByRole('tab',{name:'월드',exact:true}).click();await say(b,'다른 존에도 전달되는 월드 채팅');await a.getByRole('tab',{name:'월드',exact:true}).click();await expect(a.getByRole('log')).toContainText('다른 존에도 전달되는 월드 채팅');
+ await clickWorld(b,20,7);await at(b,20,7);expect((await own(b)).zone).toBe('cafe');await expect(b.getByRole('tab',{name:'현재 존'})).toHaveAttribute('aria-selected','true');await say(b,'같은 카페에서 인사');await a.getByRole('tab',{name:'현재 존'}).click();await expect(a.getByRole('log')).toContainText('같은 카페에서 인사');
+ await a.getByLabel('근무 상태',{exact:true}).selectOption('after_work');await a.getByRole('button',{name:'상태 저장'}).click();await expect.poll(async()=>(await own(a)).participation_mode).toBe('spectator');await clickWorld(a,18,10);await a.waitForTimeout(200);await at(a,18,8);
+ await a.getByLabel('근무 상태',{exact:true}).selectOption('vacation');await a.getByRole('button',{name:'상태 저장'}).click();await expect.poll(async()=>(await own(a)).work_status).toBe('vacation');expect((await own(a)).zone).toBe('cafe');
+ await a.getByLabel('근무 상태',{exact:true}).selectOption('working');await a.getByRole('button',{name:'상태 저장'}).click();await expect.poll(async()=>(await own(a)).participation_mode).toBe('normal');
+ const socketCount=sockets;await a.getByRole('button',{name:'채팅 전용 모드',exact:true}).click();await expect(a.locator('canvas')).not.toBeVisible();expect(await a.evaluate(()=>(window as any).__NOBIS_GAME__.loop.running)).toBe(false);
+ await b.getByRole('tab',{name:'월드',exact:true}).click();await say(b,'맵 없이도 연결 유지');await a.getByRole('tab',{name:'월드',exact:true}).click();await expect(a.getByRole('log')).toContainText('맵 없이도 연결 유지');await a.screenshot({path:'../docs/chat-only.png'});
+ await a.getByRole('button',{name:'전체 모드로 돌아가기'}).click();await at(a,18,8);await sameWorld(a);expect(sockets).toBe(socketCount);
+ const before=await own(a);await expect(a.locator('.sidebar .nav-item[title="같은 월드에서 카메라로 둘러보기"]')).toHaveCount(0);await a.getByRole('button',{name:'월드 전체 보기',exact:true}).click();await at(a,before.x,before.y);expect((await own(a)).zone).toBe('cafe');
+ await a.setViewportSize({width:390,height:844});await settle(a);expect(await a.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await a.screenshot({path:'../docs/office-mobile.png',fullPage:true});
+ await a.close();await expect(b.locator('.connection')).toContainText('1 / 15');expect(errors).toEqual([]);await context.close();
+});
+
+test('all six zones and object interactions stay on the same connected world',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await join(page,'월드 탐색');await saveRefs(page);
+ await clickWorld(page,6,5,-35);await expect.poll(async()=>(await own(page)).action,{timeout:30000}).toBe('sitting');
+ await clickWorld(page,16,4,-40);await expect.poll(async()=>(await own(page)).action,{timeout:30000}).toBe('drinking');
+ for(const [id,x,y] of [['focus',6,8],['cafe',18,8],['lounge',30,8],['outside',30,23],['garden',18,23],['meeting',6,23]] as const){await clickWorld(page,x,y);await at(page,x,y);expect((await own(page)).zone).toBe(id);await sameWorld(page);}
+ await clickWorld(page,3,19,-40);await expect(page.getByRole('dialog',{name:'회의 안내 보드'})).toBeVisible({timeout:10000});await page.getByRole('button',{name:'닫기',exact:true}).click();
+ await page.getByRole('button',{name:'작업실 · 대시보드',exact:true}).click();await expect(page.getByRole('dialog',{name:'DevNest 개인 대시보드'})).toBeVisible();await page.getByRole('button',{name:'월드로 돌아가기',exact:true}).click();await sameWorld(page);
+ await page.getByRole('button',{name:'월드 전체 보기',exact:true}).click();await settle(page);await page.screenshot({path:'../docs/office-desktop.png'});expect(errors).toEqual([]);
+});
+
+test('touch input, dashboard settings and private whisper delivery remain available',async({browser})=>{
+ const c=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true}),a=await c.newPage(),b=await c.newPage();await join(a,'모바일');await join(b,'호출대상');
+ await a.getByRole('button',{name:'월드 전체 보기',exact:true}).click();await settle(a);const point=await screen(a,11,15);await a.touchscreen.tap(point.x,point.y);await at(a,11,15);
+ await a.getByRole('button',{name:'사이드바 펼치기'}).click();await a.getByRole('button',{name:'설정',exact:true}).click();await a.getByLabel('DevNest 외부 URL').fill('javascript:alert(1)');await a.getByRole('button',{name:'연결 주소 저장'}).click();await expect(a.getByRole('alert')).toContainText('유효한 http(s)');
+ await a.getByLabel('DevNest 외부 URL').fill('http://127.0.0.1:8000/');await a.getByRole('button',{name:'연결 주소 저장'}).click();await a.getByRole('button',{name:'사이드바 펼치기'}).click();await a.getByRole('button',{name:'작업실 · 대시보드',exact:true}).click();await expect(a.getByRole('link',{name:'DevNest 새 탭에서 열기'})).toHaveAttribute('target','_blank');await a.getByRole('button',{name:'닫기',exact:true}).click();
+ await a.getByRole('tab',{name:'채팅 전용 모드',exact:true}).click();await b.getByRole('tab',{name:'채팅 전용 모드',exact:true}).click();await a.getByRole('tab',{name:'월드',exact:true}).click();await a.getByLabel('채팅 메시지',{exact:true}).fill('@');await a.locator('.mention-suggestions').getByRole('button',{name:/@호출대상/}).click();await a.getByLabel('채팅 메시지',{exact:true}).fill('@호출대상 같이 일해요');await a.getByRole('button',{name:'채팅 보내기'}).click();await b.getByRole('tab',{name:'귓속말',exact:true}).click();await expect(b.getByRole('log')).toContainText('같이 일해요');await expect(a.getByRole('log')).toContainText('같이 일해요');await c.close();
+});

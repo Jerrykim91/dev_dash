@@ -1,0 +1,28 @@
+{
+  "backend": {
+    "passed": 174,
+    "skipped": 1,
+    "databases": [
+      "SQLite",
+      "PostgreSQL17"
+    ]
+  },
+  "chrome_sqlite_passed": 3,
+  "chrome_postgresql_passed": 3,
+  "typescript_build": "passed",
+  "live_data": {
+    "preserved": true,
+    "schema": 8,
+    "counts": {
+      "users": 17,
+      "furniture_instances": 72,
+      "furniture_placements": 54,
+      "user_wallets": 9,
+      "shop_purchases": 0,
+      "coin_transactions": 10,
+      "private_messages": 1,
+      "wallet_total": 9030
+    }
+  },
+  "docker_retested": false
+}

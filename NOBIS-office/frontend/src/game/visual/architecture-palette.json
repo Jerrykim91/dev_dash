@@ -1,0 +1,17 @@
+{
+  "sky": "#29233f",
+  "skyline": "#38334f",
+  "window": "#f2cf99",
+  "masonry": "#745e74",
+  "masonryShade": "#4a3e5d",
+  "rail": "#b89fba",
+  "wood": "#967761",
+  "woodLight": "#d7b896",
+  "leaf": "#718a75",
+  "leafDark": "#445f60",
+  "blossom": "#e2afc2",
+  "blossomLight": "#f7d1d0",
+  "trunk": "#765b69",
+  "light": "#f6d5a2",
+  "glass": "#add5d1"
+}

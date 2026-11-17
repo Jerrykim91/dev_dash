@@ -1,0 +1,28 @@
+from contextlib import ExitStack
+from test_server import client,login,auth,place
+from test_phase2 import until
+from app.world import WORLD,WORLD_REVISION
+
+def test_snapshot_sends_authoritative_world_once_per_connection(client):
+    user=login(client)
+    with client.websocket_connect('/ws') as ws:
+        snap=auth(ws,user)
+        assert snap['world_revision']==WORLD_REVISION
+        assert snap['office_map']['version']==3 and len(snap['office_map']['workstations'])==15
+        ws.send_json({'type':'room_enter'});second=until(ws,'snapshot')
+        assert second['world_revision']==WORLD_REVISION and second['office_map'] is None
+    with client.websocket_connect('/ws') as ws:
+        snap=auth(ws,user);assert snap['office_map']['version']==3
+
+def test_fifteen_users_can_use_distinct_employee_seats_and_disconnect_cleanly(client):
+    import app.main as module
+    users=[login(client,'seat'+str(i)) for i in range(15)]
+    with ExitStack() as stack:
+        sockets=[stack.enter_context(client.websocket_connect('/ws')) for _ in users]
+        for ws,user in zip(sockets,users):auth(ws,user)
+        for ws,user,station in zip(sockets,users,WORLD['workstations']):
+            place(user,**station['approach']);ws.send_json({'type':'interact','object_id':station['chair_id']})
+            player=until(ws,'action')['player'];assert player['action']=='sitting'
+        peers=list(module.hub.peers.values());assert len(peers)==15
+        assert len({p.player['active_object'] for p in peers})==15
+    assert not module.hub.peers

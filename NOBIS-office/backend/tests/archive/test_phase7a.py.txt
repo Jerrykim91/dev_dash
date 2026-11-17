@@ -1,0 +1,27 @@
+from app.world import valid_move,WORLD,FLOOR,BLOCKED,CLOSED,surface_crossing,zone_at,walkable
+
+def test_all_free_tiles_stairs_and_six_zones_connected():
+    start=tuple(WORLD['spawn'].values());seen={start};queue=[start]
+    for p in queue:
+        for n in[(p[0]+1,p[1]),(p[0]-1,p[1]),(p[0],p[1]+1),(p[0],p[1]-1)]:
+            if n in seen or n not in FLOOR or n in BLOCKED or(p,n)in CLOSED or not surface_crossing(p,n,WORLD['surface']):continue
+            seen.add(n);queue.append(n)
+    assert seen==FLOOR-BLOCKED
+    assert {zone_at(*p) for p in seen}=={'office','focus','cafe','meeting','lounge','garden','outside'}
+
+def test_server_rejects_closed_walls_void_and_accepts_real_stairs():
+    for a,b in CLOSED:assert not valid_move('office',a,b,.4)
+    for stair in WORLD['surface']['stairs']:
+        a=tuple(stair['from'].values());b=tuple(stair['to'].values())
+        assert valid_move('office',a,b,.4);assert valid_move('office',b,a,.4)
+    assert not walkable('office',0,0)
+    assert not walkable('office',-1,20)
+
+def test_workstation_and_conference_capacity():
+    plots=set();assert len(WORLD['workstations'])==15 and len(WORLD['meeting_seats'])==15
+    for station in WORLD['workstations']:
+        cells={(p['x'],p['y']) for p in station['plot']};assert len(cells)==9 and not plots&cells;plots|=cells
+        assert walkable('office',**station['approach'])
+    assert len(plots)==135 and len(FLOOR)>=2300
+    assert 'vacation' not in {zone_at(*p) for p in FLOOR}
+    assert all(walkable('office',**s['approach']) for s in WORLD['meeting_seats'])

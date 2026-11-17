@@ -1,0 +1,64 @@
+{
+  "phase": "3.5",
+  "date": "2026-11-06",
+  "server": {
+    "passed": 96,
+    "skipped": 1,
+    "databases": [
+      "sqlite",
+      "postgresql"
+    ],
+    "skip_reason": "PostgreSQL import test is inapplicable to SQLite"
+  },
+  "pure_systems": {
+    "passed": 18
+  },
+  "frontend_build": "passed",
+  "browser_sqlite": {
+    "passed": 11
+  },
+  "browser_postgresql": {
+    "initial_passed": 10,
+    "initial_failed": 1,
+    "targeted_rerun_passed": 1,
+    "failure_reason": "Test read Phaser registry before async connection/game creation; explicit readiness wait added"
+  },
+  "native_database": {
+    "native_postgresql": "17",
+    "database_role": "non-superuser",
+    "restart_persistence": "passed",
+    "dump_restore": "passed",
+    "balance": 960,
+    "table_counts": {
+      "users": 1,
+      "sessions": 1,
+      "user_roles": 1,
+      "furniture_instances": 9,
+      "furniture_placements": 6,
+      "user_wallets": 1,
+      "shop_purchases": 1,
+      "coin_transactions": 2,
+      "admin_audit_logs": 1
+    },
+    "docker_execution": false
+  },
+  "linux_arm64_base_image_manifests": {
+    "library/python:3.12-slim": true,
+    "library/node:22-alpine": true,
+    "library/nginx:1.27-alpine": true,
+    "library/postgres:17-bookworm": true
+  },
+  "docker_engine_execution": "not_available",
+  "devnest_baseline_files": 92,
+  "devnest_changed_files": 0,
+  "screenshots": [
+    "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase3.5_2026-11-06/01_월드_전체.png",
+    "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase3.5_2026-11-06/02_데스크톱.png",
+    "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase3.5_2026-11-06/03_모바일_월드.png",
+    "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase3.5_2026-11-06/04_모바일_채팅.png",
+    "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase3.5_2026-11-06/05_관리자_대시보드.png",
+    "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase3.5_2026-11-06/06_관리자_감사로그.png",
+    "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase3.5_2026-11-06/07_채팅_말풍선.png",
+    "/Users/hyowonkim/Desktop/Demo/Projects/캡처/NOBIS-Office_Phase3.5_2026-11-06/08_개인_집.png"
+  ]
+}

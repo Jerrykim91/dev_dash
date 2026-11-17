@@ -1,0 +1,1 @@
+export function RewardDisplay({amount,balance}:{amount:number;balance:number}){return <div className="game-reward"><strong>+{amount} NOBIS Coin</strong><span>서버 확인 잔액 {balance.toLocaleString()} Coin</span></div>;}

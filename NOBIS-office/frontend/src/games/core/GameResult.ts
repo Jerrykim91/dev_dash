@@ -1,0 +1,3 @@
+export type RewardTier={min_score:number;coins:number};
+export type GameDefinition={game_id:string;name:string;description:string;available:boolean;config?:{duration_ms:number;cells:number;wave_ms:number;score_per_hit:number};reward_policy?:{enabled:boolean;daily_cap:number;rewards:RewardTier[]}};
+export type GameState={session_id:string;game_id:string;status:'active'|'completed'|'cancelled'|'expired';started_at:number;expires_at:number;server_now:number;remaining_ms:number;score:number;hits:number;reward:number;reward_reason:string|null;balance:number;reward_settled:boolean;mole:{cell:number;wave:number;challenge:string;expires_at:number}|null;config:{duration_ms:number;cells:number;wave_ms:number;score_per_hit:number}};

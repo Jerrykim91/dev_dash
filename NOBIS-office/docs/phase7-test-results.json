@@ -1,0 +1,122 @@
+{
+  "phase": 7,
+  "date": "2026-11-06",
+  "frontendUnit": {
+    "passed": 25,
+    "failed": 0
+  },
+  "browser": {
+    "passed": 24,
+    "failed": 0,
+    "elapsed": "5.0 minutes",
+    "viewport": "desktop1440 / mobile390",
+    "newPhase7Cases": 3
+  },
+  "backend": {
+    "passed": 190,
+    "skipped": 1,
+    "failed": 0,
+    "databases": [
+      "isolated SQLite",
+      "real isolated PostgreSQL17"
+    ],
+    "skipReason": "PostgreSQL-specific migration test is skipped for its SQLite parameter"
+  },
+  "build": {
+    "typescript": true,
+    "vite": true,
+    "largeChunkWarning": true
+  },
+  "docker": {
+    "productionBrowser": true,
+    "login": true,
+    "canvas": true,
+    "coinOdds": true,
+    "admin": true,
+    "pageErrors": [],
+    "assets": [
+      {
+        "path": "visual/avatar-a79c399193b6.png",
+        "status": 200,
+        "contentType": "image/png",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/avatar-atlas-304c2d739689.json",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/furniture-2c16e38b7b6b.png",
+        "status": 200,
+        "contentType": "image/png",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/furniture-atlas-fe77859b7a02.json",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/furniture-9ba25f6a4f4d.png",
+        "status": 200,
+        "contentType": "image/png",
+        "cache": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "visual/furniture-atlas-907ae64968ed.json",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "public, max-age=31536000, immutable"
+      }
+    ],
+    "missingAssetStatus": 404,
+    "architecture": "aarch64",
+    "platform": "dedicated Colima ARM64 VM; not Raspberry Pi"
+  },
+  "preservation": {
+    "protectedFiles": {
+      "checked": 51,
+      "changed": []
+    },
+    "devnestFiles": {
+      "checked": 123,
+      "changed": []
+    },
+    "nativeEconomicTablesUnchanged": true
+  },
+  "performance": {
+    "environment": "macOS Chrome headless / local Vite dev / foreground single avatar",
+    "frameSampleCount": 87,
+    "meanClientFrameMs": 16.666666666666668,
+    "p95ClientFrameMs": 16.700000000000728,
+    "estimatedClientFps": 59.99999999999999,
+    "apiHealthMeanMs": 3.5,
+    "sceneObjectCount": 193,
+    "visuals": {
+      "version": 1,
+      "queuedAtlases": 3,
+      "failures": [],
+      "declaredPngBytes": 348932,
+      "decodedTextureBytes": 20316160,
+      "maxTextureSize": 2048
+    },
+    "renderer": 2
+  },
+  "notVerified": [
+    "Raspberry Pi4 physical device",
+    "15 concurrent avatars performance",
+    "optional real image tileset artwork",
+    "final hand-polished artwork",
+    "new server installation and production cutover"
+  ],
+  "cleanup": {
+    "isolatedDockerServicesStopped": true,
+    "volumesPreserved": true,
+    "isolatedNativePostgresStopped": true,
+    "nativeFrontend15173": "HTTP200",
+    "nativeBackend18000Health": "HTTP200"
+  }
+}

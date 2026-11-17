@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "key": "nobis-avatar-0",
+      "image": "visual/avatar-a79c399193b6.png",
+      "data": "visual/avatar-atlas-304c2d739689.json",
+      "width": 1536,
+      "height": 1280,
+      "bytes": 211930,
+      "origin": "Original code-authored Canvas pixel art",
+      "source": "infra/visual/build-assets.cjs",
+      "third_party": false,
+      "license": "Project-internal artwork; external distribution license not assigned."
+    },
+    {
+      "key": "nobis-furniture-0",
+      "image": "visual/furniture-2c16e38b7b6b.png",
+      "data": "visual/furniture-atlas-fe77859b7a02.json",
+      "width": 1024,
+      "height": 1600,
+      "bytes": 63918,
+      "origin": "Original code-authored Canvas pixel art",
+      "source": "infra/visual/build-assets.cjs",
+      "third_party": false,
+      "license": "Project-internal artwork; external distribution license not assigned."
+    },
+    {
+      "key": "nobis-furniture-1",
+      "image": "visual/furniture-9ba25f6a4f4d.png",
+      "data": "visual/furniture-atlas-907ae64968ed.json",
+      "width": 1024,
+      "height": 1440,
+      "bytes": 73084,
+      "origin": "Original code-authored Canvas pixel art",
+      "source": "infra/visual/build-assets.cjs",
+      "third_party": false,
+      "license": "Project-internal artwork; external distribution license not assigned."
+    },
+    {
+      "key": "phase7a-environment-code",
+      "source": "frontend/src/game/visual/ArchitectureVisual.ts",
+      "origin": "Temporary code-authored Phaser structural walls, glass edges, floor risers and actual stair treads; final environment artwork deferred.",
+      "third_party": false,
+      "license": "Project-internal artwork; external distribution license not assigned."
+    },
+    {
+      "key": "nobis-lobby-tiles",
+      "image": "assets/world/lobby/tiles/tiles-f0b63aedc9b8.png",
+      "data": "assets/world/lobby/tiles/tiles-f712eef1af92.json",
+      "width": 128,
+      "height": 32,
+      "bytes": 1388,
+      "origin": "Original code-authored interim Canvas pixel art",
+      "source": "infra/visual/build-lobby-assets.cjs",
+      "third_party": false,
+      "license": "Project-internal artwork; external distribution license not assigned.",
+      "final_art": false
+    },
+    {
+      "key": "nobis-lobby-architecture",
+      "image": "assets/world/lobby/architecture/architecture-4b6fafbfe9c1.png",
+      "data": "assets/world/lobby/architecture/architecture-c994910a823d.json",
+      "width": 512,
+      "height": 800,
+      "bytes": 22480,
+      "origin": "Original code-authored interim Canvas pixel art",
+      "source": "infra/visual/build-lobby-assets.cjs",
+      "third_party": false,
+      "license": "Project-internal artwork; external distribution license not assigned.",
+      "final_art": false
+    }
+  ],
+  "inline_art": [
+    {
+      "source": "frontend/src/design/PixelMark.tsx",
+      "origin": "original inline SVG"
+    },
+    {
+      "source": "frontend/src/design/PixelIcon.tsx",
+      "origin": "original inline SVG"
+    }
+  ],
+  "fonts": {
+    "external_files": [],
+    "usage": "OS/system font fallback; no downloaded fonts"
+  },
+  "reference_images": {
+    "file": "design/reference/office-world-target.png",
+    "usage": "User-provided visual reference only; not included in game textures, cropped into objects, or reused as a background.",
+    "source": "../design/reference/nobis-office-target.png",
+    "distribution": "Reference rights are not asserted as a reusable game asset license."
+  }
+}

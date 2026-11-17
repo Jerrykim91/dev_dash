@@ -1,0 +1,16 @@
+def test_every_walkable_tile_and_zone_connected():
+    from collections import deque
+    assert WORLD['id']=='office-world'
+    origin=(WORLD['spawn']['x'],WORLD['spawn']['y'])
+    seen={origin};queue=deque([origin])
+    while queue:
+        x,y=queue.popleft()
+        for p in [(x+1,y),(x-1,y),(x,y+1),(x,y-1)]:
+            if p not in seen and walkable(None,*p):seen.add(p);queue.append(p)
+    total={(x,y) for x in range(WORLD['width']) for y in range(WORLD['height']) if walkable(None,x,y)}
+    assert seen==total
+    for zone in ZONES:
+        anchor=zone['anchor']
+        assert (anchor['x'],anchor['y']) in seen
+        assert zone_at(anchor['x'],anchor['y'])==zone['id']
+        assert map_for(zone['id']) is WORLD

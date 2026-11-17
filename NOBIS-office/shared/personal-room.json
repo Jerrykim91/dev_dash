@@ -1,0 +1,86 @@
+{
+  "id": "personal-room",
+  "width": 12,
+  "height": 10,
+  "spawn": {
+    "x": 6,
+    "y": 7
+  },
+  "objects": [
+    {
+      "id": "personal-pc",
+      "kind": "computer",
+      "x": 3,
+      "y": 3,
+      "label": "내 작업실 PC",
+      "interaction": {
+        "kind": "dashboard"
+      }
+    },
+    {
+      "id": "personal-chair",
+      "kind": "chair",
+      "x": 5,
+      "y": 3,
+      "label": "작업 의자",
+      "interaction": {
+        "kind": "action",
+        "action": "sitting",
+        "toggle": true,
+        "message": "작업 의자에 앉았어요."
+      }
+    },
+    {
+      "id": "personal-sofa",
+      "kind": "sofa",
+      "x": 8,
+      "y": 3,
+      "label": "개인 소파",
+      "interaction": {
+        "kind": "action",
+        "action": "resting",
+        "toggle": true,
+        "message": "개인 공간에서 쉬고 있어요."
+      }
+    },
+    {
+      "id": "personal-bed",
+      "kind": "bed",
+      "x": 9,
+      "y": 1,
+      "label": "침대",
+      "interaction": {
+        "kind": "action",
+        "action": "resting",
+        "toggle": true,
+        "message": "잠시 쉬어가세요."
+      }
+    },
+    {
+      "id": "personal-bookshelf",
+      "kind": "bookshelf",
+      "x": 9,
+      "y": 7,
+      "label": "오피스 복귀 책장",
+      "interaction": {
+        "kind": "menu",
+        "targets": [
+          "office"
+        ],
+        "personal_exit": true
+      }
+    },
+    {
+      "id": "personal-plant",
+      "kind": "plant",
+      "x": 1,
+      "y": 1,
+      "label": "작업실 화분",
+      "interaction": {
+        "kind": "action",
+        "action": "idle",
+        "message": "나의 작은 작업실이에요."
+      }
+    }
+  ]
+}

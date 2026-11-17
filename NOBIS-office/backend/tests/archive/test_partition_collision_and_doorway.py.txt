@@ -1,0 +1,8 @@
+def test_partition_collision_and_doorway():
+    from app.world import CLOSED,surface_crossing
+    a,b=next(iter(CLOSED))
+    assert not valid_move('office',a,b,.5)
+    stair=WORLD['surface']['stairs'][0];a=tuple(stair['from'].values());b=tuple(stair['to'].values())
+    assert valid_move('office',a,b,.5)
+    assert not valid_move('office',tuple(WORLD['spawn'].values()),(math.inf,13),.1)
+    assert zone_at(11,19.4)=='office' and zone_at(11,19.6)=='cafe'
