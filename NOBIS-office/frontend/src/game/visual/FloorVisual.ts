@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import {isLobby,lobbyFloor} from './LobbyCatalog';
+import {isLobby,lobbyFloor,lobbyFloorKind} from './LobbyCatalog';
 import type {MapData,Zone} from '../types';
 import {CoordinateSystem} from '../systems/CoordinateSystem';
 import {zoneAt} from '../systems/ZoneSystem';
@@ -7,11 +7,13 @@ import tokens from '../../design/tokens.json';
 import {frameAvailable} from './AssetLoader';
 import {manifest,visualLayers} from './catalog';
 const number=(s:string)=>parseInt(s.slice(1),16);
+/** 로비 바닥: 2배 밀도 타일셋(돌 = 업무 바닥, 나무 = 집 바닥)을 우선, 없으면 로비 전용 1배 타일 */
+function lobbyTile(scene:Phaser.Scene,x:number,y:number){const hd=manifest.tilesets[lobbyFloorKind(x,y)==='stone'?'office':'home'];return frameAvailable(scene,hd)?hd:lobbyFloor(x,y);}
 export function drawFloor(scene:Phaser.Scene,map:MapData,zones:Zone[],coords:CoordinateSystem,home:boolean){
  const floor=scene.add.graphics().setDepth(visualLayers.floor),walls=scene.add.graphics().setDepth(visualLayers.wall);const paint=tokens.world as Record<string,string>;
  const tiles=map.walkable_tiles??Array.from({length:map.width*map.height},(_,i)=>({x:i%map.width,y:Math.floor(i/map.width)}));
  for(const {x,y} of tiles){
-  const p=coords.toWorld({x,y}),zone=zoneAt({x,y},zones),id=home?'home':zone.id,tile=isLobby(map)?lobbyFloor(x,y):manifest.tilesets[id];
+  const p=coords.toWorld({x,y}),zone=zoneAt({x,y},zones),id=home?'home':zone.id,tile=isLobby(map)?lobbyTile(scene,x,y):manifest.tilesets[id];
   if(frameAvailable(scene,tile)){scene.add.image(p.x,p.y,tile.atlas,tile.frame).setDisplaySize(coords.tileWidth,coords.tileHeight).setOrigin(.5).setDepth(visualLayers.floor);continue;}
   const c=Phaser.Display.Color.HexStringToColor((id==='outside'?paint.cafe:id==='vacation'?paint.lounge:paint[id])??paint.floor),factor=(x+y)%2?1:.96;
   const points=[{x:p.x,y:p.y-16},{x:p.x+32,y:p.y},{x:p.x,y:p.y+16},{x:p.x-32,y:p.y}];floor.fillStyle(Phaser.Display.Color.GetColor(c.red*factor,c.green*factor,c.blue*factor)).fillPoints(points,true);floor.lineStyle(1,number(tokens.colors.ink),.13).strokePoints(points,true,true);

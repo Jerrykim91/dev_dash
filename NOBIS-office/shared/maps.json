@@ -14,8 +14,8 @@
         "id": "portal-cafe",
         "kind": "door",
         "label": "카페",
-        "x": 3,
-        "y": 4,
+        "x": 4,
+        "y": 1,
         "interaction": {
           "kind": "public_enter",
           "room_type": "cafe"
@@ -27,7 +27,7 @@
         "kind": "door",
         "label": "집중 업무존 · 15석",
         "x": 11,
-        "y": 3,
+        "y": 1,
         "interaction": {
           "kind": "public_enter",
           "room_type": "focus"
@@ -38,8 +38,8 @@
         "id": "portal-lounge",
         "kind": "door",
         "label": "중앙 라운지",
-        "x": 20,
-        "y": 3,
+        "x": 18,
+        "y": 1,
         "interaction": {
           "kind": "public_enter",
           "room_type": "lounge"
@@ -50,8 +50,8 @@
         "id": "portal-garden",
         "kind": "door",
         "label": "옥상 정원 · 휴식",
-        "x": 26,
-        "y": 8,
+        "x": 25,
+        "y": 1,
         "interaction": {
           "kind": "public_enter",
           "room_type": "garden"
@@ -62,8 +62,8 @@
         "id": "portal-terrace",
         "kind": "door",
         "label": "외근 · 테라스",
-        "x": 25,
-        "y": 17,
+        "x": 1,
+        "y": 5,
         "interaction": {
           "kind": "public_enter",
           "room_type": "terrace"
@@ -74,8 +74,8 @@
         "id": "portal-meeting",
         "kind": "door",
         "label": "회의실",
-        "x": 7,
-        "y": 17,
+        "x": 1,
+        "y": 14,
         "interaction": {
           "kind": "meeting_lobby",
           "room_type": "meeting"
@@ -214,7 +214,7 @@
         "id": "lobby-column-east",
         "kind": "plant",
         "x": 28,
-        "y": 12,
+        "y": 1,
         "width": 1,
         "height": 1,
         "label": "로비 기둥",

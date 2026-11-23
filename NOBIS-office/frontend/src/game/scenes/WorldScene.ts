@@ -1,8 +1,8 @@
 import {isLobby,lobbyManifest} from '../visual/LobbyCatalog';
-import {drawLobbyArchitecture} from '../visual/LobbyVisual';
+import {drawLobbyArchitecture,drawLobbyGlow} from '../visual/LobbyVisual';
 import Phaser from 'phaser';
 import {mapForScope} from '../maps';
-import type {MapObject,MapData,Player,Point,Zone} from '../types';
+import type {MapObject,MapData,Player,Point,Seat,Zone} from '../types';
 import type {Model} from '../bridge';
 import {bridge,emit} from '../bridge';
 import {CoordinateSystem} from '../systems/CoordinateSystem';
@@ -18,12 +18,16 @@ import {GestureSystem} from '../systems/GestureSystem';
 import {screenToWorld,worldToScreen,boundScroll,zoomAt,type WorldBounds} from '../systems/CameraSystem';
 import {layoutLabels,type LabelBox} from '../systems/BubbleLayoutSystem';
 import {preloadVisuals} from '../visual/AssetLoader';
-import {createCharacter,animateCharacter} from '../visual/CharacterVisual';
+import {DPR,DEFAULT_VIEW_WORLD_WIDTH,pixelZoom,fitPixelZoom,stepZoom,preferArtAligned,artFilterLinear} from '../systems/DisplayScale';
+import {manifest as visualManifest} from '../visual/catalog';
+import {createCharacter,animateCharacter,characterLayers} from '../visual/CharacterVisual';
 import {furniture,FurnitureVisual,type FurnitureObject} from '../visual/FurnitureVisual';
 import {drawFloor} from '../visual/FloorVisual';
+import {drawWalls,wallTheme} from '../visual/WallVisual';
 import {visualLayers} from '../visual/catalog';
 import design from '../../design/tokens.json';
 
+const SEAT_STANDARD_PX=12; // 앉은 프레임 기준 좌석 높이(docs/visual-standard-v2.md §10)
 type Avatar={labels:Phaser.GameObjects.Container;container:Phaser.GameObjects.Container;sprite:Phaser.GameObjects.Sprite;name:Phaser.GameObjects.Text;bubble:Phaser.GameObjects.Text;chatBubble:Phaser.GameObjects.Text;chatExpires:number;target:Point;ground:Point;player:Player};
 export class WorldScene extends Phaser.Scene {
  model!:Model;
@@ -38,9 +42,10 @@ export class WorldScene extends Phaser.Scene {
  marker!:Phaser.GameObjects.Graphics;
  trail!:Phaser.GameObjects.Graphics;
  lastSend=0;lastPosition='';frozen=false;
- gestures=new GestureSystem();tapTargets=new Map<number,{objectId?:string;playerId?:string}>();
+ gestures=new GestureSystem(8*DPR);wheelAcc=0;pinchAcc=1;textResolution=0;tapTargets=new Map<number,{objectId?:string;playerId?:string}>();
  editing=false;preview?:Phaser.GameObjects.Graphics;ghost?:FurnitureObject;lastHover='';
  cameraMode:'follow'|'overview'|'explore'='follow';
+ afterStand?:()=>void;
  constructor(key:string){super(key);}
  init(data:{model:Model}){
   this.model=data.model;this.map=data.model.scope.startsWith('personal:')?(data.model.homeMap??mapForScope(data.model.scope)):(data.model.officeMap??mapForScope(data.model.scope));this.editing=false;this.roomZones=data.model.scope==='office'&&data.model.worldZones?.length?data.model.worldZones:zonesForScope(data.model.scope);this.objectSprites=new Map();this.avatars=new Map();this.lastSend=0;this.lastPosition='';this.frozen=false;
@@ -69,7 +74,7 @@ export class WorldScene extends Phaser.Scene {
    const gesture=this.gestures.move(pointer.id,{x:pointer.x,y:pointer.y});
    if(gesture){
     this.cameraMode='explore';const c=this.cameras.main;c.stopFollow();
-    if(gesture.kind==='pinch'){const next=zoomAt(c,this.worldBounds(),isLobby(this.map)?Math.max(lobbyManifest.camera.minimumZoom,c.zoom*gesture.scale):c.zoom*gesture.scale,gesture.before,gesture.after);c.setZoom(next.zoom).setScroll(next.scrollX,next.scrollY);}
+    if(gesture.kind==='pinch'){this.pinchAcc*=gesture.scale;let z=c.zoom;if(this.pinchAcc>1.25||this.pinchAcc<.8){z=stepZoom(c.zoom,this.pinchAcc>1?1:-1,this.minZoom(),this.maxZoom());this.pinchAcc=1;}const next=zoomAt(c,this.worldBounds(),z,gesture.before,gesture.after,{min:z,max:z});c.setZoom(next.zoom).setScroll(next.scrollX,next.scrollY);this.syncTextResolution();}
     else {c.scrollX-=gesture.dx/c.zoom;c.scrollY-=gesture.dy/c.zoom;this.clampCamera();}
    }else if(this.editing&&!this.gestures.fingers.size)this.editTile(pointer,true);
   });
@@ -83,16 +88,18 @@ export class WorldScene extends Phaser.Scene {
   const resetGesture=()=>{this.gestures.reset();this.tapTargets.clear();};
   this.input.on('gameout',resetGesture);
   this.input.on('wheel',(pointer:Phaser.Input.Pointer,_objects:unknown,_dx:number,dy:number)=>{
-   if(this.frozen)return;this.cameraMode='explore';const c=this.cameras.main;c.stopFollow();const next=zoomAt(c,this.worldBounds(),isLobby(this.map)?Math.max(lobbyManifest.camera.minimumZoom,c.zoom-dy*.001):c.zoom-dy*.001,{x:pointer.x,y:pointer.y});c.setZoom(next.zoom).setScroll(next.scrollX,next.scrollY);
+   if(this.frozen)return;this.cameraMode='explore';const c=this.cameras.main;c.stopFollow();this.wheelAcc+=dy*DPR;/* 브라우저는 HiDPI에서 휠 이동량을 DPR로 나눠 전달(실측: 2x에서 -120→-60) → CSS 기준으로 정규화 */if(Math.abs(this.wheelAcc)<100)return;const z=stepZoom(c.zoom,this.wheelAcc<0?1:-1,this.minZoom(),this.maxZoom());this.wheelAcc=0;const next=zoomAt(c,this.worldBounds(),z,{x:pointer.x,y:pointer.y},undefined,{min:z,max:z});c.setZoom(next.zoom).setScroll(next.scrollX,next.scrollY);this.syncTextResolution();
   });
   const updateModel=(e:Event)=>{
    const next=(e as CustomEvent<Model>).detail;if(next.scope!==this.model.scope||next.channelId!==this.model.channelId)return;const changed=JSON.stringify(next.homeMap)!==JSON.stringify(this.model.homeMap);this.model=next;
    if(changed&&!this.editing&&next.scope.startsWith('personal:')&&next.homeMap)this.applyMap(next.homeMap);
    this.syncAvatars();this.updatePortalCounts();
    if(!this.model.canMove)this.movement.cancel();
+   const me=this.ownPlayer();if(me?.seat_id&&!this.afterStand){this.movement.cancel();this.movement.position={x:me.x,y:me.y};this.movement.direction=me.direction;}
   };
   const correction=(e:Event)=>{
    const p=(e as CustomEvent<Point&{scope?:string}>).detail;if(p.scope&&p.scope!==this.model.scope)return;this.movement.cancel();this.movement.position={x:p.x,y:p.y};
+   const next=this.afterStand;this.afterStand=undefined;if(next)next();
   };
   const object=(e:Event)=>{const o=this.map.objects.find(o=>o.id===(e as CustomEvent<string>).detail);if(o)this.approach(o);};
   const move=(e:Event)=>this.moveTo((e as CustomEvent<Point>).detail);
@@ -100,7 +107,7 @@ export class WorldScene extends Phaser.Scene {
    this.frozen=(e as CustomEvent<boolean>).detail;
    if(this.frozen){resetGesture();this.movement.cancel();if(this.model.connected&&this.model.players.find(p=>p.id===this.model.session.user.id)?.participation_mode==='normal')this.sendPosition();}
   };
-  const camera=(e:Event)=>{if((e as CustomEvent<string>).detail==='overview'){this.cameraMode='overview';this.fitCamera();}else {this.cameras.main.setZoom(Math.max(this.defaultZoom(),this.cameras.main.zoom));this.followPlayer();}};
+  const camera=(e:Event)=>{if((e as CustomEvent<string>).detail==='overview'){this.cameraMode='overview';this.fitCamera();}else {this.cameras.main.setZoom(Math.max(this.defaultZoom(),this.cameras.main.zoom));this.followPlayer();this.syncTextResolution();}};
   const effect=(e:Event)=>{const data=(e as CustomEvent<{object_id:string;scope:string}>).detail;if(data.scope!==this.model.scope)return;const art=this.objectSprites.get(data.object_id),o=this.map.objects.find(o=>o.id===data.object_id);if(art&&o){const p=this.coords.toWorld(o);this.tweens.killTweensOf(art);art.setPosition(p.x,p.y).setAlpha(1);this.tweens.add({targets:art,x:p.x+7,y:p.y+3,alpha:.7,duration:150,yoyo:true,repeat:1,ease:'Sine.easeInOut'});}};
   const decorate=(e:Event)=>{
    const d=(e as CustomEvent<{active:boolean;map?:MapData;preview?:MapObject;valid?:boolean}>).detail;
@@ -140,7 +147,9 @@ export class WorldScene extends Phaser.Scene {
   for(const label of this.portalLabels.values())label.destroy();this.portalLabels.clear();
   for(const o of this.map.objects){
    const p=this.coords.toWorld(o);
-   const art=furniture(this,o).setPosition(p.x,p.y).setDepth(o.kind==='rug'?visualLayers.rug:this.coords.depth({x:o.x+((o.width??1)-1)/2,y:o.y+((o.height??1)-1)/2}));
+   // 벽에 붙는 문은 벽과 같은 뒤쪽 층(칸 깊이 −2)
+   const art=furniture(this,o,wallTheme(this.map)).setPosition(p.x,p.y).setDepth(o.kind==='rug'?visualLayers.rug:o.kind==='door'&&o.wall_axis?this.coords.depth(o)-1.85:this.coords.depth({x:o.x+((o.width??1)-1)/2,y:o.y+((o.height??1)-1)/2}));
+   if(art instanceof FurnitureVisual)art.sliceByFootprint(o,this.coords);
    this.objectSprites.set(o.id,art);
    if(!o.interaction&&!o.instance_id)continue;
    // Chairs must not capture clicks on the desk behind them through an oversized empty hit box.
@@ -163,22 +172,35 @@ export class WorldScene extends Phaser.Scene {
   if(hover&&key===this.lastHover)return;this.lastHover=key;
   emit(hover?'home-hover':'home-tile',tile);
  }
- drawWorld(){drawFloor(this,this.map,this.roomZones,this.coords,this.model.scope.startsWith('personal:'));if(this.model.scope==='office'&&(!isLobby(this.map)||!drawLobbyArchitecture(this,this.map,this.coords)))drawArchitecture(this,this.map,this.coords);}
+ drawWorld(){drawFloor(this,this.map,this.roomZones,this.coords,this.model.scope.startsWith('personal:'));
+  // 새 벽 그림이 있으면 뒤쪽 벽은 WallVisual, 앞쪽 턱·바닥 두께는 기존 렌더러. 없으면 기존 경로 그대로.
+  if(drawWalls(this,this.map,this.coords)){if(isLobby(this.map))drawLobbyGlow(this,this.map,this.coords);else drawArchitecture(this,this.map,this.coords,{skipBackWalls:true});return;}
+  if(this.model.scope==='office'&&(!isLobby(this.map)||!drawLobbyArchitecture(this,this.map,this.coords)))drawArchitecture(this,this.map,this.coords);}
  worldBounds():WorldBounds{if(this.map.walkable_tiles){const points=this.map.walkable_tiles.map(p=>this.coords.toWorld(p)),xs=points.map(p=>p.x),ys=points.map(p=>p.y),x=Math.min(...xs)-85,y=Math.min(...ys)-110;return{x,y,width:Math.max(...xs)+85-x,height:Math.max(...ys)+85-y};}return{x:-this.map.height*32-80,y:-110,width:(this.map.width+this.map.height)*32+160,height:(this.map.width+this.map.height)*16+220};}
- defaultZoom(){if(isLobby(this.map))return this.scale.width<760?lobbyManifest.camera.mobileZoom:lobbyManifest.camera.desktopZoom;const b=this.worldBounds(),fit=Math.min(this.scale.width/b.width,this.scale.height/b.height,1);return this.scale.width<760?1.05:Math.max(.6,Math.min(1,fit*1.6));}
+ cssWidth(){return this.scale.width/DPR;}
+ /** 기본 배율: 기존 CSS 기준값 × DPR과 '보이는 월드 폭' 기준값 중 큰 쪽을 픽셀 정렬. 4K·레티나에서도 같은 크기감과 선명한 픽셀. */
+ defaultZoom(){const mobile=this.cssWidth()<760;let css:number;if(isLobby(this.map))css=mobile?lobbyManifest.camera.mobileZoom:lobbyManifest.camera.desktopZoom;else{const b=this.worldBounds(),fit=Math.min(this.cssWidth()/b.width,this.scale.height/DPR/b.height,1);css=mobile?1.05:Math.max(.6,Math.min(1,fit*1.6));}return preferArtAligned(pixelZoom(Math.max(css*DPR,mobile?0:this.scale.width/DEFAULT_VIEW_WORLD_WIDTH)));}
+ /** HD 아틀라스 필터: 축소(z<2)는 선형(2×2 평균 = 1배 그림), 그 외는 최근접. 배율이 바뀔 때만 갱신 */
+ artFilterZoom=-1;
+ syncArtFilter(){const z=this.cameras.main.zoom;if(z===this.artFilterZoom)return;this.artFilterZoom=z;const mode=artFilterLinear(z)?Phaser.Textures.FilterMode.LINEAR:Phaser.Textures.FilterMode.NEAREST;for(const a of visualManifest.atlases as {key:string;scale?:number}[])if((a.scale??1)<1&&this.textures.exists(a.key))this.textures.get(a.key).setFilter(mode);this.registry.set('art-filter',{zoom:z,linear:mode===Phaser.Textures.FilterMode.LINEAR});}
+ minZoom(){const b=this.worldBounds();return Math.min(1,fitPixelZoom(Math.min(this.scale.width/b.width,this.scale.height/b.height)));}
+ maxZoom(){return Math.max(2,Math.ceil(1.8*DPR));}
+ /** 월드에 붙은 글자(문 이름 등)는 현재 배율 해상도로 다시 렌더링해 확대해도 선명하게. */
+ syncTextResolution(){const r=Math.min(4,Math.max(1,Math.round(this.cameras.main.zoom)));if(r===this.textResolution)return;this.textResolution=r;for(const o of this.children.list)if(o instanceof Phaser.GameObjects.Text)o.setResolution(r);}
  clampCamera(){const c=this.cameras.main,p=boundScroll(c,this.worldBounds());c.setScroll(p.x,p.y);}
  fitCamera(){
   const c=this.cameras.main,b=this.worldBounds();c.setBounds(b.x,b.y,b.width,b.height);
   const fit=Math.min(this.scale.width/b.width,this.scale.height/b.height,1);
-  if(this.cameraMode==='overview'){c.stopFollow();c.setZoom(fit);c.centerOn(b.x+b.width/2,b.y+b.height/2);}
+  if(this.cameraMode==='overview'){c.stopFollow();c.setZoom(fitPixelZoom(Math.min(this.scale.width/b.width,this.scale.height/b.height)));c.centerOn(b.x+b.width/2,b.y+b.height/2);}
   else if(this.cameraMode==='follow'){c.setZoom(this.defaultZoom());this.followPlayer();}
-  this.clampCamera();
+  this.clampCamera();this.syncTextResolution();
  }
  followPlayer(){this.cameraMode='follow';const own=this.avatars.get(this.model.session.user.id);if(own)this.cameras.main.startFollow(own.container,true,.1,.1);}
  startTile(){return {x:Math.round(this.movement.position.x),y:Math.round(this.movement.position.y)};}
  moveTo(tile:Point){
   if(this.editing)return;
   if(!this.model.canMove||this.frozen){emit('hint','관람 중에는 이동할 수 없어요. 카메라로 월드를 둘러보세요.');return;}
+  if(this.standFirst(()=>this.moveTo(tile)))return;
   this.movement.cancel();
   const path=this.paths.find(this.startTile(),tile)??this.paths.nearestReachable(this.startTile(),tile);
   if(path){this.followPlayer();this.follow(path);emit('hint',this.collision.walkable(tile)?'연결된 월드 안에서 목적지로 걷는 중…':'가장 가까운 이동 가능 위치로 이동해요.');}
@@ -187,10 +209,17 @@ export class WorldScene extends Phaser.Scene {
  approach(o:MapObject){
   if(this.editing)return;
   if(!this.model.canMove||this.frozen){emit('hint','관람 중에는 오브젝트를 사용할 수 없어요.');return;}
-  this.movement.cancel();const path=this.interactions.approach(this.startTile(),o);
+  const me=this.ownPlayer();if(me?.seat_id&&this.map.seats?.find(s=>s.id===me.seat_id&&(s.object_id===o.id||s.work_surface_id===o.id))){emit('interact',o.id);return;}
+  if(this.standFirst(()=>this.approach(o)))return;
+  this.movement.cancel();const taken=new Set(this.model.players.filter(p=>p.id!==this.model.session.user.id&&p.seat_id).map(p=>p.seat_id as string));const path=this.interactions.approach(this.startTile(),o,this.map.seats,taken);
   if(!path){emit('hint','오브젝트에 접근할 수 없어요.');return;}
   this.followPlayer();this.follow(path,()=>{this.sendPosition();emit('interact',o.id);});emit('hint',`${o.label}(으)로 이동 중…`);
  }
+ ownPlayer(){return this.model.players.find(p=>p.id===this.model.session.user.id);}
+ seatDepth(seat:Seat){const o=this.map.objects.find(o=>o.id===seat.object_id);return o?this.coords.depth({x:o.x+((o.width??1)-1)/2,y:o.y+((o.height??1)-1)/2}):this.coords.depth(seat.tile);}
+ seatOf(player:Player){return player.seat_id?this.map.seats?.find(s=>s.id===player.seat_id):undefined;}
+ /** 앉아 있으면 일어서기를 요청하고, 서버가 진입 칸으로 교정해 주면 next를 실행한다. */
+ standFirst(next:()=>void){const me=this.ownPlayer();if(!me?.seat_id||this.afterStand)return !!this.afterStand;this.afterStand=next;emit('stand',null);emit('hint','자리에서 일어나는 중…');return true;}
  sendPosition(){
   const p=this.movement.position;
   this.lastPosition=`${p.x.toFixed(3)},${p.y.toFixed(3)},${this.movement.moving}`;this.lastSend=this.time.now;
@@ -211,7 +240,8 @@ export class WorldScene extends Phaser.Scene {
     const name=this.add.text(0,7,player.nickname,{fontFamily:design.font.display,fontSize:'11px',backgroundColor:design.colors.surface+'e8',padding:{x:5,y:3},color:design.colors.text}).setOrigin(.5,0);
     const bubble=this.add.text(0,-83,'',{fontFamily:design.font.body,fontSize:'10px',backgroundColor:design.colors.text,color:design.colors.ink,padding:{x:8,y:5},wordWrap:{width:140}}).setOrigin(.5,1);
     const chatBubble=this.add.text(0,-118,'',{fontFamily:design.font.body,fontSize:'11px',backgroundColor:design.colors.cream,color:design.colors.ink,padding:{x:9,y:6},wordWrap:{width:160}}).setOrigin(.5,1).setVisible(false);
-    const container=this.add.container(p.x,p.y,[sprite]),labels=this.add.container(0,0,[name,bubble,chatBubble]).setDepth(visualLayers.labels);
+    for(const t of [name,bubble,chatBubble])t.setResolution(DPR);
+    const container=this.add.container(p.x,p.y,[sprite,...characterLayers(sprite)]),labels=this.add.container(0,0,[name,bubble,chatBubble]).setDepth(visualLayers.labels);
     if(player.id!==this.model.session.user.id)sprite.setInteractive(new Phaser.Geom.Rectangle(0,0,sprite.width,sprite.height),Phaser.Geom.Rectangle.Contains).setData('player-id',player.id);
     a={labels,container,sprite,name,bubble,chatBubble,chatExpires:0,target:player,ground:{x:player.x,y:player.y},player};this.avatars.set(player.id,a);
    }
@@ -228,18 +258,20 @@ export class WorldScene extends Phaser.Scene {
    const anchor=worldToScreen(a.container,c),visible=anchor.x>=c.x-20&&anchor.x<=c.x+c.width+20&&anchor.y>=c.y-40&&anchor.y<=c.y+c.height+90;
    a.labels.setVisible(visible);if(!visible)continue;
    const own=id===this.model.session.user.id,head=anchor.y-(a.sprite.displayHeight*a.sprite.originY+4)*c.zoom;
-   const put=(kind:string,text:Phaser.GameObjects.Text,y:number,priority:number)=>{text.setScale(1/c.zoom);const key=id+':'+kind;texts.set(key,text);boxes.push({id:key,x:anchor.x-text.width/2,y,width:text.width,height:text.height,priority});};
-   put('name',a.name,anchor.y+7,0);
-   if(a.bubble.text)put('status',a.bubble,head-a.bubble.height-6,own?4:5);else a.bubble.setVisible(false);
-   if(Date.now()<a.chatExpires)put('chat',a.chatBubble,head-a.bubble.height-a.chatBubble.height-12,own?1:2);else a.chatBubble.setVisible(false);
+   // 이름표는 CSS 크기 고정(장치 픽셀 = CSS × DPR)
+   const put=(kind:string,text:Phaser.GameObjects.Text,y:number,priority:number)=>{text.setScale(DPR/c.zoom);const key=id+':'+kind;texts.set(key,text);boxes.push({id:key,x:anchor.x-text.width*DPR/2,y,width:text.width*DPR,height:text.height*DPR,priority});};
+   put('name',a.name,anchor.y+7*DPR,0);
+   if(a.bubble.text)put('status',a.bubble,head-(a.bubble.height+6)*DPR,own?4:5);else a.bubble.setVisible(false);
+   if(Date.now()<a.chatExpires)put('chat',a.chatBubble,head-(a.bubble.height+a.chatBubble.height+12)*DPR,own?1:2);else a.chatBubble.setVisible(false);
   }
-  const reserved:LabelBox[]=[{id:'zone-ui',x:c.x+8,y:c.y+8,width:145,height:30,priority:0}];
-  for(const box of layoutLabels(boxes,{x:c.x+6,y:c.y+6,width:Math.max(1,c.width-12),height:Math.max(1,c.height-55)},reserved)){
+  const reserved:LabelBox[]=[{id:'zone-ui',x:c.x+8*DPR,y:c.y+8*DPR,width:145*DPR,height:30*DPR,priority:0}];
+  for(const box of layoutLabels(boxes,{x:c.x+6*DPR,y:c.y+6*DPR,width:Math.max(1,c.width-12*DPR),height:Math.max(1,c.height-55*DPR)},reserved)){
    const text=texts.get(box.id)!;text.setVisible(box.visible);if(!box.visible)continue;
    const point=screenToWorld({x:box.x+box.width/2,y:box.id.endsWith(':name')?box.y:box.y+box.height},c);text.setPosition(point.x,point.y);
   }
  }
  update(time:number,delta:number){
+  this.syncArtFilter();
   if(!this.movement||this.frozen)return;
   if(this.model.canMove)this.movement.update(delta/1000);
   for(const [id,a] of this.avatars){
@@ -248,7 +280,11 @@ export class WorldScene extends Phaser.Scene {
    const moving=local?this.movement.moving:Phaser.Math.Distance.Between(a.container.x,a.container.y,world.x,world.y)>1;
    if(local)a.ground={...p};
    else {const t=1-Math.exp(-delta/65);a.ground.x=Phaser.Math.Linear(a.ground.x,p.x,t);a.ground.y=Phaser.Math.Linear(a.ground.y,p.y,t);}
-   const foot=this.coords.toWorld(a.ground);a.container.setPosition(foot.x,foot.y);a.container.setDepth(this.coords.depth(a.ground)+1);
+   const foot=this.coords.toWorld(a.ground);a.container.setPosition(foot.x,foot.y);
+   const seat=this.seatOf(a.player),seated=!!seat&&Math.hypot(a.ground.x-seat.tile.x,a.ground.y-seat.tile.y)<.05;
+   // 깊이 규칙 v2: 앉은 캐릭터 = 앉은 가구의 정렬 기준(footprint 중심) +0.10 → 가구 lower(−0.15)와 upper(+0.20) 사이.
+   // 좌석 칸 기준으로 하면 2칸 소파의 앞쪽(왼쪽) 자리에서 캐릭터가 소파 뒤로 가려진다. 서 있으면 발 칸 +1.
+   a.container.setDepth(seated?this.seatDepth(seat!)+.1:this.coords.depth(a.ground)+1);a.sprite.y=seated?SEAT_STANDARD_PX-seat!.sit_height:0;
    const dir=local?this.movement.direction:a.player.direction;
    animateCharacter(this,a.sprite,a.player,moving,dir);
   }

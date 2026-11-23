@@ -9,8 +9,11 @@ if not SHARED.exists(): SHARED=Path(__file__).resolve().parents[1]/'shared'
 MAPS=json.loads((SHARED/'maps.json').read_text())
 ZONES=json.loads((SHARED/'zones.json').read_text())
 ROOM_DATA=json.loads((SHARED/'rooms.json').read_text())
+from .seats import with_seats
+for _m in ROOM_DATA['maps'].values():with_seats(_m)
 WORLD=ROOM_DATA['maps']['lobby']
 PERSONAL=json.loads((SHARED/'personal-room.json').read_text())
+with_seats(MAPS.get('office'))
 WORLD_REVISION=hashlib.sha256(json.dumps([WORLD,ZONES],sort_keys=True).encode()).hexdigest()[:16]
 PUBLIC_ZONES={z['id'] for z in ZONES}
 BLOCKED={(o['x']+dx,o['y']+dy) for o in WORLD['objects'] if o.get('blocking',True) for dx in range(o.get('width',1)) for dy in range(o.get('height',1))}

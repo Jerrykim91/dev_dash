@@ -1,3 +1,5 @@
+from pathlib import Path
+import json
 import asyncio
 import contextlib
 import time
@@ -24,6 +26,17 @@ class Peer:
         async with self.lock:
             await asyncio.wait_for(self.ws.send_json(data),timeout=3)
 
+from ..world import SHARED
+AVATAR_PARTS=json.loads((SHARED/'avatar-parts.json').read_text())
+
+
+def valid_parts(parts):
+    """옷 갈아입기 값 검증: {'hair','top','bottom'} 모두 목록 안의 id여야 한다. 아니면 None(기본 외형)."""
+    if not isinstance(parts,dict):return None
+    out={k:parts.get(k) for k in ('hair','top','bottom')}
+    return out if all(isinstance(v,str) and v in {o['id'] for o in AVATAR_PARTS[k]} for k,v in out.items()) else None
+
+
 class Hub:
     def __init__(self,repository=None):
         self.repository=repository
@@ -39,6 +52,9 @@ class Hub:
         if color not in colors or color in used: color=next((c for c in colors if c not in used),colors[0])
         self.avatar_colors[uid]=color
         peer.player['avatar']={'id':'placeholder-v1','palette':color}
+        saved=(self.repository.avatar_for(uid).get('parts') if self.repository else '') or ''
+        parts=valid_parts(json.loads(saved)) if saved else None
+        if parts:peer.player['avatar']['parts']=parts
         if self.repository:self.repository.save_avatar(uid,color)
     def can_read(self,peer,channel):
         if channel=='world':return True

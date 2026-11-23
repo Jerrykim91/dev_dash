@@ -99,7 +99,7 @@ class Repository:
                     target=sqlite3.connect(backup35)
                     try:con.backup(target)
                     finally:target.close()
-            for table,column,definition in [('users','account_origin',"TEXT NOT NULL DEFAULT 'legacy'"),('sessions','auth_kind',"TEXT NOT NULL DEFAULT 'dev'"),('users','disabled','INTEGER NOT NULL DEFAULT 0'),('users','password_hash',"TEXT NOT NULL DEFAULT ''"),('zone_presence','world_id',"TEXT NOT NULL DEFAULT 'nobis'"),('zone_presence','channel_id',"TEXT NOT NULL DEFAULT 'ch1'")]:
+            for table,column,definition in [('avatar_profiles','parts',"TEXT NOT NULL DEFAULT ''"),('users','account_origin',"TEXT NOT NULL DEFAULT 'legacy'"),('sessions','auth_kind',"TEXT NOT NULL DEFAULT 'dev'"),('users','disabled','INTEGER NOT NULL DEFAULT 0'),('users','password_hash',"TEXT NOT NULL DEFAULT ''"),('zone_presence','world_id',"TEXT NOT NULL DEFAULT 'nobis'"),('zone_presence','channel_id',"TEXT NOT NULL DEFAULT 'ch1'")]:
                 if column not in {r['name'] for r in con.execute(f'PRAGMA table_info({table})')}:con.execute(f'ALTER TABLE {table} ADD COLUMN {column} {definition}')
             con.executescript('BEGIN IMMEDIATE;\n'+MULTICHANNEL+'\nCOMMIT;')
             con.execute('INSERT OR IGNORE INTO schema_migrations(version) VALUES (5)')
@@ -138,8 +138,11 @@ class Repository:
         with self.connect() as c:return c.execute('SELECT 1 FROM users WHERE id=?',(uid,)).fetchone() is not None
     def avatar_for(self,uid):
         with self.connect() as c:
-            row=c.execute('SELECT avatar_id,palette FROM avatar_profiles WHERE user_id=?',(uid,)).fetchone()
+            row=c.execute('SELECT avatar_id,palette,parts FROM avatar_profiles WHERE user_id=?',(uid,)).fetchone()
         return dict(row) if row else {}
+    def save_avatar_parts(self,uid,parts):
+        """옷 갈아입기(파트 외형). parts는 검증된 dict 또는 None(기본 외형으로)."""
+        with self.connect() as c:c.execute('UPDATE avatar_profiles SET parts=? WHERE user_id=?',(json.dumps(parts,sort_keys=True) if parts else '',uid))
     def save_avatar(self,uid,palette):
         with self.connect() as c:c.execute('UPDATE avatar_profiles SET palette=? WHERE user_id=?',(palette,uid))
     def save_presence(self,p,return_position=None):

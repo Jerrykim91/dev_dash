@@ -27,7 +27,8 @@ from .social import SocialService,SocialError,zone_channel
 from fastapi.responses import JSONResponse
 from .models.contracts import Login, Move, ChatInput, StatusChange, ChannelCreate, PersonalSettings, HomeLayout, ShopPurchase, PasswordLogin, PrivateInput, ChatPreferences
 from .services.work_status import MockWorkStatusProvider, participation_for
-from .websocket.hub import Hub, Peer
+from .websocket.hub import Hub, Peer, valid_parts
+from .seats import SeatRegistry, pick_seat
 from .world import allowed, map_for, valid_move, zones_for, zone_at, walkable, WORLD, WORLD_REVISION
 
 ENV=os.getenv('APP_ENV','development')
@@ -40,6 +41,7 @@ homes=HomeService(repository,1000 if ENV=='development' else 0)
 games=GameService(repository,homes,social)
 work_status_provider=MockWorkStatusProvider(repository)
 hub=Hub(repository)
+SEATS=SeatRegistry(lambda:[q.player for q in hub.peers.values()])
 community=CommunityService(repository,social,hub)
 collectibles=CollectibleService(repository,homes,social)
 hub.profile_filter=community.mask_world
@@ -169,6 +171,13 @@ async def snapshot(peer):
     await peer.send({'type':'snapshot','world_revision':revision,'office_map':office_map,'room_instance_id':room_instance,'room_type':peer.player['room_type'],'room_id':peer.player['room_id'],'room':rooms.info(peer.player),'room_counts':rooms.counts(peer.player['channel_id']),'players':hub.players_for(uid),'zones':rooms.zones(peer.player),'scope_map':current if peer.player['scope'].startswith('personal:') else None,'max_players':social.channel(peer.player['channel_id'])['capacity'],'channels':repository.channels_for(uid),'home_state':homes.state(uid),'world_channels':world_channels_payload(),'world_channel_id':peer.player['channel_id'],'room_settings':repository.settings_for(uid),'dashboard_config':client_config(),'chat_preferences':social.preference(uid),'private_messages':social.private_history(uid),'announcements':social.announcements(peer.player['channel_id'])})
     peer.world_revision_sent=revision
 
+def face_toward(player,obj):
+    """물체 중심을 향한 4방향(+x east, -x west, +y south, -y north). 같으면 기존 방향."""
+    dx=obj['x']+(obj.get('width',1)-1)/2-player['x'];dy=obj['y']+(obj.get('height',1)-1)/2-player['y']
+    if abs(dx)<1e-6 and abs(dy)<1e-6:return player.get('direction','south')
+    return ('east' if dx>0 else 'west') if abs(dx)>=abs(dy) else ('south' if dy>0 else 'north')
+
+
 async def change_public_room(peer,typ,meeting_id=None):
     p=peer.player
     async with hub.lock:
@@ -177,7 +186,7 @@ async def change_public_room(peer,typ,meeting_id=None):
         position=rooms.defs.get(p.get('room_type'),{}).get('lobby_return') if typ=='lobby' else None
         plan=rooms.plan(p,typ,meeting_id,position)
         repository.ensure_channel('zone:'+plan['room_instance_id'] if typ=='meeting' else zone_channel(p['channel_id'],plan['zone']),'zone',rooms.defs[typ]['name'])
-        p.update(**plan,action='idle',active_object=None)
+        p.update(**plan,action='idle',active_object=None,seat_id=None)
         try:persist(peer)
         except repository.errors:
             p.clear();p.update(old);raise
@@ -199,7 +208,7 @@ async def switch_world_channel(peer,cid):
         if cid==p['channel_id']:return
         if sum(other.player['channel_id']==cid and other.player['scope']=='office' for other in hub.peers.values())>=target['capacity']:raise SocialError('대상 채널의 정원이 찼습니다.',409)
         old=p['channel_id']
-        rooms.persist(p);p.update(channel_id=cid);p.update(**rooms.restore(p),world_id='nobis',action='idle',active_object=None)
+        rooms.persist(p);p.update(channel_id=cid);p.update(**rooms.restore(p),world_id='nobis',action='idle',active_object=None,seat_id=None)
         hub.assign_avatar(peer);peer.moved=time.monotonic();peer.move_credit=.35
     await hub.broadcast({'type':'left','id':p['id']},lambda other:other.player['channel_id']==old)
     ensure_instance_chat(cid)
@@ -291,7 +300,7 @@ async def save_home(room_id:str,data:HomeLayout,user=Depends(current_user)):
         if visitor.player['scope']==room_id:
             validate_layout([p.model_dump() for p in data.placements],{i['id']:CATALOG_BY_ID[i['item_id']] for i in homes.state(user['id'])['inventory']},(visitor.player['x'],visitor.player['y']))
     result=homes.save(user['id'],room_id,data.revision,[p.model_dump() for p in data.placements],(peer.player['x'],peer.player['y']))
-    peer.player.update(action='idle',active_object=None)
+    peer.player.update(action='idle',active_object=None,seat_id=None)
     await peer.send({'type':'home_state','state':result})
     await hub.broadcast({'type':'home_layout','scope':room_id,'map':result['map']},lambda p:p.player['scope']==room_id)
     await hub.presence('action',peer)
@@ -310,10 +319,27 @@ def player_map(player):
 async def channel_updates():
     await asyncio.gather(*(p.send({'type':'channels','channels':repository.channels_for(p.player['id'])}) for p in list(hub.peers.values())))
 
+def seat_of(p):
+    return next((s for s in player_map(p).get('seats',[]) if s['id']==p.get('seat_id')),None) if p.get('seat_id') else None
+
 def persist(peer):
-    rooms.normalize(peer.player);rooms.persist(peer.player)
-    repository.save_presence(peer.player,peer.office_return)
+    # 앉아 있으면 좌석(막힌 칸) 대신 진입 칸을 저장 → 재접속 시 의자 옆에서 시작
+    p=peer.player;seat=seat_of(p);saved=(p['x'],p['y'])
+    if seat:p['x'],p['y']=seat['approach']['x'],seat['approach']['y']
+    try:
+        rooms.normalize(p);rooms.persist(p)
+        repository.save_presence(p,peer.office_return)
+    finally:
+        p['x'],p['y']=saved
     peer.persisted=time.monotonic()
+
+async def stand_up(peer):
+    """좌석 해제 → 진입 칸으로 이동 → 클라이언트에 위치 교정 통지."""
+    p=peer.player;seat=seat_of(p)
+    p.update(seat_id=None,action='idle',active_object=None)
+    if seat:p.update(x=seat['approach']['x'],y=seat['approach']['y'])
+    persist(peer);await hub.presence('action',peer)
+    await peer.send({'type':'correction','zone':p['zone'],'scope':p['scope'],'x':p['x'],'y':p['y']})
 
 async def refresh_world():
     for member in list(hub.peers.values()):
@@ -329,7 +355,7 @@ async def change_scope(peer,personal,owner=None):
         rooms.persist(p);peer.office_return={'x':p['x'],'y':p['y']}
         owner_peer=hub.peers.get(owner)
         if owner_peer and owner!=p['id']:p['channel_id']=owner_peer.player['channel_id']
-        p.update(scope='personal:'+owner,zone='personal',**destination,action='idle',active_object=None)
+        p.update(scope='personal:'+owner,zone='personal',**destination,action='idle',active_object=None,seat_id=None)
         integration.mark_home(p['id'],owner);repository.ensure_channel('zone:personal:'+owner,'zone','개인 집')
         if p['id']!=owner:
             with repository.connect() as c:integration.note(c,owner,p['id'],'home_entered','승인한 방문자가 집에 들어왔습니다.',p['id'])
@@ -340,7 +366,7 @@ async def change_scope(peer,personal,owner=None):
             alternatives=[ch for ch in social.channels() if ch['enabled'] and sum(q.player['channel_id']==ch['id'] and q.player['scope']=='office' for q in hub.peers.values())<ch['capacity']]
             if not alternatives:raise CommunityError('복귀할 오피스 채널에 빈자리가 없습니다. 잠시 후 다시 시도하세요.',409)
             p['channel_id']=alternatives[0]['id'];peer.office_return=None
-        p.update(**rooms.restore(p),action='idle',active_object=None);integration.mark_home(p['id'])
+        p.update(**rooms.restore(p),action='idle',active_object=None,seat_id=None);integration.mark_home(p['id'])
     rooms.normalize(p)
     peer.moved=time.monotonic();peer.move_credit=.35;persist(peer)
     await hub.broadcast({'type':'left','id':p['id']},lambda other:other is not peer and same_room(other.player,old))
@@ -384,6 +410,9 @@ async def handle(peer,msg):
     if active_game and kind!='move':await error(peer,'게임을 종료한 뒤 이동하거나 상호작용해 주세요.');return
     if kind=='move':
         data=Move.model_validate(msg)
+        if player.get('seat_id'):
+            if not data.moving and math.hypot(data.x-player['x'],data.y-player['y'])<.01:return
+            await stand_up(peer);return
         before=(player['x'],player['y'])
         elapsed=now-peer.moved
         credit=min(.8,peer.move_credit+elapsed*4.5)
@@ -399,15 +428,27 @@ async def handle(peer,msg):
         if previous_zone!=player['zone'] or now-peer.persisted>=1:persist(peer)
         kind='zone_changed' if previous_zone!=player['zone'] else 'moved'
         await hub.broadcast({'type':kind,'player':player,'from_zone':previous_zone},lambda p:same_room(p.player,player))
+    elif kind=='stand':
+        if player.get('seat_id'):await stand_up(peer)
     elif kind=='travel':
         await error(peer,'별도 맵 이동은 없습니다. 월드 안의 목적지까지 걸어가세요.')
     elif kind=='status':
         data=StatusChange.model_validate(msg)
         work_status_provider.set_test_status(player['id'],data.work_status,data.message)
         player.update(work_status=data.work_status,message=data.message,participation_mode=participation_for(data.work_status))
-        player['action']=data.work_status if data.work_status in ('vacation','after_work') else 'idle'
-        player['active_object']=None
+        if data.work_status in ('vacation','after_work') or not player.get('seat_id'):
+            player['action']=data.work_status if data.work_status in ('vacation','after_work') else 'idle'
+            player['active_object']=None;player['seat_id']=None
         persist(peer)
+        await hub.presence('status',peer)
+    elif kind=='avatar_parts':
+        # 옷 갈아입기: {'parts': {'hair','top','bottom'}} 또는 {'parts': None}(기본 외형으로)
+        raw=msg.get('parts')
+        parts=valid_parts(raw) if raw is not None else None
+        if raw is not None and parts is None:raise SocialError('고를 수 없는 외형입니다.')
+        repository.save_avatar_parts(player['id'],parts)
+        avatar={k:v for k,v in player['avatar'].items() if k!='parts'}
+        player['avatar']=avatar|({'parts':parts} if parts else {})
         await hub.presence('status',peer)
     elif kind=='meeting_enter':
         portal=next(o for o in map_for('office')['objects'] if o['id']=='portal-meeting')
@@ -439,7 +480,11 @@ async def handle(peer,msg):
     elif kind=='interact':
         if player['participation_mode']=='spectator': await error(peer,'관람 중에는 오브젝트를 사용할 수 없어요');return
         obj=next((o for o in player_map(player)['objects'] if o['id']==msg.get('object_id')),None)
-        if not obj or min(math.hypot(player['x']-(obj['x']+dx),player['y']-(obj['y']+dy)) for dx in range(obj.get('width',1)) for dy in range(obj.get('height',1)))>1.15:
+        seat=None
+        if obj and (obj.get('interaction') or {}).get('kind')=='action':
+            seat,why=pick_seat(player_map(player),obj,player,SEATS)
+            if why=='occupied':await error(peer,'다른 사람이 앉아 있어요. 다른 자리를 골라 주세요.');return
+        if not obj or (not seat and min(math.hypot(player['x']-(obj['x']+dx),player['y']-(obj['y']+dy)) for dx in range(obj.get('width',1)) for dy in range(obj.get('height',1)))>1.15):
             await error(peer,'오브젝트 옆으로 먼저 이동해 주세요');return
         interaction=obj.get('interaction')
         if not interaction: await error(peer,'이 오브젝트는 사용할 수 없어요');return
@@ -451,10 +496,19 @@ async def handle(peer,msg):
             await change_scope(peer,False);return
         if interaction['kind']=='action':
             toggle=interaction.get('toggle') and player.get('active_object')==obj['id'] and player['action']==interaction['action']
-            player['action']='idle' if toggle else interaction['action']
-            player['active_object']=None if toggle else obj['id']
-            persist(peer)
-            await hub.presence('action',peer)
+            if toggle and player.get('seat_id'):
+                await stand_up(peer)
+            else:
+                if seat and not toggle:
+                    # 좌석 스냅: 위치 = 좌석 칸, 방향 = 좌석 facing (Habbo: 몸 방향 = 의자 회전)
+                    player.update(x=seat['tile']['x'],y=seat['tile']['y'],direction=seat['facing'],seat_id=seat['id'])
+                elif not toggle:
+                    # 앉을 자리가 없는 물체(의자 없는 책상 등): 선 채로 그 물체를 바라본다
+                    player['direction']=face_toward(player,obj)
+                player['action']='idle' if toggle else interaction['action']
+                player['active_object']=None if toggle else obj['id']
+                persist(peer)
+                await hub.presence('action',peer)
         payload={**interaction,'object_id':obj['id'],'label':obj['label']}
         if interaction['kind']=='action':payload['message']=({'desk':'작업을 종료했어요.','chair':'의자에서 일어났어요.','sofa':'휴식을 마쳤어요.'}.get(obj['kind'],'휴식을 마쳤어요.') if toggle else interaction.get('message','상태를 변경했어요.'))
         if obj['kind']=='bookshelf':
@@ -530,7 +584,7 @@ async def websocket(ws:WebSocket):
         destination=social.location_for(user['id'],selected)
         peer.player.update(x=destination['x'],y=destination['y'],zone=zone_at(destination['x'],destination['y']))
         if saved and saved['channel_id']==selected and (saved['scope']=='office' or saved['scope'].startswith('personal:')) and walkable(saved['scope'],saved['x'],saved['y'],homes.map_for(saved['scope'][9:]) if saved['scope'].startswith('personal:') else None):
-            peer.player.update(scope=saved['scope'],zone=zone_at(saved['x'],saved['y'],saved['scope']),x=saved['x'],y=saved['y'],active_object=None)
+            peer.player.update(scope=saved['scope'],zone=zone_at(saved['x'],saved['y'],saved['scope']),x=saved['x'],y=saved['y'],active_object=None,seat_id=None)
             if saved['return_x'] is not None:peer.office_return={'x':saved['return_x'],'y':saved['return_y']}
         if peer.player['scope'].startswith('personal:'):
             try:integration.may_enter(user['id'],peer.player['scope'][9:])

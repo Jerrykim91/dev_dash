@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "notes": "가구 종류·크기별 논리 정의(docs/visual-standard-v2.md §2.5~2.6). 키 = '<kind>/<W>x<H>'(회전 0 기준 크기). 좌석 tile은 회전 0 기준 footprint 내부 오프셋, facing은 앉은 사람이 보는 방향. 회전: 90 = 0의 좌우 반전(WxH 교환), 180 = 반대 뷰, 270 = 180의 반전.",
+  "standardSitHeightPx": 12,
+  "kinds": {
+    "chair/1x1": {"rotationScheme": "4-way-mirror", "seats": [{"tile": [0, 0], "facing": "north", "sitHeight": 12}]},
+    "sofa/2x1": {"rotationScheme": "4-way-mirror", "seats": [{"tile": [0, 0], "facing": "south", "sitHeight": 11}, {"tile": [1, 0], "facing": "south", "sitHeight": 11}]},
+    "sofa/1x1": {"rotationScheme": "4-way-mirror", "displayName": "armchair", "seats": [{"tile": [0, 0], "facing": "south", "sitHeight": 11}]},
+    "desk/2x1": {"rotationScheme": "4-way-mirror", "workSurface": {"edge": "+y", "slotTile": [1, 0]}}
+  }
+}

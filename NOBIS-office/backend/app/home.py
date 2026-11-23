@@ -97,7 +97,9 @@ class HomeService:
             w,h=item['size']['width'],item['size']['height']
             if p['rotation'] in (90,270):w,h=h,w
             objects.append({'id':p['instance_id'],'instance_id':p['instance_id'],'kind':item['asset_key'],'label':item['name'],'x':p['grid_x'],'y':p['grid_y'],'width':w,'height':h,'rotation':p['rotation'],'blocking':item['blocking'],'interaction':interaction(item['category'])})
-        return {**copy.deepcopy(PERSONAL),'objects':objects+[EXIT]}
+        from .seats import with_seats
+        m={**copy.deepcopy(PERSONAL),'objects':objects+[EXIT]};m.pop('seats',None)
+        return with_seats(m)
     def map_for(self,uid):
         if uid not in self.maps:self.maps[uid]=self.state(uid)['map']
         return self.maps[uid]

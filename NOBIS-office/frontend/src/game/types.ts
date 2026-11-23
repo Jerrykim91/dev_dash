@@ -4,15 +4,18 @@ export type WorkStatus = 'before_work'|'working'|'meeting'|'focusing'|'break'|'o
 export type PresenceState = 'online'|'offline'|'away'|'private';
 export type ParticipationMode = 'normal'|'spectator';
 export type AvatarAction = 'idle'|'walking'|'sitting'|'typing'|'chatting'|'working'|'meeting'|'away'|'vacation'|'after_work'|'resting'|'drinking';
-export type Avatar = {id:string;palette:string};
+/** 옷 갈아입기(파트 외형). 없으면 팔레트로 고른 완성 캐릭터(외형 16칸) */
+export type AvatarParts = {hair:string;top:string;bottom:string};
+export type Avatar = {id:string;palette:string;parts?:AvatarParts};
 export type User = {id:string;nickname:string;role:'user'|'moderator'|'admin'|'super_admin';work_status:WorkStatus|null;message:string};
-export type Player = User & Point & {room_type?:string;room_id?:string;room_instance_id?:string;profile_location_visible?:boolean;minigame?:{session_id:string;game_id:string}|null;direction:Direction;zone:string;scope:string;world_id?:string;channel_id?:string;active_object?:string|null;status_text?:string;presence:PresenceState;participation_mode:ParticipationMode;action:AvatarAction;avatar:Avatar};
+export type Player = User & Point & {room_type?:string;room_id?:string;room_instance_id?:string;profile_location_visible?:boolean;minigame?:{session_id:string;game_id:string}|null;direction:Direction;zone:string;scope:string;world_id?:string;channel_id?:string;active_object?:string|null;seat_id?:string|null;status_text?:string;presence:PresenceState;participation_mode:ParticipationMode;action:AvatarAction;avatar:Avatar};
 export type Interaction = {kind:'action'|'menu'|'dashboard'|'channel'|'home_exit'|'arcade'|'public_enter'|'public_exit'|'meeting_lobby';room_type?:string;channel_kind?:'cafe'|'meeting';personal_entry?:boolean;personal_exit?:boolean;toggle?:boolean;action?:AvatarAction;message?:string;targets?:string[];label?:string};
-export interface InteractableObject extends Point {id:string;kind:string;label:string;visual_asset?:string;axis?:'x'|'y';instance_id?:string;width?:number;height?:number;blocking?:boolean;rotation?:number;placeholder?:boolean;interaction?:Interaction}
+export interface InteractableObject extends Point {id:string;kind:string;wall_axis?:'x'|'y'|null;label:string;visual_asset?:string;axis?:'x'|'y';instance_id?:string;width?:number;height?:number;blocking?:boolean;rotation?:number;placeholder?:boolean;interaction?:Interaction}
 export type MapObject = InteractableObject;
 export type SurfaceSpec = {regions:{id:string;tiles:{x:number;y:number;width:number;height:number};elevation:number;cells?:Point[]}[];stairs:{id:string;from:Point;to:Point}[]};
 export type Workstation={id:string;desk_id:string;chair_id:string;plot:Point[];approach:Point};
-export type MapData = {workstations?:Workstation[];meeting_seats?:{chair_id:string;approach:Point}[];visualAreas?:{id:string;name:string;anchor:Point}[];id?:string;version?:number;walkable_tiles?:Point[];closed_edges?:[Point,Point][];surface?:SurfaceSpec;width:number;height:number;spawn:Point;exit?:Point;objects:MapObject[]};
+export type Seat = {id:string;object_id:string;tile:Point;facing:Direction;sit_height:number;approach:Point;work_surface_id?:string|null};
+export type MapData = {seats?:Seat[];workstations?:Workstation[];meeting_seats?:{chair_id:string;approach:Point}[];visualAreas?:{id:string;name:string;anchor:Point}[];id?:string;version?:number;walkable_tiles?:Point[];closed_edges?:[Point,Point][];surface?:SurfaceSpec;width:number;height:number;spawn:Point;exit?:Point;objects:MapObject[]};
 export type Zone = {cells?:Point[];id:string;name:string;map_id:string;private:boolean;tiles:{x:number;y:number;width:number;height:number}|null;anchor:Point;floor:string;accent:string;chat_bubbles_allowed?:boolean};
 export type ChatChannel = {id:string;kind:'world'|'zone'|'private_cafe'|'meeting'|'announcement';name:string;meeting_id?:string};
 export type Chat = {id:string;user_id:string;nickname:string;text:string;time:string;channel:string;mentions:string[];message_type?:'world'|'channel'|'zone'|'private'|'announcement';recipient_id?:string;recipient_nickname?:string;delivery?:'stored'|'delivered'};

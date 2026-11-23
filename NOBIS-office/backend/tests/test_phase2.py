@@ -39,12 +39,18 @@ def test_private_cafe_invite_accept_history_leave_and_no_leak(client):
         assert client.get(f'/api/channels/{cid}/messages',headers=headers(b)).status_code==403
         wb.send_json({'type':'chat','channel':cid,'text':'revoked'});assert until(wb,'error')['type']=='error'
 
+def meeting_door_front():
+    # 회의실 문 바로 앞 칸(문 위치는 rooms.json이 정한다: 로비 뒤쪽 벽에 붙는 문)
+    from app.world import MAPS
+    o=next(o for o in MAPS['office']['objects'] if o['id']=='portal-meeting')
+    return (o['x']+1,o['y']) if o.get('wall_axis')=='x' else (o['x'],o['y']+1)
+
 def test_meeting_attendance_end_and_archived_records(client):
     a,b=login(client,'Organizer'),login(client,'Attendee')
     with client.websocket_connect('/ws') as wa,client.websocket_connect('/ws') as wb:
         auth(wa,a);auth(wb,b);drain(wa)
         wa.send_json({'type':'channel_create','kind':'meeting','name':'Wrong position'});assert until(wa,'error')['type']=='error'
-        place(a,7,18,'lobby');wa.send_json({'type':'channel_create','kind':'meeting','name':'Weekly review'})
+        place(a,*meeting_door_front(),'lobby');wa.send_json({'type':'channel_create','kind':'meeting','name':'Weekly review'})
         cid=until(wa,'channel_created')['channel_id'];assert client.get('/api/channels',headers=headers(a)).json()[0]['meeting_id'].startswith('meeting:')
         wa.send_json({'type':'channel_invite','channel_id':cid,'user_id':b['user']['id']});until(wb,'notification');until(wb,'channels')
         wb.send_json({'type':'channel_accept','channel_id':cid});until(wb,'channel_accepted');drain(wa)
@@ -58,7 +64,9 @@ def test_toggle_interactions_and_status_bubbles(client):
     with client.websocket_connect('/ws') as ws:
         auth(ws,u);cx,cy,scope=near_object('chair');place(u,cx,cy,scope);ws.send_json({'type':'interact','object_id':'chair'})
         p=until(ws,'action')['player'];assert p['action']=='sitting' and p['status_text']=='앉아서 쉬는 중';until(ws,'interaction')
-        ws.send_json({'type':'move','scope':'office','zone':'focus','x':cx,'y':cy,'direction':'south','moving':False});assert until(ws,'moved')['player']['action']=='sitting'
+        # 좌석 규칙(visual-standard-v2 §7.2): 의자 칸으로 스냅·의자 방향. 앉은 자리 그대로의 위치 보고는 무시되고 앉은 상태 유지
+        assert p['seat_id']=='chair#0' and p['direction']=='north'
+        ws.send_json({'type':'move','scope':'office','zone':'focus','x':p['x'],'y':p['y'],'direction':'north','moving':False});drain(ws)
         ws.send_json({'type':'interact','object_id':'chair'});assert until(ws,'action')['player']['action']=='idle';until(ws,'interaction')
         for object_id,action in [('desk-0','working'),('coffee','drinking'),('sofa-0','resting')]:
             place(u,*near_object(object_id));ws.send_json({'type':'interact','object_id':object_id});assert until(ws,'action')['player']['action']==action;until(ws,'interaction')

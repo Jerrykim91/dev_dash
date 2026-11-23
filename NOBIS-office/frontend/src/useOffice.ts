@@ -69,11 +69,12 @@ export function useOffice(session:Session) {
   connect();
   const position=(e:Event)=>send({type:'move',...(e as CustomEvent).detail});
   const interaction=(e:Event)=>send({type:'interact',object_id:(e as CustomEvent).detail});
-  bridge.addEventListener('position',position);bridge.addEventListener('interact',interaction);
+  const stand=()=>send({type:'stand'});
+  bridge.addEventListener('position',position);bridge.addEventListener('interact',interaction);bridge.addEventListener('stand',stand);
   const heartbeat=setInterval(()=>send({type:'ping'}),20000);
   const visibility=()=>send({type:'presence',presence:document.hidden?'away':'online'});
   document.addEventListener('visibilitychange',visibility);
-  return()=>{active=false;reconnect.current=()=>{};clearTimeout(retry);clearInterval(heartbeat);bridge.removeEventListener('position',position);bridge.removeEventListener('interact',interaction);document.removeEventListener('visibilitychange',visibility);const ws=socket.current;socket.current=null;if(ws?.readyState===WebSocket.CONNECTING)ws.addEventListener('open',()=>ws.close(),{once:true});else ws?.close();};
+  return()=>{active=false;reconnect.current=()=>{};clearTimeout(retry);clearInterval(heartbeat);bridge.removeEventListener('position',position);bridge.removeEventListener('interact',interaction);bridge.removeEventListener('stand',stand);document.removeEventListener('visibilitychange',visibility);const ws=socket.current;socket.current=null;if(ws?.readyState===WebSocket.CONNECTING)ws.addEventListener('open',()=>ws.close(),{once:true});else ws?.close();};
  },[session,send]);
  return send;
 }

@@ -19,3 +19,5 @@ body{background:var(--color-canvas)}button,input,select,textarea{font-family:var
 .chat-message.mine p{color:var(--color-text)}
 
 .room-loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--color-muted);background:var(--color-surface);z-index:2;pointer-events:none;font-size:12px}
+
+.wardrobe{border:1px solid var(--color-border);border-radius:var(--radius-small);margin:10px 0 0;font-size:12px}.wardrobe>summary{cursor:pointer;padding:6px 10px;color:var(--color-muted)}.wardrobe-body{display:grid;gap:6px;padding:4px 10px 10px}.wardrobe-field{display:grid;grid-template-columns:32px 1fr;align-items:center;gap:8px;margin:0}.wardrobe-field>span{color:var(--color-muted)}.wardrobe-field select{width:100%;min-height:0;padding:3px 6px;margin:0}.wardrobe-reset{justify-self:end;font-size:12px;padding:3px 10px}

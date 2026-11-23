@@ -89,3 +89,17 @@ test('arcade out-of-order poll responses cannot restore consumed targets or comp
 test('arcade timer uses monotonic elapsed time and one pointer action at a time',()=>{
  const game=new WhackAMoleGame();game.sync(30000,100);assert.equal(game.remaining(10100),20000);assert.equal(game.remaining(50000),0);assert(game.allowInput(1000));assert(!game.allowInput(1001));assert(game.allowInput(1100));
 });
+
+import {pixelZoom,fitPixelZoom,stepZoom,zoomLevels,devicePixelRatioOf,preferArtAligned,artFilterLinear} from './DisplayScale';
+test('HiDPI: camera zoom snaps to pixel-aligned levels and DPR is clamped',()=>{
+ assert.equal(devicePixelRatioOf({devicePixelRatio:2}),2);assert.equal(devicePixelRatioOf({devicePixelRatio:5}),3);assert.equal(devicePixelRatioOf({}),1);
+ assert.deepEqual([.85,1.7,2.4,.6,.3].map(pixelZoom),[1,2,2,1/2,1/3]);
+ assert.deepEqual([2.9,1.2,.7,.26].map(fitPixelZoom),[2,1,1/2,1/4]);
+ assert.deepEqual(zoomLevels(.5,4),[1/2,1,2,3,4]);
+ assert.equal(stepZoom(2,1,.5,4),3);assert.equal(stepZoom(2,-1,.5,4),1);assert.equal(stepZoom(4,1,.5,4),4);assert.equal(stepZoom(.5,-1,.5,4),.5);
+ for(const z of zoomLevels(1/4,6))assert(Number.isInteger(z)||Number.isInteger(1/z));
+});
+test('HD art: default zoom lands on whole device pixels per art pixel and minification filters linearly',()=>{
+ assert.deepEqual([1,2,3,4,5,1/2].map(preferArtAligned),[1,2,4,4,6,1/2]);
+ assert.deepEqual([1/2,1,2,3].map(artFilterLinear),[true,true,false,false]);
+});

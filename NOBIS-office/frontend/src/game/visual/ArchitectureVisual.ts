@@ -7,7 +7,7 @@ import {visualLayers} from './catalog';
 const color=(s:string)=>parseInt(s.slice(1),16);
 const key=(p:Point)=>`${p.x},${p.y}`;
 /** Temporary structural renderer. Every opening and stair corresponds to navigation data. */
-export function drawArchitecture(scene:Phaser.Scene,map:MapData,coords:CoordinateSystem){
+export function drawArchitecture(scene:Phaser.Scene,map:MapData,coords:CoordinateSystem,opts:{skipBackWalls?:boolean}={}){
  const surface=new SurfaceSystem(map),floor=new Set(map.walkable_tiles?.map(key)),closed=new Set((map.closed_edges??[]).flatMap(([a,b])=>[key(a)+'>'+key(b),key(b)+'>'+key(a)]));
  const batches=new Map<number,Phaser.GameObjects.Graphics>();
  const batch=(depth:number)=>{let g=batches.get(depth);if(!g){g=scene.add.graphics().setDepth(depth);batches.set(depth,g);}return g;};
@@ -15,7 +15,9 @@ export function drawArchitecture(scene:Phaser.Scene,map:MapData,coords:Coordinat
   const p=coords.toWorld(tile);
   for(const [dx,dy,a,b]of [[1,0,{x:p.x+32,y:p.y},{x:p.x,y:p.y+16}],[0,1,{x:p.x-32,y:p.y},{x:p.x,y:p.y+16}],[-1,0,{x:p.x,y:p.y-16},{x:p.x-32,y:p.y}],[0,-1,{x:p.x,y:p.y-16},{x:p.x+32,y:p.y}]] as [number,number,Point,Point][]){
    const n={x:tile.x+dx,y:tile.y+dy},boundary=!floor.has(key(n)),blocked=closed.has(key(tile)+'>'+key(n));
-   if(!boundary&&!blocked)continue;if(blocked&&(dx<0||dy<0))continue;
+   if(!boundary&&!blocked)continue
+   if(blocked&&(dx<0||dy<0))continue;
+   if(opts.skipBackWalls&&boundary&&(dx<0||dy<0))continue; // 뒤쪽 벽은 WallVisual이 그림
    const g=batch(coords.depth(tile)-.25),height=blocked?24:17;
    g.fillStyle(color(blocked?palette.glass:palette.masonryShade),blocked?.34:.9).fillPoints([a,b,{x:b.x,y:b.y-height},{x:a.x,y:a.y-height}],true);
    g.lineStyle(2,color(palette.rail),.9).lineBetween(a.x,a.y-height,b.x,b.y-height);

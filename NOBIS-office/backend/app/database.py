@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS sessions(token_hash TEXT PRIMARY KEY,user_id TEXT NOT
 def initialize_postgres(repo,runtime_cleanup):
     with repo.connect() as c:
         c.execute('BEGIN IMMEDIATE');c.executescript(BASE);c.executescript(PHASE2);c.executescript(PHASE3)
-        for table,column,definition in [('zone_presence','world_id',"TEXT NOT NULL DEFAULT 'nobis'"),('zone_presence','channel_id',"TEXT NOT NULL DEFAULT 'ch1'"),('users','account_origin',"TEXT NOT NULL DEFAULT 'legacy'")]:
+        for table,column,definition in [('avatar_profiles','parts',"TEXT NOT NULL DEFAULT ''"),('zone_presence','world_id',"TEXT NOT NULL DEFAULT 'nobis'"),('zone_presence','channel_id',"TEXT NOT NULL DEFAULT 'ch1'"),('users','account_origin',"TEXT NOT NULL DEFAULT 'legacy'")]:
             c.execute(f'ALTER TABLE {table} ADD COLUMN IF NOT EXISTS {column} {definition}')
         c.executescript(MULTICHANNEL)
         for table in ('coin_transactions','announcements','user_reports'):c.execute(f'ALTER TABLE {table} ADD COLUMN IF NOT EXISTS _rowid BIGSERIAL')
