@@ -1,0 +1,112 @@
+{
+ "styleRef": "template/style-ref.png",
+ "rawDir": "raw",
+ "common": {
+  "part": "Use case: stylized-concept\nAsset type: character sprite SHEET for a 2:1 isometric pixel-art office game (paper-doll part system): 10 animation frames of ONE character in a fixed 5x2 grid\nStyle/medium: crisp pixel art in the style of Image 2 (style only, do not copy its characters): clean chunky pixels, one-art-pixel dark plum outline, 3-tone cel shading per material, cozy pastel palette, no dithering, no gradients, no blur; chibi proportions exactly as the mannequins\nLighting: soft light from DIRECTLY ABOVE; the two visible side faces share the SAME mid tone. No cast shadows.\nComposition/framing: exactly one painted figure over each grey mannequin of Image 1: same size, same foot position, same pose, same facing; keep the 5x2 grid, the spacing and every figure position EXACTLY. The tiny box on a head marks where the face points; do not draw it as an object.\nBackground: fully transparent background (alpha). If transparency is impossible, use a perfectly flat solid #00ff00 background.\nAvoid: chairs, desks, props, text, numbers, frame borders, ground, shadows, extra figures",
+  "parthead": "Use case: stylized-concept\nAsset type: character sprite SHEET for a 2:1 isometric pixel-art office game (paper-doll part system): 8 head sprites (4 hairstyles x 2 views) in a fixed 4x2 grid\nStyle/medium: crisp pixel art in the style of Image 2 (style only, do not copy its characters): clean chunky pixels, one-art-pixel dark plum outline, 3-tone cel shading per material, cozy pastel palette, no dithering, no gradients, no blur; chibi proportions exactly as the mannequins\nLighting: soft light from DIRECTLY ABOVE; the two visible side faces share the SAME mid tone. No cast shadows.\nBackground: fully transparent background (alpha). If transparency is impossible, use a perfectly flat solid #00ff00 background.\nAvoid: bodies, necks, props, text, numbers, frame borders, ground, shadows, extra figures"
+ },
+ "labels": {
+  "top": {
+   "cardigan": "라벤더 가디건",
+   "hoodie": "네이비 후드티"
+  },
+  "bottom": {
+   "chino": "베이지 치노",
+   "skirt": "네이비 플리츠 치마"
+  },
+  "hair": {
+   "0": "짧은 갈색 머리",
+   "1": "갈색 포니테일",
+   "2": "검은 단발+안경",
+   "3": "주황 웨이브 단발"
+  }
+ },
+ "assets": [
+  {
+   "id": "base_south",
+   "type": "part",
+   "guide": "template/body_south.png",
+   "size": "1536x1024",
+   "subject": "BASE BODY for a paper-doll system, the SAME plain mannequin-like person in all 10 frames: light peach skin; a completely BALD smooth round head with NO hair and NO face features (a separate head sprite will cover it); a plain tight light-grey long-sleeve base shirt; plain tight mid-grey leggings to the ankles; simple dark-brown shoes. Nothing else. every figure faces the LOWER-LEFT (front three-quarter view). Frames left to right, top row then bottom row: 1-2 standing idle, 3-6 walking (both legs attached at the hips, swinging from the hip joint), 7-8 seated idle in the air at chair height with hands on the thighs, 9-10 seated typing with forearms forward."
+  },
+  {
+   "id": "base_north",
+   "type": "part",
+   "guide": "template/body_north.png",
+   "size": "1536x1024",
+   "subject": "BASE BODY for a paper-doll system, the SAME plain mannequin-like person in all 10 frames: light peach skin; a completely BALD smooth round head with NO hair and NO face features (a separate head sprite will cover it); a plain tight light-grey long-sleeve base shirt; plain tight mid-grey leggings to the ankles; simple dark-brown shoes. Nothing else. every figure faces away toward the UPPER-RIGHT (back three-quarter view). Frames left to right, top row then bottom row: 1-2 standing idle, 3-6 walking (both legs attached at the hips, swinging from the hip joint), 7-8 seated idle in the air at chair height with hands on the thighs, 9-10 seated typing with forearms forward."
+  },
+  {
+   "id": "top-cardigan_south",
+   "type": "part",
+   "guide": "work/base_south.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: a sheet of 10 frames of the SAME base character on a transparent background. Edit Image 1: paint ONLY the described garment onto every figure, fitted naturally to each pose; keep EVERYTHING else exactly as in Image 1: the bald head, skin, hands, the other clothes, shoes, every pose and position, the grid and the transparent background. Image 2 is a STYLE REFERENCE ONLY.",
+   "subject": "TOP GARMENT ONLY: a soft lavender cardigan worn open over a white collared shirt, long sleeves to the wrists. Paint it over the grey base shirt only; do not change the legs, shoes or head. every figure faces the LOWER-LEFT (front three-quarter view)."
+  },
+  {
+   "id": "top-hoodie_south",
+   "type": "part",
+   "guide": "work/base_south.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: a sheet of 10 frames of the SAME base character on a transparent background. Edit Image 1: paint ONLY the described garment onto every figure, fitted naturally to each pose; keep EVERYTHING else exactly as in Image 1: the bald head, skin, hands, the other clothes, shoes, every pose and position, the grid and the transparent background. Image 2 is a STYLE REFERENCE ONLY.",
+   "subject": "TOP GARMENT ONLY: a navy blue pullover hoodie with white drawstrings and a front pocket, long sleeves to the wrists. Paint it over the grey base shirt only; do not change the legs, shoes or head. every figure faces the LOWER-LEFT (front three-quarter view)."
+  },
+  {
+   "id": "bottom-chino_south",
+   "type": "part",
+   "guide": "work/base_south.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: a sheet of 10 frames of the SAME base character on a transparent background. Edit Image 1: paint ONLY the described garment onto every figure, fitted naturally to each pose; keep EVERYTHING else exactly as in Image 1: the bald head, skin, hands, the other clothes, shoes, every pose and position, the grid and the transparent background. Image 2 is a STYLE REFERENCE ONLY.",
+   "subject": "BOTTOM GARMENT ONLY: beige chino trousers to the ankles (replace the grey leggings). Do not change the shirt, arms, hands or head. every figure faces the LOWER-LEFT (front three-quarter view)."
+  },
+  {
+   "id": "bottom-skirt_south",
+   "type": "part",
+   "guide": "work/base_south.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: a sheet of 10 frames of the SAME base character on a transparent background. Edit Image 1: paint ONLY the described garment onto every figure, fitted naturally to each pose; keep EVERYTHING else exactly as in Image 1: the bald head, skin, hands, the other clothes, shoes, every pose and position, the grid and the transparent background. Image 2 is a STYLE REFERENCE ONLY.",
+   "subject": "BOTTOM GARMENT ONLY: a navy pleated knee-length skirt with black tights below it (replace the grey leggings). Do not change the shirt, arms, hands or head. every figure faces the LOWER-LEFT (front three-quarter view)."
+  },
+  {
+   "id": "top-cardigan_north",
+   "type": "part",
+   "guide": "work/base_north.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: a sheet of 10 frames of the SAME base character on a transparent background. Edit Image 1: paint ONLY the described garment onto every figure, fitted naturally to each pose; keep EVERYTHING else exactly as in Image 1: the bald head, skin, hands, the other clothes, shoes, every pose and position, the grid and the transparent background. Image 2 is a STYLE REFERENCE ONLY.",
+   "subject": "TOP GARMENT ONLY: a soft lavender cardigan worn open over a white collared shirt, long sleeves to the wrists. Paint it over the grey base shirt only; do not change the legs, shoes or head. every figure faces away toward the UPPER-RIGHT (back three-quarter view)."
+  },
+  {
+   "id": "top-hoodie_north",
+   "type": "part",
+   "guide": "work/base_north.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: a sheet of 10 frames of the SAME base character on a transparent background. Edit Image 1: paint ONLY the described garment onto every figure, fitted naturally to each pose; keep EVERYTHING else exactly as in Image 1: the bald head, skin, hands, the other clothes, shoes, every pose and position, the grid and the transparent background. Image 2 is a STYLE REFERENCE ONLY.",
+   "subject": "TOP GARMENT ONLY: a navy blue pullover hoodie with white drawstrings and a front pocket, long sleeves to the wrists. Paint it over the grey base shirt only; do not change the legs, shoes or head. every figure faces away toward the UPPER-RIGHT (back three-quarter view)."
+  },
+  {
+   "id": "bottom-chino_north",
+   "type": "part",
+   "guide": "work/base_north.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: a sheet of 10 frames of the SAME base character on a transparent background. Edit Image 1: paint ONLY the described garment onto every figure, fitted naturally to each pose; keep EVERYTHING else exactly as in Image 1: the bald head, skin, hands, the other clothes, shoes, every pose and position, the grid and the transparent background. Image 2 is a STYLE REFERENCE ONLY.",
+   "subject": "BOTTOM GARMENT ONLY: beige chino trousers to the ankles (replace the grey leggings). Do not change the shirt, arms, hands or head. every figure faces away toward the UPPER-RIGHT (back three-quarter view)."
+  },
+  {
+   "id": "bottom-skirt_north",
+   "type": "part",
+   "guide": "work/base_north.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: a sheet of 10 frames of the SAME base character on a transparent background. Edit Image 1: paint ONLY the described garment onto every figure, fitted naturally to each pose; keep EVERYTHING else exactly as in Image 1: the bald head, skin, hands, the other clothes, shoes, every pose and position, the grid and the transparent background. Image 2 is a STYLE REFERENCE ONLY.",
+   "subject": "BOTTOM GARMENT ONLY: a navy pleated knee-length skirt with black tights below it (replace the grey leggings). Do not change the shirt, arms, hands or head. every figure faces away toward the UPPER-RIGHT (back three-quarter view)."
+  },
+  {
+   "id": "heads",
+   "type": "parthead",
+   "guide": "template/heads.png",
+   "size": "1536x1024",
+   "roles": "Image 1 is the EDIT TARGET: 8 grey head spheres in a 4x2 grid on a transparent background (a tiny box marks where the face points; do not draw it). Edit Image 1: paint a chibi head (face and hair) over each sphere at EXACTLY the same size and position; hair may extend at most 10% beyond the sphere outline; no neck, no body, no shoulders. Image 2 is a STYLE REFERENCE ONLY (match its skin tone, outline and face style).",
+   "subject": "4 hairstyles, each painted twice side by side: odd columns = front three-quarter view facing the LOWER-LEFT with the face visible (simple dark eyes, tiny mouth, light peach skin); even columns = back three-quarter view facing away to the UPPER-RIGHT (back of the head, no face). Row 1, columns 1-2: short tousled brown hair. Row 1, columns 3-4: long brown hair in a low ponytail with side-swept bangs. Row 2, columns 1-2: black bowl-cut hair with thin round glasses (glasses only on the front view). Row 2, columns 3-4: wavy shoulder-length orange-brown bob."
+  }
+ ]
+}

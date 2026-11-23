@@ -1,0 +1,6 @@
+# 옷 갈아입기 파트: 생성 원본(raw)·정합 중간 산출물(work)·비교 시트(out)는 로컬 보관(make_spec.py·process.py로 재생성).
+# 템플릿·명세·스크립트와 내보낸 HD 파트 프레임(export, 아틀라스를 다시 묶을 때의 원본)은 보관.
+/raw/
+/work/
+/out/
+__pycache__/

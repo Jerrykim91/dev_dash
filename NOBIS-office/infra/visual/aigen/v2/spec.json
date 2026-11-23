@@ -1,0 +1,3080 @@
+{
+ "styleRef": "../refs/style-office.png",
+ "rawDir": "raw",
+ "common": {
+  "gprop": "Use case: stylized-concept\nAsset type: furniture sprite for a 2:1 isometric pixel-art office game; it will be downscaled exactly 8x to final pixel art\nStyle/medium: crisp pixel art in the style of Image 2 (style only, do not copy its content): clean chunky pixels, one-art-pixel dark plum outline, 3-tone cel shading per material, cozy pastel palette, no dithering, no gradients, no blur\nLighting: soft light from DIRECTLY ABOVE. Top faces are the brightest; the two visible side faces share the SAME mid tone (symmetric shading, because the sprite will also be used horizontally mirrored). No cast shadows.\nBackground: fully transparent background (alpha). If transparency is impossible, use a perfectly flat solid {key} background.\nAvoid: floor, ground plane, grid, shadows on the ground, text, letters, numbers, logos, people, extra objects, any change of camera angle",
+  "gclip": "Use case: stylized-concept\nAsset type: character animation strip for a 2:1 isometric pixel-art office game; every figure will be downscaled exactly 8x into a 48x64 px frame\nStyle/medium: crisp pixel art in the style of Image 2 (style only, do not copy its content): clean chunky pixels, one-art-pixel dark plum outline, 3-tone cel shading per material, cozy pastel palette, no dithering, no gradients, no blur; chibi proportions exactly as the mannequin (cube-like big head = 40% of height, short legs)\nLighting: soft light from DIRECTLY ABOVE. Top faces are the brightest; the two visible side faces share the SAME mid tone (symmetric shading, because the sprite will also be used horizontally mirrored). No cast shadows.\nComposition/framing: one painted figure exactly over each grey mannequin of Image 1 (same size, same foot position, same pose, same facing). The tiny box on a mannequin's head marks where the FACE points; do not draw it as an object. Frames read left to right. The head (including hair) must exactly fill the mannequin's sphere head: do not enlarge the head or add big hair volume; keep the same head size in every frame.\nBackground: fully transparent background (alpha). If transparency is impossible, use a perfectly flat solid {key} background.\nAvoid: extra figures, chairs, desks, props, text, numbers, frame borders, ground, shadows, changing outfit or hairstyle between frames",
+  "texture": "Use case: stylized-concept\nAsset type: tileable game texture that will be projected onto isometric floor geometry\nStyle/medium: crisp pixel art matching the palette and material rendering of Image 1 (reference only): clean flat colors, subtle 2-3 tone variation, no noise, no dithering\nComposition/framing: perfectly flat orthographic top view, NO perspective, edge to edge, no border\nAvoid: perspective, shadows, text, logos, watermark, furniture, people"
+ },
+ "orientation": {},
+ "phases": {
+  "A": [
+   "desk_r0",
+   "chair_n",
+   "sofa_s",
+   "plant",
+   "floor_wood",
+   "p0_idle_s",
+   "p0_idle_n",
+   "p0_walk_s",
+   "p0_walk_n",
+   "p0_sittype_s",
+   "p0_sittype_n",
+   "p1_turn"
+  ],
+  "B": [
+   "desk_r180",
+   "chair_s",
+   "sofa_n",
+   "p1_idle_s",
+   "p1_idle_n",
+   "p1_walk_s",
+   "p1_walk_n",
+   "p1_sittype_s",
+   "p1_sittype_n"
+  ],
+  "C": [
+   "desk_work_r0",
+   "armchair_s",
+   "p0_sitidle_s",
+   "p1_sitidle_s",
+   "p0_sitidle_n",
+   "p1_sitidle_n"
+  ],
+  "D": [
+   "desk_work_r180",
+   "armchair_n"
+  ],
+  "G": [
+   "floor_meeting",
+   "floor_lounge",
+   "floor_grass",
+   "floor_deck",
+   "floor_cafe",
+   "wall_cafe",
+   "wall_meeting",
+   "railing",
+   "door_cafe",
+   "door_focus",
+   "door_meeting",
+   "door_lounge",
+   "door_garden",
+   "door_terrace",
+   "door_exit",
+   "door_exitcafe",
+   "door_exitmeeting",
+   "door_gate",
+   "desk_small_s",
+   "bookshelf_s",
+   "whiteboard_s",
+   "computer_s",
+   "coffee_s",
+   "arcade_s",
+   "bed_long_s",
+   "daybed_s",
+   "lamp",
+   "table_round",
+   "meeting_table",
+   "rug",
+   "cat_bed",
+   "home_portal",
+   "column"
+  ],
+  "H": [
+   "desk_small_n",
+   "bookshelf_n",
+   "whiteboard_n",
+   "computer_n",
+   "coffee_n",
+   "arcade_n",
+   "bed_long_n",
+   "daybed_n"
+  ],
+  "J": [
+   "p2_turn",
+   "p3_turn"
+  ],
+  "K": [
+   "p0_sit-talk_s",
+   "p0_sit-talk_n",
+   "p0_sit-relax_s",
+   "p0_sit-relax_n",
+   "p0_sit-drink_s",
+   "p0_sit-drink_n",
+   "p0_stand-drink_s",
+   "p0_stand-drink_n",
+   "p0_stand-read_s",
+   "p0_stand-read_n",
+   "p0_stand-present_s",
+   "p0_stand-present_n",
+   "p0_stand-play_s",
+   "p0_stand-play_n",
+   "p0_gesture-wave-stand_s",
+   "p0_gesture-wave-stand_n",
+   "p0_gesture-nod-stand_s",
+   "p0_gesture-nod-stand_n",
+   "p0_gesture-clap-stand_s",
+   "p0_gesture-clap-stand_n",
+   "p0_gesture-cheer-stand_s",
+   "p0_gesture-cheer-stand_n",
+   "p0_gesture-thumbsup-stand_s",
+   "p0_gesture-thumbsup-stand_n",
+   "p0_gesture-wave-sit_s",
+   "p0_gesture-wave-sit_n",
+   "p0_gesture-nod-sit_s",
+   "p0_gesture-nod-sit_n",
+   "p0_gesture-clap-sit_s",
+   "p0_gesture-clap-sit_n",
+   "p0_gesture-cheer-sit_s",
+   "p0_gesture-cheer-sit_n",
+   "p0_gesture-thumbsup-sit_s",
+   "p0_gesture-thumbsup-sit_n",
+   "p0_lay_s",
+   "p0_lay_n",
+   "p1_sit-talk_s",
+   "p1_sit-talk_n",
+   "p1_sit-relax_s",
+   "p1_sit-relax_n",
+   "p1_sit-drink_s",
+   "p1_sit-drink_n",
+   "p1_stand-drink_s",
+   "p1_stand-drink_n",
+   "p1_stand-read_s",
+   "p1_stand-read_n",
+   "p1_stand-present_s",
+   "p1_stand-present_n",
+   "p1_stand-play_s",
+   "p1_stand-play_n",
+   "p1_gesture-wave-stand_s",
+   "p1_gesture-wave-stand_n",
+   "p1_gesture-nod-stand_s",
+   "p1_gesture-nod-stand_n",
+   "p1_gesture-clap-stand_s",
+   "p1_gesture-clap-stand_n",
+   "p1_gesture-cheer-stand_s",
+   "p1_gesture-cheer-stand_n",
+   "p1_gesture-thumbsup-stand_s",
+   "p1_gesture-thumbsup-stand_n",
+   "p1_gesture-wave-sit_s",
+   "p1_gesture-wave-sit_n",
+   "p1_gesture-nod-sit_s",
+   "p1_gesture-nod-sit_n",
+   "p1_gesture-clap-sit_s",
+   "p1_gesture-clap-sit_n",
+   "p1_gesture-cheer-sit_s",
+   "p1_gesture-cheer-sit_n",
+   "p1_gesture-thumbsup-sit_s",
+   "p1_gesture-thumbsup-sit_n",
+   "p1_lay_s",
+   "p1_lay_n",
+   "p2_idle_s",
+   "p2_idle_n",
+   "p2_walk_s",
+   "p2_walk_n",
+   "p2_sittype_s",
+   "p2_sittype_n",
+   "p2_sitidle_s",
+   "p2_sitidle_n",
+   "p2_sit-talk_s",
+   "p2_sit-talk_n",
+   "p2_sit-relax_s",
+   "p2_sit-relax_n",
+   "p2_sit-drink_s",
+   "p2_sit-drink_n",
+   "p2_stand-drink_s",
+   "p2_stand-drink_n",
+   "p2_stand-read_s",
+   "p2_stand-read_n",
+   "p2_stand-present_s",
+   "p2_stand-present_n",
+   "p2_stand-play_s",
+   "p2_stand-play_n",
+   "p2_gesture-wave-stand_s",
+   "p2_gesture-wave-stand_n",
+   "p2_gesture-nod-stand_s",
+   "p2_gesture-nod-stand_n",
+   "p2_gesture-clap-stand_s",
+   "p2_gesture-clap-stand_n",
+   "p2_gesture-cheer-stand_s",
+   "p2_gesture-cheer-stand_n",
+   "p2_gesture-thumbsup-stand_s",
+   "p2_gesture-thumbsup-stand_n",
+   "p2_gesture-wave-sit_s",
+   "p2_gesture-wave-sit_n",
+   "p2_gesture-nod-sit_s",
+   "p2_gesture-nod-sit_n",
+   "p2_gesture-clap-sit_s",
+   "p2_gesture-clap-sit_n",
+   "p2_gesture-cheer-sit_s",
+   "p2_gesture-cheer-sit_n",
+   "p2_gesture-thumbsup-sit_s",
+   "p2_gesture-thumbsup-sit_n",
+   "p2_lay_s",
+   "p2_lay_n",
+   "p3_idle_s",
+   "p3_idle_n",
+   "p3_walk_s",
+   "p3_walk_n",
+   "p3_sittype_s",
+   "p3_sittype_n",
+   "p3_sitidle_s",
+   "p3_sitidle_n",
+   "p3_sit-talk_s",
+   "p3_sit-talk_n",
+   "p3_sit-relax_s",
+   "p3_sit-relax_n",
+   "p3_sit-drink_s",
+   "p3_sit-drink_n",
+   "p3_stand-drink_s",
+   "p3_stand-drink_n",
+   "p3_stand-read_s",
+   "p3_stand-read_n",
+   "p3_stand-present_s",
+   "p3_stand-present_n",
+   "p3_stand-play_s",
+   "p3_stand-play_n",
+   "p3_gesture-wave-stand_s",
+   "p3_gesture-wave-stand_n",
+   "p3_gesture-nod-stand_s",
+   "p3_gesture-nod-stand_n",
+   "p3_gesture-clap-stand_s",
+   "p3_gesture-clap-stand_n",
+   "p3_gesture-cheer-stand_s",
+   "p3_gesture-cheer-stand_n",
+   "p3_gesture-thumbsup-stand_s",
+   "p3_gesture-thumbsup-stand_n",
+   "p3_gesture-wave-sit_s",
+   "p3_gesture-wave-sit_n",
+   "p3_gesture-nod-sit_s",
+   "p3_gesture-nod-sit_n",
+   "p3_gesture-clap-sit_s",
+   "p3_gesture-clap-sit_n",
+   "p3_gesture-cheer-sit_s",
+   "p3_gesture-cheer-sit_n",
+   "p3_gesture-thumbsup-sit_s",
+   "p3_gesture-thumbsup-sit_n",
+   "p3_lay_s",
+   "p3_lay_n"
+  ]
+ },
+ "assets": [
+  {
+   "id": "desk_r0",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/desk_r0.png",
+   "key": "#00ff00",
+   "subject": "office work desk: the big slab = warm peach wooden desktop; left block = wooden side-panel leg; right box = cream 3-drawer cabinet (drawers face lower-left); thin back panel = peach modesty panel; thin upright panel = dark monitor whose SCREEN faces lower-left showing bright green code lines, on a small grey stand; flat strip = light grey keyboard; small box on the right = a row of 5 colorful books"
+  },
+  {
+   "id": "chair_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/chair_n.png",
+   "key": "#00ff00",
+   "subject": "lavender office swivel chair seen from BEHIND: the upright panel nearest to us = the padded backrest seen from its back, with a small grey support bar; slab = seat cushion; post = chrome gas lift; cross = five-star base with small dark wheels"
+  },
+  {
+   "id": "sofa_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/sofa_s.png",
+   "key": "#ff00ff",
+   "subject": "cozy mustard-yellow two-seat sofa seen from the FRONT: long back slab = backrest with two soft back cushions; front slab = two seat cushions; end blocks = rounded armrests; tiny dark wooden legs"
+  },
+  {
+   "id": "plant",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/plant.png",
+   "key": "#ff00ff",
+   "subject": "lush potted areca palm: bottom box = round cream ceramic pot; the upper volume = bushy bright green fronds (organic leafy silhouette that may spill a little outside the box)"
+  },
+  {
+   "id": "floor_wood",
+   "kind": "floor",
+   "type": "texture",
+   "size": "1024x1024",
+   "subject": "a single square patch of light oak floor seen straight from above: 4 planks running vertically, DESATURATED warm beige-brown (not orange), subtle grain, thin darker seams; seamless when repeated"
+  },
+  {
+   "id": "p0_idle_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_idle_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame IDLE breathing loop of the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes), standing, facing the LOWER-LEFT (front three-quarter view); frame 2 = body 1 pixel higher",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_idle_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_idle_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame IDLE breathing loop of the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes), standing, seen from BEHIND facing the UPPER-RIGHT (back three-quarter view, back of the head visible); frame 2 = body 1 pixel higher",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_walk_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_walk_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "4-frame WALK cycle of the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) walking toward the LOWER-LEFT (front three-quarter view): 1 left leg forward, 2 passing, 3 right leg forward, 4 passing; arms swing opposite to legs; both legs stay attached at the hips and swing from the hip joint as straight diagonal limbs exactly like the mannequin (trousers/skirt continuous from the waist, no gap between body and legs, small natural stride)",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_walk_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_walk_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "4-frame WALK cycle of the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) walking away toward the UPPER-RIGHT (back three-quarter view, back of the head visible): 1 left leg forward, 2 passing, 3 right leg forward, 4 passing; both legs stay attached at the hips and swing from the hip joint as straight diagonal limbs exactly like the mannequin (trousers/skirt continuous from the waist, no gap between body and legs, small natural stride)",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_sittype_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.type_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TYPE loop of the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair facing the LOWER-LEFT: thighs horizontal toward the viewer, forearms forward typing on an invisible keyboard; frame 2 = hands slightly moved. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_sittype_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.type_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TYPE loop of the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT: back and back of the head visible, forearms forward typing; frame 2 = hands slightly moved. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_turn",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_turnaround.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "identity turnaround of a NEW chibi character: young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes. LEFT figure = front three-quarter view facing the lower-left; RIGHT figure = back three-quarter view facing the upper-right (back of head and ponytail visible); both standing idle"
+  },
+  {
+   "id": "desk_r180",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/desk_r180.png",
+   "key": "#00ff00",
+   "subject": "the SAME desk seen from the opposite side: the big slab = the same peach desktop; left box = the cream drawer cabinet seen from its plain back; right block = the wooden side-panel leg; the panel facing us = the peach modesty panel; the upright panel = the BACK of the dark monitor (plain grey back, no screen visible); flat strip = keyboard on the far side; small box = the same colorful books",
+   "refs": [
+    "raw/desk_r0.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "chair_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/chair_s.png",
+   "key": "#00ff00",
+   "subject": "the SAME lavender office chair seen from the FRONT: the upright panel at the back = the backrest showing its cushioned front; slab = seat cushion facing us; post = chrome gas lift; cross = five-star base with small dark wheels",
+   "refs": [
+    "raw/chair_n.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "sofa_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/sofa_n.png",
+   "key": "#ff00ff",
+   "subject": "the SAME mustard sofa seen from BEHIND: the tall slab nearest to us = the plain fabric BACK of the backrest; seat cushions barely visible behind it; armrests at both ends; tiny dark wooden legs",
+   "refs": [
+    "raw/sofa_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "p1_idle_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_idle_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame IDLE breathing loop of the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes), standing, facing the LOWER-LEFT (front three-quarter view); frame 2 = body 1 pixel higher",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_idle_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_idle_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame IDLE breathing loop of the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes), standing, seen from BEHIND facing the UPPER-RIGHT (back three-quarter view, back of the head visible); frame 2 = body 1 pixel higher",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_walk_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_walk_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "4-frame WALK cycle of the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) walking toward the LOWER-LEFT (front three-quarter view): 1 left leg forward, 2 passing, 3 right leg forward, 4 passing; arms swing opposite to legs; both legs stay attached at the hips and swing from the hip joint as straight diagonal limbs exactly like the mannequin (trousers/skirt continuous from the waist, no gap between body and legs, small natural stride)",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_walk_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_walk_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "4-frame WALK cycle of the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) walking away toward the UPPER-RIGHT (back three-quarter view, back of the head visible): 1 left leg forward, 2 passing, 3 right leg forward, 4 passing; both legs stay attached at the hips and swing from the hip joint as straight diagonal limbs exactly like the mannequin (trousers/skirt continuous from the waist, no gap between body and legs, small natural stride)",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sittype_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.type_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TYPE loop of the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair facing the LOWER-LEFT: thighs horizontal toward the viewer, forearms forward typing on an invisible keyboard; frame 2 = hands slightly moved. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sittype_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.type_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TYPE loop of the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT: back and back of the head visible, forearms forward typing; frame 2 = hands slightly moved. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "desk_work_r0",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/desk_s1_r0.png",
+   "key": "#00ff00",
+   "subject": "office work desk: the big slab = warm peach wooden desktop; RIGHT block = wooden side-panel leg; LEFT box = cream 3-drawer cabinet (drawers face lower-left); thin back panel = peach modesty panel; thin upright panel = dark monitor whose SCREEN faces lower-left showing bright green code lines, on a small grey stand; flat strip = light grey keyboard; small box on the left = a row of 5 colorful books"
+  },
+  {
+   "id": "armchair_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/armchair_s.png",
+   "key": "#ff00ff",
+   "subject": "cozy mustard-yellow single armchair seen from the FRONT: back slab = padded backrest; front slab = one seat cushion; side blocks = rounded armrests; tiny dark wooden legs; same fabric and colors as a matching mustard two-seat sofa",
+   "refs": [
+    "raw/sofa_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "p0_sitidle_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.idle_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-REST loop of the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting relaxed on an invisible chair facing the LOWER-LEFT: thighs horizontal toward the viewer, hands resting on the lap; frame 2 = body 1 pixel higher (breathing). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sitidle_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.idle_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-REST loop of the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting relaxed on an invisible chair facing the LOWER-LEFT: thighs horizontal toward the viewer, hands resting on the lap; frame 2 = body 1 pixel higher (breathing). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_sitidle_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.idle_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-REST loop of the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting relaxed on an invisible chair seen from BEHIND facing the UPPER-RIGHT: back and back of the head visible, hands on the lap; frame 2 = body 1 pixel higher. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sitidle_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.idle_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-REST loop of the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting relaxed on an invisible chair seen from BEHIND facing the UPPER-RIGHT: back and back of the head visible, hands on the lap; frame 2 = body 1 pixel higher. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "desk_work_r180",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/desk_s1_r180.png",
+   "key": "#00ff00",
+   "subject": "the SAME desk seen from the opposite side: the big slab = the same peach desktop; RIGHT box = the cream drawer cabinet seen from its plain back; LEFT block = the wooden side-panel leg; the panel facing us = the peach modesty panel; the upright panel = the BACK of the dark monitor (plain grey back, no screen visible); flat strip = keyboard on the far side; small box = the same colorful books",
+   "refs": [
+    "raw/desk_work_r0.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "armchair_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/armchair_n.png",
+   "key": "#ff00ff",
+   "subject": "the SAME mustard armchair seen from BEHIND: the tall slab nearest to us = the plain fabric BACK of the backrest; armrests on both sides; tiny dark legs",
+   "refs": [
+    "raw/armchair_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "floor_meeting",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1024",
+   "subject": "a single square patch seen straight from above, seamless when repeated, muted pastel palette matching the reference: soft blue-grey low-pile office carpet with a very subtle woven texture"
+  },
+  {
+   "id": "floor_lounge",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1024",
+   "subject": "a single square patch seen straight from above, seamless when repeated, muted pastel palette matching the reference: soft lavender plush carpet with a faint diamond weave"
+  },
+  {
+   "id": "floor_grass",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1024",
+   "subject": "a single square patch seen straight from above, seamless when repeated, muted pastel palette matching the reference: neat short rooftop-garden grass with a few tiny clover and darker blades, gentle green (not neon)"
+  },
+  {
+   "id": "floor_deck",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1024",
+   "subject": "a single square patch seen straight from above, seamless when repeated, muted pastel palette matching the reference: grey-brown outdoor wooden deck boards running vertically with small screw dots and thin gaps"
+  },
+  {
+   "id": "floor_cafe",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1024",
+   "subject": "a single square patch seen straight from above, seamless when repeated, muted pastel palette matching the reference: warm caramel herringbone wooden parquet"
+  },
+  {
+   "id": "wall_cafe",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1536x1024",
+   "subject": "front elevation of an interior cafe wall, horizontally seamless: upper part warm cream plaster, lower third exposed red-brown brick, a thin cream top cap at the very top and a dark wooden baseboard; same proportions as Image 2",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: keep exactly the same wall proportions, top cap, wainscot height and baseboard so segments line up."
+  },
+  {
+   "id": "wall_meeting",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1536x1024",
+   "subject": "front elevation of a meeting-room wall, horizontally seamless: upper part muted blue-grey painted wall, lower third light grey acoustic panels, thin cream top cap, grey baseboard; same proportions as Image 2",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: keep exactly the same wall proportions, top cap, wainscot height and baseboard so segments line up."
+  },
+  {
+   "id": "railing",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1536x1024",
+   "subject": "front elevation of a low rooftop railing, horizontally seamless: light wooden top rail and slim dark metal balusters on a short concrete curb; EVERYTHING between the balusters and above the rail is fully transparent background (alpha)",
+   "key": "#00ff00"
+  },
+  {
+   "id": "door_cafe",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2. No text, no letters, no numbers. Door theme: warm wooden cafe door with a small striped awning above and a tiny coffee-cup icon plate",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly (lavender upper wall, cream wainscot, peach baseboard, cream top cap) so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_focus",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2. No text, no letters, no numbers. Door theme: calm dark-navy door with a soft lamp above and a small monitor icon plate",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly (lavender upper wall, cream wainscot, peach baseboard, cream top cap) so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_meeting",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2. No text, no letters, no numbers. Door theme: frosted glass door with a slim light-wood frame and a small two-people icon plate",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly (lavender upper wall, cream wainscot, peach baseboard, cream top cap) so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_lounge",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2. No text, no letters, no numbers. Door theme: plum purple door with rounded top panel and a small sofa icon plate",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly (lavender upper wall, cream wainscot, peach baseboard, cream top cap) so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_garden",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2. No text, no letters, no numbers. Door theme: sage green door with climbing vines and tiny flowers around the frame and a small leaf icon plate",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly (lavender upper wall, cream wainscot, peach baseboard, cream top cap) so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_terrace",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2. No text, no letters, no numbers. Door theme: dusk-blue door with a small crescent moon and star icon plate and a little wall lantern",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly (lavender upper wall, cream wainscot, peach baseboard, cream top cap) so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_exit",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2. No text, no letters, no numbers. Door theme: simple light-wood door with a small arrow-free exit icon plate (a door pictogram)",
+   "refs": [
+    "../raw/wall_plain.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly (lavender upper wall, cream wainscot, peach baseboard, cream top cap) so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_exitcafe",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2 exactly (warm cream plaster upper wall, red-brown brick lower third, cream top cap, dark wooden baseboard). No text, no letters, no numbers. Door theme: simple light-wood door with a small exit icon plate (a door pictogram)",
+   "refs": [
+    "raw/wall_cafe.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_exitmeeting",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall segment with ONE door in its exact horizontal center. The door is about 55% of the image width, its top at about 78% of the wall height, standing on the baseboard. The wall around the door matches Image 2 exactly (muted blue-grey upper wall, light grey acoustic panels on the lower third, cream top cap, grey baseboard). No text, no letters, no numbers. Door theme: simple light-wood door with a small exit icon plate (a door pictogram)",
+   "refs": [
+    "raw/wall_meeting.png"
+   ],
+   "refRole": "Image 2 is the WALL DESIGN reference: the wall around the door must match it exactly so the segment replaces one wall segment seamlessly."
+  },
+  {
+   "id": "door_gate",
+   "kind": "texture",
+   "type": "texture",
+   "size": "1024x1536",
+   "subject": "front elevation (perfectly flat, no perspective) of ONE wall-segment-sized image for a rooftop garden: a door-height wooden garden ARCH GATE in the exact horizontal center: two square light-wood posts joined by a small arched wooden top, a light-wood slatted gate door between them with a small exit door pictogram plate; the gate is about 55% of the image width and its arched top is at about 78% of the image height (same size as a normal door), standing on the bottom edge. At both sides of the gate, short pieces of the railing from Image 2 at EXACTLY the same height as in Image 2: the railing occupies only the bottom 36% of the image height (its wooden top rail at 36% from the bottom). EVERYTHING else (sky above the railing, around and above the gate) is fully transparent background (alpha). No text, no letters, no numbers.",
+   "refs": [
+    "raw/railing.png"
+   ],
+   "refRole": "Image 2 is the RAILING DESIGN reference: keep the same rail, balusters and curb so the side pieces line up with the railing.",
+   "key": "#00ff00"
+  },
+  {
+   "id": "desk_small_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/desk_small_s.png",
+   "key": "#00ff00",
+   "subject": "small wooden side desk: peach wooden top, two slim side panels, a back modesty panel, an open light-grey laptop whose screen faces lower-left"
+  },
+  {
+   "id": "bookshelf_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/bookshelf_s.png",
+   "key": "#00ff00",
+   "subject": "tall wooden bookshelf with four shelves full of colorful book spines and one small plant, the open shelf side faces lower-left"
+  },
+  {
+   "id": "whiteboard_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/whiteboard_s.png",
+   "key": "#00ff00",
+   "subject": "mobile whiteboard on two grey metal posts with feet: white board with a few yellow sticky notes and simple chart doodles (no readable text), marker tray in front"
+  },
+  {
+   "id": "computer_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/computer_s.png",
+   "key": "#00ff00",
+   "subject": "small computer stand table with a dark monitor showing a pastel dashboard (no readable text) facing lower-left and a slim keyboard"
+  },
+  {
+   "id": "coffee_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/coffee_s.png",
+   "key": "#00ff00",
+   "subject": "cafe coffee counter: peach wooden cabinet with an espresso machine, a grinder and a few white cups on top, front panel faces lower-left"
+  },
+  {
+   "id": "arcade_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/arcade_s.png",
+   "key": "#00ff00",
+   "subject": "retro arcade cabinet: purple body with pastel side art, glowing pixel game screen and joystick panel facing lower-left"
+  },
+  {
+   "id": "bed_long_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/bed_long_s.png",
+   "key": "#00ff00",
+   "subject": "cozy single bed: light wooden frame, headboard at the far end, white pillow, lavender blanket folded toward the foot end which faces the viewer"
+  },
+  {
+   "id": "daybed_s",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/daybed_s.png",
+   "key": "#00ff00",
+   "subject": "compact daybed: light wooden base with a low padded back rest at the far side, cream mattress and a small lavender pillow"
+  },
+  {
+   "id": "lamp",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/lamp.png",
+   "key": "#00ff00",
+   "subject": "floor lamp: round brass base, slim brass pole, cream drum lampshade glowing softly"
+  },
+  {
+   "id": "table_round",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/table_round.png",
+   "key": "#00ff00",
+   "subject": "small ROUND cafe table (the square top is a round tabletop seen in isometric): light wood top, single slim pedestal and round foot"
+  },
+  {
+   "id": "meeting_table",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/meeting_table.png",
+   "key": "#00ff00",
+   "subject": "long rectangular meeting table: light oak tabletop with rounded corners, two sturdy dark pedestal bases; tabletop empty except a small cable tray in the middle"
+  },
+  {
+   "id": "rug",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/rug.png",
+   "key": "#00ff00",
+   "subject": "ROUND woven rug lying flat on the floor (an ellipse inside the diamond): warm beige with a soft pink border ring"
+  },
+  {
+   "id": "cat_bed",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/cat_bed.png",
+   "key": "#00ff00",
+   "subject": "round lavender pet cushion with an orange-and-white cat sleeping curled up on it"
+  },
+  {
+   "id": "home_portal",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/home_portal.png",
+   "key": "#00ff00",
+   "subject": "freestanding entrance door to a personal home in a cozy office lobby: cream wooden door frame, soft lavender-purple door with a small brass knob, a little warm-yellow name plate near the top of the door, a plum doormat in front"
+  },
+  {
+   "id": "column",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/column.png",
+   "key": "#00ff00",
+   "subject": "slim interior column: cream plaster shaft with a simple lavender capital and plinth"
+  },
+  {
+   "id": "desk_small_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/desk_small_n.png",
+   "key": "#00ff00",
+   "subject": "the SAME small desk seen from behind: the plain back modesty panel faces us, the laptop's grey back lid visible",
+   "refs": [
+    "raw/desk_small_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "bookshelf_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/bookshelf_n.png",
+   "key": "#00ff00",
+   "subject": "the SAME bookshelf seen from behind: plain wooden back panel",
+   "refs": [
+    "raw/bookshelf_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "whiteboard_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/whiteboard_n.png",
+   "key": "#00ff00",
+   "subject": "the SAME whiteboard seen from behind: plain light-grey back of the board",
+   "refs": [
+    "raw/whiteboard_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "computer_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/computer_n.png",
+   "key": "#00ff00",
+   "subject": "the SAME computer stand seen from behind: dark plastic back of the monitor with a cable",
+   "refs": [
+    "raw/computer_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "coffee_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/coffee_n.png",
+   "key": "#00ff00",
+   "subject": "the SAME coffee counter seen from the back: plain back panel, machines visible on top from behind",
+   "refs": [
+    "raw/coffee_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "arcade_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/arcade_n.png",
+   "key": "#00ff00",
+   "subject": "the SAME arcade cabinet seen from behind: plain purple back with vent slots",
+   "refs": [
+    "raw/arcade_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "bed_long_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/bed_long_n.png",
+   "key": "#00ff00",
+   "subject": "the SAME bed seen from the head end: the wooden headboard is nearest to us",
+   "refs": [
+    "raw/bed_long_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "daybed_n",
+   "kind": "furniture",
+   "type": "gprop",
+   "guide": "blockout/daybed_n.png",
+   "key": "#00ff00",
+   "subject": "the SAME daybed seen from the back: the padded back rest is nearest to us",
+   "refs": [
+    "raw/daybed_s.png"
+   ],
+   "refRole": "Image 3 is the OBJECT IDENTITY reference: paint the SAME object design, materials and colors, now seen from the other side as the blockout shows."
+  },
+  {
+   "id": "p2_turn",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_turnaround.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "identity turnaround of a NEW chibi character: young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers. LEFT figure = front three-quarter view facing the lower-left; RIGHT figure = back three-quarter view facing the upper-right; both standing idle"
+  },
+  {
+   "id": "p3_turn",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_turnaround.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "identity turnaround of a NEW chibi character: young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots. LEFT figure = front three-quarter view facing the lower-left; RIGHT figure = back three-quarter view facing the upper-right; both standing idle"
+  },
+  {
+   "id": "p0_sit-talk_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.talk_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TALK loop: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one hand gesturing while talking, the other hand on the lap. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_sit-talk_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.talk_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TALK loop: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand gesturing while talking, the other hand on the lap. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_sit-relax_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.relax_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "1 frame: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) leaning back RELAXED on an invisible sofa facing the LOWER-LEFT (front three-quarter view), arms resting on invisible armrests, legs stretched forward. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_sit-relax_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.relax_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "1 frame: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) leaning back RELAXED on an invisible sofa seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms resting on invisible armrests, legs stretched forward. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_sit-drink_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.drink_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame SIT-AND-DRINK: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), lifting a small white coffee cup from the lap (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_sit-drink_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.drink_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame SIT-AND-DRINK: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), lifting a small white coffee cup from the lap (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_stand-drink_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.drink_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame STAND-AND-DRINK: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing facing the LOWER-LEFT (front three-quarter view), lifting a small white coffee cup from waist (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_stand-drink_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.drink_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame STAND-AND-DRINK: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), lifting a small white coffee cup from waist (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_stand-read_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.read_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame READING loop: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing facing the LOWER-LEFT (front three-quarter view), holding an open book with both hands at chest height; frame 2 head tilted slightly down. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_stand-read_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.read_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame READING loop: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), holding an open book with both hands at chest height; frame 2 head tilted slightly down. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_stand-present_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.present_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame PRESENTING loop: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing facing the LOWER-LEFT (front three-quarter view), one arm raised pointing up and forward as if presenting a whiteboard. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_stand-present_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.present_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame PRESENTING loop: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one arm raised pointing up and forward as if presenting a whiteboard. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_stand-play_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.play_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame ARCADE PLAYING loop: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing facing the LOWER-LEFT (front three-quarter view), both hands forward at waist height on invisible arcade controls, small hand movement. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_stand-play_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.play_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame ARCADE PLAYING loop: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), both hands forward at waist height on invisible arcade controls, small hand movement. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-wave-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing facing the LOWER-LEFT (front three-quarter view), one hand raised high above the head waving side to side. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-wave-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand raised high above the head waving side to side. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-nod-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing facing the LOWER-LEFT (front three-quarter view); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-nod-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-clap-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing facing the LOWER-LEFT (front three-quarter view), hands apart (1), clapped together in front of the chest (2), apart (3). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-clap-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), hands apart (1), clapped together in front of the chest (2), apart (3). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-cheer-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) facing the LOWER-LEFT (front three-quarter view), arms down (1), both arms raised high with a small jump (2), arms still up landing (3). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-cheer-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms down (1), both arms raised high with a small jump (2), arms still up landing (3). Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-thumbsup-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing facing the LOWER-LEFT (front three-quarter view), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-thumbsup-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-wave-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one hand raised high waving side to side. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-wave-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand raised high waving side to side. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-nod-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-nod-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-clap-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), hands apart, clapped together, apart. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-clap-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), hands apart, clapped together, apart. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-cheer-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), arms down then both arms raised high. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-cheer-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms down then both arms raised high. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-thumbsup-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_gesture-thumbsup-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_lay_s",
+   "kind": "avatar",
+   "type": "gprop",
+   "guide": "blockout/m_lay_s.png",
+   "key": "#00ff00",
+   "subject": "the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) LYING on their back asleep on an invisible bed, eyes closed, relaxed; head on the side where the grey sphere is. Paint ONLY the character, no bed, no pillow",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p0_lay_n",
+   "kind": "avatar",
+   "type": "gprop",
+   "guide": "blockout/m_lay_n.png",
+   "key": "#00ff00",
+   "subject": "the character from Image 3 (brown short hair, white shirt, lavender cardigan, dark grey trousers, brown shoes) LYING on their back asleep on an invisible bed, eyes closed, relaxed; head on the side where the grey sphere is. Paint ONLY the character, no bed, no pillow",
+   "refs": [
+    "../raw/char_a.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sit-talk_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.talk_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TALK loop: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one hand gesturing while talking, the other hand on the lap. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sit-talk_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.talk_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TALK loop: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand gesturing while talking, the other hand on the lap. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sit-relax_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.relax_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "1 frame: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) leaning back RELAXED on an invisible sofa facing the LOWER-LEFT (front three-quarter view), arms resting on invisible armrests, legs stretched forward. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sit-relax_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.relax_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "1 frame: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) leaning back RELAXED on an invisible sofa seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms resting on invisible armrests, legs stretched forward. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sit-drink_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.drink_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame SIT-AND-DRINK: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), lifting a small white coffee cup from the lap (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_sit-drink_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.drink_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame SIT-AND-DRINK: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), lifting a small white coffee cup from the lap (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_stand-drink_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.drink_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame STAND-AND-DRINK: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing facing the LOWER-LEFT (front three-quarter view), lifting a small white coffee cup from waist (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_stand-drink_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.drink_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame STAND-AND-DRINK: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), lifting a small white coffee cup from waist (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_stand-read_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.read_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame READING loop: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing facing the LOWER-LEFT (front three-quarter view), holding an open book with both hands at chest height; frame 2 head tilted slightly down. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_stand-read_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.read_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame READING loop: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), holding an open book with both hands at chest height; frame 2 head tilted slightly down. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_stand-present_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.present_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame PRESENTING loop: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing facing the LOWER-LEFT (front three-quarter view), one arm raised pointing up and forward as if presenting a whiteboard. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_stand-present_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.present_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame PRESENTING loop: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one arm raised pointing up and forward as if presenting a whiteboard. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_stand-play_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.play_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame ARCADE PLAYING loop: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing facing the LOWER-LEFT (front three-quarter view), both hands forward at waist height on invisible arcade controls, small hand movement. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_stand-play_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.play_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame ARCADE PLAYING loop: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), both hands forward at waist height on invisible arcade controls, small hand movement. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-wave-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing facing the LOWER-LEFT (front three-quarter view), one hand raised high above the head waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-wave-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand raised high above the head waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-nod-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing facing the LOWER-LEFT (front three-quarter view); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-nod-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-clap-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing facing the LOWER-LEFT (front three-quarter view), hands apart (1), clapped together in front of the chest (2), apart (3). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-clap-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), hands apart (1), clapped together in front of the chest (2), apart (3). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-cheer-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) facing the LOWER-LEFT (front three-quarter view), arms down (1), both arms raised high with a small jump (2), arms still up landing (3). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-cheer-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms down (1), both arms raised high with a small jump (2), arms still up landing (3). Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-thumbsup-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing facing the LOWER-LEFT (front three-quarter view), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-thumbsup-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-wave-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one hand raised high waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-wave-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand raised high waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-nod-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-nod-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-clap-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), hands apart, clapped together, apart. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-clap-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), hands apart, clapped together, apart. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-cheer-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), arms down then both arms raised high. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-cheer-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms down then both arms raised high. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-thumbsup-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_gesture-thumbsup-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_lay_s",
+   "kind": "avatar",
+   "type": "gprop",
+   "guide": "blockout/m_lay_s.png",
+   "key": "#00ff00",
+   "subject": "the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) LYING on their back asleep on an invisible bed, eyes closed, relaxed; head on the side where the grey sphere is. Paint ONLY the character, no bed, no pillow",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p1_lay_n",
+   "kind": "avatar",
+   "type": "gprop",
+   "guide": "blockout/m_lay_n.png",
+   "key": "#00ff00",
+   "subject": "the character from Image 3 (young woman office worker: long dark brown hair tied in a low ponytail, mint green blouse, navy knee-length skirt, dark tights, black flat shoes) LYING on their back asleep on an invisible bed, eyes closed, relaxed; head on the side where the grey sphere is. Paint ONLY the character, no bed, no pillow",
+   "refs": [
+    "raw/p1_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_idle_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_idle_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame IDLE breathing loop of the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers), standing, facing the LOWER-LEFT (front three-quarter view); frame 2 = body 1 pixel higher",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_idle_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_idle_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame IDLE breathing loop of the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers), standing, seen from BEHIND facing the UPPER-RIGHT (back three-quarter view, back of the head visible); frame 2 = body 1 pixel higher",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_walk_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_walk_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "4-frame WALK cycle of the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) walking toward the LOWER-LEFT (front three-quarter view): 1 left leg forward, 2 passing, 3 right leg forward, 4 passing; arms swing opposite to legs; both legs stay attached at the hips and swing from the hip joint as straight diagonal limbs exactly like the mannequin (trousers/skirt continuous from the waist, no gap between body and legs, small natural stride)",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_walk_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_walk_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "4-frame WALK cycle of the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) walking away toward the UPPER-RIGHT (back three-quarter view, back of the head visible): 1 left leg forward, 2 passing, 3 right leg forward, 4 passing; both legs stay attached at the hips and swing from the hip joint as straight diagonal limbs exactly like the mannequin (trousers/skirt continuous from the waist, no gap between body and legs, small natural stride)",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sittype_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.type_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TYPE loop of the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair facing the LOWER-LEFT: thighs horizontal toward the viewer, forearms forward typing on an invisible keyboard; frame 2 = hands slightly moved. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sittype_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.type_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TYPE loop of the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT: back and back of the head visible, forearms forward typing; frame 2 = hands slightly moved. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sitidle_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.idle_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-REST loop of the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting relaxed on an invisible chair facing the LOWER-LEFT: thighs horizontal toward the viewer, hands resting on the lap; frame 2 = body 1 pixel higher (breathing). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sitidle_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.idle_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-REST loop of the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting relaxed on an invisible chair seen from BEHIND facing the UPPER-RIGHT: back and back of the head visible, hands on the lap; frame 2 = body 1 pixel higher. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sit-talk_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.talk_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TALK loop: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one hand gesturing while talking, the other hand on the lap. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sit-talk_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.talk_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TALK loop: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand gesturing while talking, the other hand on the lap. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sit-relax_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.relax_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "1 frame: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) leaning back RELAXED on an invisible sofa facing the LOWER-LEFT (front three-quarter view), arms resting on invisible armrests, legs stretched forward. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sit-relax_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.relax_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "1 frame: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) leaning back RELAXED on an invisible sofa seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms resting on invisible armrests, legs stretched forward. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sit-drink_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.drink_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame SIT-AND-DRINK: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), lifting a small white coffee cup from the lap (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_sit-drink_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.drink_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame SIT-AND-DRINK: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), lifting a small white coffee cup from the lap (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_stand-drink_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.drink_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame STAND-AND-DRINK: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing facing the LOWER-LEFT (front three-quarter view), lifting a small white coffee cup from waist (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_stand-drink_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.drink_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame STAND-AND-DRINK: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), lifting a small white coffee cup from waist (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_stand-read_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.read_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame READING loop: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing facing the LOWER-LEFT (front three-quarter view), holding an open book with both hands at chest height; frame 2 head tilted slightly down. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_stand-read_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.read_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame READING loop: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), holding an open book with both hands at chest height; frame 2 head tilted slightly down. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_stand-present_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.present_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame PRESENTING loop: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing facing the LOWER-LEFT (front three-quarter view), one arm raised pointing up and forward as if presenting a whiteboard. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_stand-present_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.present_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame PRESENTING loop: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one arm raised pointing up and forward as if presenting a whiteboard. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_stand-play_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.play_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame ARCADE PLAYING loop: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing facing the LOWER-LEFT (front three-quarter view), both hands forward at waist height on invisible arcade controls, small hand movement. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_stand-play_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.play_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame ARCADE PLAYING loop: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), both hands forward at waist height on invisible arcade controls, small hand movement. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-wave-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing facing the LOWER-LEFT (front three-quarter view), one hand raised high above the head waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-wave-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand raised high above the head waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-nod-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing facing the LOWER-LEFT (front three-quarter view); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-nod-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-clap-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing facing the LOWER-LEFT (front three-quarter view), hands apart (1), clapped together in front of the chest (2), apart (3). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-clap-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), hands apart (1), clapped together in front of the chest (2), apart (3). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-cheer-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) facing the LOWER-LEFT (front three-quarter view), arms down (1), both arms raised high with a small jump (2), arms still up landing (3). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-cheer-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms down (1), both arms raised high with a small jump (2), arms still up landing (3). Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-thumbsup-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing facing the LOWER-LEFT (front three-quarter view), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-thumbsup-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-wave-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one hand raised high waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-wave-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand raised high waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-nod-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-nod-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-clap-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), hands apart, clapped together, apart. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-clap-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), hands apart, clapped together, apart. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-cheer-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), arms down then both arms raised high. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-cheer-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms down then both arms raised high. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-thumbsup-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_gesture-thumbsup-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_lay_s",
+   "kind": "avatar",
+   "type": "gprop",
+   "guide": "blockout/m_lay_s.png",
+   "key": "#00ff00",
+   "subject": "the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) LYING on their back asleep on an invisible bed, eyes closed, relaxed; head on the side where the grey sphere is. Paint ONLY the character, no bed, no pillow",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p2_lay_n",
+   "kind": "avatar",
+   "type": "gprop",
+   "guide": "blockout/m_lay_n.png",
+   "key": "#00ff00",
+   "subject": "the character from Image 3 (young man, short black hair, round glasses, navy hoodie, light grey trousers, white sneakers) LYING on their back asleep on an invisible bed, eyes closed, relaxed; head on the side where the grey sphere is. Paint ONLY the character, no bed, no pillow",
+   "refs": [
+    "raw/p2_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_idle_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_idle_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame IDLE breathing loop of the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots), standing, facing the LOWER-LEFT (front three-quarter view); frame 2 = body 1 pixel higher",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_idle_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_idle_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame IDLE breathing loop of the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots), standing, seen from BEHIND facing the UPPER-RIGHT (back three-quarter view, back of the head visible); frame 2 = body 1 pixel higher",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_walk_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_walk_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "4-frame WALK cycle of the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) walking toward the LOWER-LEFT (front three-quarter view): 1 left leg forward, 2 passing, 3 right leg forward, 4 passing; arms swing opposite to legs; both legs stay attached at the hips and swing from the hip joint as straight diagonal limbs exactly like the mannequin (trousers/skirt continuous from the waist, no gap between body and legs, small natural stride)",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_walk_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_walk_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "4-frame WALK cycle of the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) walking away toward the UPPER-RIGHT (back three-quarter view, back of the head visible): 1 left leg forward, 2 passing, 3 right leg forward, 4 passing; both legs stay attached at the hips and swing from the hip joint as straight diagonal limbs exactly like the mannequin (trousers/skirt continuous from the waist, no gap between body and legs, small natural stride)",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sittype_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.type_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TYPE loop of the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair facing the LOWER-LEFT: thighs horizontal toward the viewer, forearms forward typing on an invisible keyboard; frame 2 = hands slightly moved. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sittype_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.type_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TYPE loop of the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT: back and back of the head visible, forearms forward typing; frame 2 = hands slightly moved. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sitidle_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.idle_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-REST loop of the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting relaxed on an invisible chair facing the LOWER-LEFT: thighs horizontal toward the viewer, hands resting on the lap; frame 2 = body 1 pixel higher (breathing). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sitidle_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.idle_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-REST loop of the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting relaxed on an invisible chair seen from BEHIND facing the UPPER-RIGHT: back and back of the head visible, hands on the lap; frame 2 = body 1 pixel higher. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sit-talk_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.talk_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TALK loop: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one hand gesturing while talking, the other hand on the lap. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sit-talk_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.talk_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame SIT-AND-TALK loop: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand gesturing while talking, the other hand on the lap. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sit-relax_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.relax_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "1 frame: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) leaning back RELAXED on an invisible sofa facing the LOWER-LEFT (front three-quarter view), arms resting on invisible armrests, legs stretched forward. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sit-relax_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.relax_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "1 frame: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) leaning back RELAXED on an invisible sofa seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms resting on invisible armrests, legs stretched forward. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sit-drink_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.drink_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame SIT-AND-DRINK: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), lifting a small white coffee cup from the lap (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_sit-drink_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_sit.drink_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame SIT-AND-DRINK: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), lifting a small white coffee cup from the lap (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_stand-drink_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.drink_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame STAND-AND-DRINK: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing facing the LOWER-LEFT (front three-quarter view), lifting a small white coffee cup from waist (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_stand-drink_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.drink_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame STAND-AND-DRINK: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), lifting a small white coffee cup from waist (1) to chest (2) to the mouth (3). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_stand-read_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.read_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame READING loop: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing facing the LOWER-LEFT (front three-quarter view), holding an open book with both hands at chest height; frame 2 head tilted slightly down. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_stand-read_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.read_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame READING loop: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), holding an open book with both hands at chest height; frame 2 head tilted slightly down. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_stand-present_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.present_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame PRESENTING loop: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing facing the LOWER-LEFT (front three-quarter view), one arm raised pointing up and forward as if presenting a whiteboard. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_stand-present_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.present_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame PRESENTING loop: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one arm raised pointing up and forward as if presenting a whiteboard. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_stand-play_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.play_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame ARCADE PLAYING loop: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing facing the LOWER-LEFT (front three-quarter view), both hands forward at waist height on invisible arcade controls, small hand movement. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_stand-play_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_stand.play_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame ARCADE PLAYING loop: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), both hands forward at waist height on invisible arcade controls, small hand movement. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-wave-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing facing the LOWER-LEFT (front three-quarter view), one hand raised high above the head waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-wave-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand raised high above the head waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-nod-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing facing the LOWER-LEFT (front three-quarter view); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-nod-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-clap-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing facing the LOWER-LEFT (front three-quarter view), hands apart (1), clapped together in front of the chest (2), apart (3). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-clap-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), hands apart (1), clapped together in front of the chest (2), apart (3). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-cheer-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) facing the LOWER-LEFT (front three-quarter view), arms down (1), both arms raised high with a small jump (2), arms still up landing (3). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-cheer-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms down (1), both arms raised high with a small jump (2), arms still up landing (3). Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-thumbsup-stand_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.stand_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing facing the LOWER-LEFT (front three-quarter view), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-thumbsup-stand_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.stand_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) standing seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-wave-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one hand raised high waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-wave-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.wave.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame WAVE gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one hand raised high waving side to side. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-nod-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-nod-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.nod.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame NOD gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible); frame 2 head nods down. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-clap-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), hands apart, clapped together, apart. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-clap-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.clap.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CLAP gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), hands apart, clapped together, apart. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-cheer-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), arms down then both arms raised high. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-cheer-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.cheer.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "3-frame CHEER gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), arms down then both arms raised high. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-thumbsup-sit_s",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.sit_south.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair facing the LOWER-LEFT (front three-quarter view), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_gesture-thumbsup-sit_n",
+   "kind": "avatar",
+   "type": "gclip",
+   "guide": "blockout/m_gesture.thumbsup.sit_north.png",
+   "size": "1536x1024",
+   "key": "#00ff00",
+   "subject": "2-frame THUMBS-UP gesture: the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) sitting on an invisible chair seen from BEHIND facing the UPPER-RIGHT (back of the head visible), one fist forward with the thumb up. Paint ONLY the character",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_lay_s",
+   "kind": "avatar",
+   "type": "gprop",
+   "guide": "blockout/m_lay_s.png",
+   "key": "#00ff00",
+   "subject": "the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) LYING on their back asleep on an invisible bed, eyes closed, relaxed; head on the side where the grey sphere is. Paint ONLY the character, no bed, no pillow",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  },
+  {
+   "id": "p3_lay_n",
+   "kind": "avatar",
+   "type": "gprop",
+   "guide": "blockout/m_lay_n.png",
+   "key": "#00ff00",
+   "subject": "the character from Image 3 (young woman, wavy auburn shoulder-length hair, cream knit sweater, olive skirt, brown boots) LYING on their back asleep on an invisible bed, eyes closed, relaxed; head on the side where the grey sphere is. Paint ONLY the character, no bed, no pillow",
+   "refs": [
+    "raw/p3_turn.png"
+   ],
+   "refRole": "Image 3 is the CHARACTER IDENTITY reference: keep exactly the same hair, face, clothes and colors."
+  }
+ ]
+}

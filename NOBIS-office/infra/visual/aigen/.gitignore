@@ -1,0 +1,47 @@
+# 패턴은 이 폴더 기준으로 고정(/)한다. docs/asset-authoring.md §2 '무엇을 저장소에 두나'
+# 예외: raw/char_a.png(v2 프리셋 p0의 아이덴티티 레퍼런스), raw/wall_plain.png(v2 벽·문 디자인 레퍼런스), 표준 문서가 참조하는 근거 이미지 3장
+raw/*
+!raw/char_a.png
+!raw/wall_plain.png
+/norm/
+/atlas/
+/blockout/
+/guides/
+preview/*
+!preview/evidence-v2.png
+!preview/workstation.png
+!preview/office.png
+
+# v2: 2배 밀도 프레임(norm_d2, 아틀라스를 다시 묶을 때의 원본)·참고용 원본·preview·qa는 보관.
+# 1배 프레임(norm)과 블록아웃은 build.py·blockout.py가 결정적으로 다시 만든다.
+/v2/norm/
+v2/raw/*.log
+v2/raw/*.keyed.png
+v2/raw/*.try*.png
+# v2 원본은 용량(약 0.9MB/장)이 커서 다음 생성의 레퍼런스로 쓰는 것만 보관. 나머지는 로컬 보관(정규화 결과 norm/로 게임에 충분)
+v2/raw/*.png
+!v2/raw/arcade_s.png
+!v2/raw/armchair_s.png
+!v2/raw/bed_long_s.png
+!v2/raw/bookshelf_s.png
+!v2/raw/chair_n.png
+!v2/raw/coffee_s.png
+!v2/raw/computer_s.png
+!v2/raw/daybed_s.png
+!v2/raw/desk_r0.png
+!v2/raw/desk_small_s.png
+!v2/raw/desk_work_r0.png
+!v2/raw/p1_turn.png
+!v2/raw/p2_turn.png
+!v2/raw/p3_turn.png
+!v2/raw/sofa_s.png
+!v2/raw/whiteboard_s.png
+# 벽·문 생성의 참고 이미지(방 출구 문은 그 방 벽을 참고로 그린다)
+!v2/raw/wall_cafe.png
+!v2/raw/wall_meeting.png
+!v2/raw/railing.png
+
+v2/blockout/
+v2/_*.png
+
+__pycache__/

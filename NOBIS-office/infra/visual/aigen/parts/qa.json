@@ -1,0 +1,232 @@
+{
+ "base_south": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 2,
+   "dy": -2
+  },
+  "iou_sheet": 0.908,
+  "cells": [
+   [
+    -2,
+    2,
+    0.925
+   ],
+   [
+    0,
+    0,
+    0.93
+   ],
+   [
+    -2,
+    4,
+    0.91
+   ],
+   [
+    -2,
+    -2,
+    0.938
+   ],
+   [
+    -2,
+    2,
+    0.917
+   ],
+   [
+    -4,
+    2,
+    0.908
+   ],
+   [
+    2,
+    -2,
+    0.905
+   ],
+   [
+    2,
+    -4,
+    0.913
+   ],
+   [
+    2,
+    -2,
+    0.908
+   ],
+   [
+    2,
+    -2,
+    0.909
+   ]
+  ],
+  "iou_cells_min": 0.905
+ },
+ "base_north": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 2,
+   "dy": -1
+  },
+  "iou_sheet": 0.9,
+  "cells": [
+   [
+    -2,
+    2,
+    0.934
+   ],
+   [
+    0,
+    0,
+    0.928
+   ],
+   [
+    0,
+    6,
+    0.905
+   ],
+   [
+    0,
+    0,
+    0.933
+   ],
+   [
+    0,
+    2,
+    0.902
+   ],
+   [
+    -2,
+    -4,
+    0.915
+   ],
+   [
+    0,
+    -2,
+    0.895
+   ],
+   [
+    0,
+    0,
+    0.898
+   ],
+   [
+    4,
+    0,
+    0.871
+   ],
+   [
+    2,
+    0,
+    0.873
+   ]
+  ],
+  "iou_cells_min": 0.871
+ },
+ "bottom-chino_south": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 0,
+   "dy": 0
+  },
+  "iou_sheet": 0.975,
+  "iou_cells_min": 0.967,
+  "layer_px": 62331,
+  "outside_base_px": 654
+ },
+ "bottom-skirt_south": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 2,
+   "dy": -1
+  },
+  "iou_sheet": 0.88,
+  "iou_cells_min": 0.861,
+  "layer_px": 110181,
+  "outside_base_px": 31038
+ },
+ "top-cardigan_south": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 0,
+   "dy": -1
+  },
+  "iou_sheet": 0.965,
+  "iou_cells_min": 0.955,
+  "layer_px": 109146,
+  "outside_base_px": 4810
+ },
+ "top-hoodie_south": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 0,
+   "dy": 0
+  },
+  "iou_sheet": 0.939,
+  "iou_cells_min": 0.93,
+  "layer_px": 118837,
+  "outside_base_px": 12530
+ },
+ "bottom-chino_north": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 0,
+   "dy": 0
+  },
+  "iou_sheet": 0.977,
+  "iou_cells_min": 0.971,
+  "layer_px": 69348,
+  "outside_base_px": 248
+ },
+ "bottom-skirt_north": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 0,
+   "dy": 0
+  },
+  "iou_sheet": 0.921,
+  "iou_cells_min": 0.89,
+  "layer_px": 92429,
+  "outside_base_px": 22120
+ },
+ "top-cardigan_north": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 1,
+   "dy": 0
+  },
+  "iou_sheet": 0.959,
+  "iou_cells_min": 0.937,
+  "layer_px": 113856,
+  "outside_base_px": 5118
+ },
+ "top-hoodie_north": {
+  "sheet": {
+   "scale": 1.0,
+   "dx": 0,
+   "dy": 0
+  },
+  "iou_sheet": 0.973,
+  "iou_cells_min": 0.968,
+  "layer_px": 111951,
+  "outside_base_px": 5029
+ },
+ "heads": {
+  "sheet": {
+   "scale": 1.01,
+   "dx": -7,
+   "dy": 1
+  },
+  "iou_sheet": 0.864
+ },
+ "combos": 8,
+ "export": {
+  "tops": [
+   "cardigan",
+   "hoodie"
+  ],
+  "bottoms": [
+   "chino",
+   "skirt"
+  ],
+  "files": 109
+ }
+}
